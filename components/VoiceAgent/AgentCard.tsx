@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useAgentStore } from '@/store/agentStore'
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition'
 import { useTTS } from '@/hooks/useTTS'
+import { useWakeWord } from '@/hooks/useWakeWord'
 import { RecordButton } from './RecordButton'
 import { StatusIndicator } from './StatusIndicator'
 import { TranscriptDisplay } from './TranscriptDisplay'
@@ -16,6 +17,7 @@ export function AgentCard() {
   const { startListening, stopListening, reset } = useAgentStore()
   const { isSupported } = useSpeechRecognition()
   useTTS()
+  useWakeWord()
 
   // Ctrl+Shift+M global keyboard shortcut
   useEffect(() => {
@@ -60,7 +62,7 @@ export function AgentCard() {
         border border-white/10
         rounded-2xl shadow-2xl
         transition-all duration-300 ease-in-out
-        overflow-hidden
+        overflow-y-auto
         ${showContent ? 'w-72 p-4' : 'w-auto p-2'}
       `}
     >
@@ -71,7 +73,7 @@ export function AgentCard() {
           {showContent && (
             <div className="flex flex-col gap-0.5 min-w-0">
               <span className="text-xs font-semibold text-white/70 tracking-wide">
-                Voice Agent
+                Wone
               </span>
               <StatusIndicator />
             </div>
@@ -115,7 +117,7 @@ export function AgentCard() {
       {showResponse && (
         <div className="border-t border-white/10 pt-3">
           <p className="text-[10px] text-white/30 uppercase tracking-wider mb-1.5 font-medium">
-            Claude
+            Wone
           </p>
           <ResponseDisplay />
         </div>

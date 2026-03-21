@@ -41,7 +41,7 @@ export function ResponseDisplay() {
   if (!streamedResponse) return null
 
   return (
-    <div className="w-full max-h-40 overflow-y-auto">
+    <div className="w-full">
       <p className="text-sm text-white/85 leading-relaxed whitespace-pre-wrap">
         {streamedResponse}
         {(state === 'thinking') && (
