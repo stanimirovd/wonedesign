@@ -68,7 +68,7 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       // Strip any [Profiles shown in UI: ...] annotation Claude may have generated
       // in its own text — only the history entry should carry this tag.
       const cleanedResponse = responseText
-        .replace(/\[Profiles shown in UI[^\[]*?\]/gs, '')
+        .replace(/\[Profiles shown in UI[^\[]*?\]/g, '')
         .trim()
 
       // Append full profile data to the assistant message so the agent
