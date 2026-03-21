@@ -25,7 +25,9 @@ const SYSTEM_PROMPT =
   'FILTERING EXISTING RESULTS: When the user wants to narrow down, keep only some, or remove profiles from the current view ' +
   '(e.g. "keep only two", "show just the first one", "remove the last one"), ' +
   'look at the [Profiles shown in UI: ...] list in the conversation history to find the IDs, ' +
-  'then use filter_candidates with the IDs you want to keep. Do NOT call search_users again just to filter.'
+  'then use filter_candidates with the IDs you want to keep. Do NOT call search_users again just to filter. ' +
+  'Do NOT output "[Profiles shown in UI: ...]" or any similar annotation in your spoken response — ' +
+  'that tag exists only in the conversation history for your internal reference.'
 
 const MAX_ITERATIONS = 5
 
@@ -134,27 +136,26 @@ export async function POST(req: NextRequest) {
                 block.input as Record<string, unknown>,
               )
 
-              // Emit candidate profiles as a dedicated event so the client can
-              // render UI cards — these never enter streamedResponse / TTS
-              if (
-                block.name === 'search_users' ||
-                block.name === 'filter_candidates' ||
-                block.name === 'get_user'
-              ) {
-                const profiles = extractCandidates(block.name, result)
-                if (profiles.length > 0) {
-                  send({ type: 'candidates', profiles })
-                }
-              }
-
               const isCandidate =
                 block.name === 'search_users' ||
                 block.name === 'filter_candidates' ||
                 block.name === 'get_user'
+
+              // Emit candidate profiles as a dedicated event so the client can
+              // render UI cards — these never enter streamedResponse / TTS
+              const profiles = isCandidate ? extractCandidates(block.name, result) : []
+              if (profiles.length > 0) {
+                send({ type: 'candidates', profiles })
+              }
+
               toolResults.push({
                 type: 'tool_result',
                 tool_use_id: block.id,
-                content: isCandidate ? 'Profiles are displayed in the UI.' : result,
+                content: isCandidate
+                  ? profiles.length === 1
+                    ? '1 profile is displayed in the UI.'
+                    : `${profiles.length} profiles are displayed in the UI.`
+                  : result,
               })
               hasCustomToolUse = true
             }
