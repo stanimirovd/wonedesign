@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import type { CandidateProfile } from '@/types/agent'
 
 interface Props {
@@ -7,7 +8,10 @@ interface Props {
 }
 
 export function CandidateCard({ profile }: Props) {
-  const visibleSkills = profile.skills.slice(0, 6)
+  const [expanded, setExpanded] = useState(false)
+
+  const visibleSkills = expanded ? profile.skills : profile.skills.slice(0, 6)
+  const hiddenCount = profile.skills.length - 6
 
   return (
     <div className="rounded-xl bg-white/5 border border-white/10 p-3 flex flex-col gap-2">
@@ -40,28 +44,58 @@ export function CandidateCard({ profile }: Props) {
               {skill}
             </span>
           ))}
-          {profile.skills.length > 6 && (
+          {!expanded && hiddenCount > 0 && (
             <span className="px-1.5 py-0.5 rounded-md text-white/30 text-[10px]">
-              +{profile.skills.length - 6}
+              +{hiddenCount}
             </span>
           )}
         </div>
       )}
 
       {/* Summary */}
-      <p className="text-[11px] text-white/40 leading-relaxed line-clamp-2">{profile.summary}</p>
+      <p className={`text-[11px] text-white/40 leading-relaxed${expanded ? '' : ' line-clamp-2'}`}>
+        {profile.summary}
+      </p>
 
-      {/* Education (shown for single-profile lookups) */}
+      {/* Experience (expanded only) */}
+      {expanded && profile.experience && profile.experience.length > 0 && (
+        <div className="flex flex-col gap-2 pt-1 border-t border-white/8">
+          <p className="text-[10px] text-white/30 uppercase tracking-wider font-medium">Experience</p>
+          {profile.experience.map((exp, i) => (
+            <div key={i} className="flex flex-col gap-0.5">
+              <p className="text-[11px] text-white/60 font-medium">
+                {exp.title} · {exp.company}
+              </p>
+              <p className="text-[10px] text-white/30">
+                {exp.start} – {exp.end ?? 'Present'}
+              </p>
+              {exp.description && (
+                <p className="text-[10px] text-white/35 leading-relaxed">{exp.description}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Education */}
       {profile.education && profile.education.length > 0 && (
         <p className="text-[10px] text-white/30">
           {profile.education[0].degree} · {profile.education[0].institution}
         </p>
       )}
 
-      {/* Languages (shown for single-profile lookups) */}
+      {/* Languages */}
       {profile.languages && profile.languages.length > 0 && (
         <p className="text-[10px] text-white/30">{profile.languages.join(' · ')}</p>
       )}
+
+      {/* Expand / collapse toggle */}
+      <button
+        onClick={() => setExpanded((v) => !v)}
+        className="self-start text-[10px] text-white/30 hover:text-white/50 transition-colors"
+      >
+        {expanded ? 'Show less ↑' : 'Show more ↓'}
+      </button>
 
       {/* Profile ID */}
       <p className="text-[9px] text-white/20 font-mono">{profile.id}</p>

@@ -64,6 +64,9 @@ function searchUsers(input: Record<string, unknown>): string {
     summary: u.summary,
     currentCompany: u.experience[0]?.company ?? null,
     totalExperiences: u.experience.length,
+    education: u.education,
+    languages: u.languages,
+    experience: u.experience,
   }))
 
   return JSON.stringify({ found: results.length, results: summary })
@@ -81,6 +84,9 @@ function filterCandidates(input: Record<string, unknown>): string {
     summary: u.summary,
     currentCompany: u.experience[0]?.company ?? null,
     totalExperiences: u.experience.length,
+    education: u.education,
+    languages: u.languages,
+    experience: u.experience,
   }))
   return JSON.stringify({ found: results.length, results: summary })
 }
