@@ -46,7 +46,7 @@ export interface AgentStore {
   appendToResponse: (chunk: string) => void
   setToolStatus: (label: string | null) => void
   setCandidates: (profiles: CandidateProfile[]) => void
-  setFinishedStreaming: () => void
+  setFinishedStreaming: (responseText: string) => void
   setFinishedSpeaking: () => void
   setError: (msg: string) => void
   reset: () => void

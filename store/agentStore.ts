@@ -48,7 +48,7 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
 
     fetchClaudeStream(finalTranscript, conversationHistory, {
       onChunk: (chunk) => get().appendToResponse(chunk),
-      onDone: () => get().setFinishedStreaming(),
+      onDone: (responseText) => get().setFinishedStreaming(responseText),
       onError: (msg) => get().setError(msg),
       onToolUse: (label) => get().setToolStatus(label),
       onCandidates: (profiles) => get().setCandidates(profiles),
@@ -62,14 +62,14 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
 
   setCandidates: (profiles) => set({ candidateProfiles: profiles }),
 
-  setFinishedStreaming: () =>
+  setFinishedStreaming: (responseText) =>
     set((s) => ({
       state: 'speaking',
       toolStatus: null,
       conversationHistory: [
         ...s.conversationHistory,
         { role: 'user' as const, content: s.finalTranscript },
-        { role: 'assistant' as const, content: s.streamedResponse },
+        { role: 'assistant' as const, content: responseText },
       ],
     })),
 
