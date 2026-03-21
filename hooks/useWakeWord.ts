@@ -3,16 +3,40 @@
 import { useEffect, useRef } from 'react'
 import { useAgentStore } from '@/store/agentStore'
 
-const WAKE_PHRASE = 'hey wone'
+// "Wone" is not a real word so speech recognition will mishear it.
+// Match any plausible transcription of "Hey Wone".
+const WAKE_PATTERNS = [
+  'hey wone',
+  'hey one',
+  'hey won',
+  'hey bone',
+  'hey hone',
+  'hey home',
+  'hey own',
+  'hey lone',
+  'a wone',
+  'a one',
+]
+
+function matchesWakePhrase(transcript: string): boolean {
+  const t = transcript.toLowerCase().trim()
+  return WAKE_PATTERNS.some((p) => t.includes(p))
+}
 
 /**
- * Runs a continuous, low-priority speech recognition session in the background.
- * When the wake phrase "Hey Wone" is detected it calls startListening(), which
- * hands control over to the main useSpeechRecognition hook.
+ * Runs a continuous background speech recognition session.
+ * Activates the agent when the wake phrase "Hey Wone" (or a likely
+ * mishearing) is detected.
+ *
+ * Only starts after the user has clicked the mic button at least once,
+ * because Chrome requires a prior user gesture before allowing background
+ * microphone access.
  */
 export function useWakeWord() {
   const state = useAgentStore((s) => s.state)
+  const micUnlocked = useAgentStore((s) => s.micUnlocked)
   const startListening = useAgentStore((s) => s.startListening)
+
   const recognitionRef = useRef<{
     continuous: boolean
     interimResults: boolean
@@ -20,10 +44,12 @@ export function useWakeWord() {
     start: () => void
     stop: () => void
     abort: () => void
-    onresult: ((e: { results: { [i: number]: { isFinal: boolean; [j: number]: { transcript: string } } }; resultIndex: number }) => void) | null
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    onresult: ((e: any) => void) | null
     onend: (() => void) | null
     onerror: ((e: { error: string }) => void) | null
   } | null>(null)
+
   const restartTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const activeRef = useRef(false)
 
@@ -32,13 +58,8 @@ export function useWakeWord() {
       typeof window !== 'undefined' &&
       ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)
 
-    if (!isSupported) return
-
-    // Only run wake-word listener when the agent is idle or reset
-    const shouldListen = state === 'idle'
-
-    if (!shouldListen) {
-      // Stop wake-word listener while agent is busy
+    // Only run when idle and the user has granted mic access via a click
+    if (!isSupported || state !== 'idle' || !micUnlocked) {
       activeRef.current = false
       if (restartTimerRef.current) clearTimeout(restartTimerRef.current)
       if (recognitionRef.current) {
@@ -51,24 +72,22 @@ export function useWakeWord() {
     function startWakeListener() {
       if (!activeRef.current) return
 
-      const SR =
-        (window as typeof window & { SpeechRecognition?: new () => typeof recognitionRef.current; webkitSpeechRecognition?: new () => typeof recognitionRef.current }).SpeechRecognition ??
-        (window as typeof window & { webkitSpeechRecognition?: new () => typeof recognitionRef.current }).webkitSpeechRecognition
-
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const SR = (window as any).SpeechRecognition ?? (window as any).webkitSpeechRecognition
       if (!SR) return
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const rec = new (SR as any)()
+      const rec = new SR() as any
       rec.continuous = true
       rec.interimResults = true
       rec.lang = 'en-US'
       recognitionRef.current = rec
 
-      rec.onresult = (event: { results: { [i: number]: { isFinal: boolean; [j: number]: { transcript: string } } }; resultIndex: number }) => {
-        for (let i = event.resultIndex; i < Object.keys(event.results).length; i++) {
-          const transcript = event.results[i][0].transcript.toLowerCase().trim()
-          if (transcript.includes(WAKE_PHRASE)) {
-            // Wake phrase detected — hand off to the main agent
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      rec.onresult = (event: any) => {
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const transcript: string = event.results[i][0].transcript
+          if (matchesWakePhrase(transcript)) {
             activeRef.current = false
             try { rec.abort() } catch { /* ignore */ }
             recognitionRef.current = null
@@ -79,7 +98,6 @@ export function useWakeWord() {
       }
 
       rec.onend = () => {
-        // Restart after a short pause so we stay alive
         if (activeRef.current) {
           restartTimerRef.current = setTimeout(startWakeListener, 300)
         }
@@ -90,13 +108,12 @@ export function useWakeWord() {
           activeRef.current = false
           return
         }
-        // For other errors just restart
         if (activeRef.current) {
           restartTimerRef.current = setTimeout(startWakeListener, 1000)
         }
       }
 
-      try { rec.start() } catch { /* ignore if already started */ }
+      try { rec.start() } catch { /* ignore */ }
     }
 
     activeRef.current = true
@@ -110,5 +127,5 @@ export function useWakeWord() {
         recognitionRef.current = null
       }
     }
-  }, [state, startListening])
+  }, [state, micUnlocked, startListening])
 }

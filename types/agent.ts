@@ -12,10 +12,12 @@ export interface AgentStore {
   finalTranscript: string
   streamedResponse: string
   errorMessage: string | null
+  micUnlocked: boolean
 
   // Actions
   setInterimTranscript: (text: string) => void
   setFinalTranscript: (text: string) => void
+  unlockMic: () => void
   startListening: () => void
   stopListening: () => void
   submitTranscript: () => void
