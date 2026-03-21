@@ -1,3 +1,8 @@
+export interface ConversationTurn {
+  role: 'user' | 'assistant'
+  content: string
+}
+
 export type AgentState =
   | 'idle'
   | 'listening'
@@ -29,6 +34,7 @@ export interface AgentStore {
   micUnlocked: boolean
   toolStatus: string | null
   candidateProfiles: CandidateProfile[] | null
+  conversationHistory: ConversationTurn[]
 
   // Actions
   setInterimTranscript: (text: string) => void

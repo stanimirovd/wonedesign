@@ -6,7 +6,7 @@ import type {
   BetaMessageParam,
   BetaToolResultBlockParam,
 } from '@anthropic-ai/sdk/resources/beta/messages/messages'
-import type { CandidateProfile } from '@/types/agent'
+import type { CandidateProfile, ConversationTurn } from '@/types/agent'
 
 export const runtime = 'nodejs'
 
@@ -53,6 +53,8 @@ function extractCandidates(toolName: string, result: string): CandidateProfile[]
 export async function POST(req: NextRequest) {
   let message: string
 
+  let history: ConversationTurn[] = []
+
   try {
     const body = await req.json()
     message = body?.message
@@ -61,6 +63,17 @@ export async function POST(req: NextRequest) {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       })
+    }
+    if (Array.isArray(body?.history)) {
+      history = body.history.filter(
+        (t: unknown) =>
+          t !== null &&
+          typeof t === 'object' &&
+          ('role' in (t as object)) &&
+          ('content' in (t as object)) &&
+          ((t as ConversationTurn).role === 'user' || (t as ConversationTurn).role === 'assistant') &&
+          typeof (t as ConversationTurn).content === 'string',
+      )
     }
   } catch {
     return new Response(JSON.stringify({ error: 'Invalid JSON body' }), {
@@ -78,7 +91,10 @@ export async function POST(req: NextRequest) {
       }
 
       try {
-        const messages: BetaMessageParam[] = [{ role: 'user', content: message }]
+        const messages: BetaMessageParam[] = [
+          ...history.map((t) => ({ role: t.role, content: t.content })),
+          { role: 'user', content: message },
+        ]
 
         for (let iteration = 0; iteration < MAX_ITERATIONS; iteration++) {
           const response = await anthropic.beta.messages.create({

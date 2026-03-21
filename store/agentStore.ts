@@ -11,6 +11,7 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
   micUnlocked: false,
   toolStatus: null,
   candidateProfiles: null,
+  conversationHistory: [],
 
   setInterimTranscript: (text) => set({ interimTranscript: text }),
 
@@ -27,6 +28,7 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       errorMessage: null,
       toolStatus: null,
       candidateProfiles: null,
+      // conversationHistory intentionally preserved so follow-ups work
     }),
 
   stopListening: () => {
@@ -39,12 +41,12 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
   },
 
   submitTranscript: () => {
-    const { finalTranscript } = get()
+    const { finalTranscript, conversationHistory } = get()
     if (!finalTranscript.trim()) return
 
     set({ state: 'thinking', streamedResponse: '', toolStatus: null, candidateProfiles: null })
 
-    fetchClaudeStream(finalTranscript, {
+    fetchClaudeStream(finalTranscript, conversationHistory, {
       onChunk: (chunk) => get().appendToResponse(chunk),
       onDone: () => get().setFinishedStreaming(),
       onError: (msg) => get().setError(msg),
@@ -60,7 +62,16 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
 
   setCandidates: (profiles) => set({ candidateProfiles: profiles }),
 
-  setFinishedStreaming: () => set({ state: 'speaking', toolStatus: null }),
+  setFinishedStreaming: () =>
+    set((s) => ({
+      state: 'speaking',
+      toolStatus: null,
+      conversationHistory: [
+        ...s.conversationHistory,
+        { role: 'user' as const, content: s.finalTranscript },
+        { role: 'assistant' as const, content: s.streamedResponse },
+      ],
+    })),
 
   setFinishedSpeaking: () => set({ state: 'idle' }),
 
@@ -75,5 +86,6 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       errorMessage: null,
       toolStatus: null,
       candidateProfiles: null,
+      conversationHistory: [],
     }),
 }))
