@@ -1,10 +1,22 @@
 import { NextRequest } from 'next/server'
 import anthropic from '@/lib/anthropic'
+import { TOOL_DEFINITIONS, TOOL_LABELS } from '@/lib/tools'
+import { executeCustomTool } from '@/lib/executeTools'
+import type {
+  BetaMessageParam,
+  BetaToolResultBlockParam,
+} from '@anthropic-ai/sdk/resources/beta/messages/messages'
 
 export const runtime = 'nodejs'
 
 const SYSTEM_PROMPT =
-  'You are a concise voice assistant. Keep responses under 3 sentences unless asked for detail. Respond naturally as if speaking aloud. Be helpful, clear, and direct.'
+  'You are a helpful voice assistant with two special capabilities: ' +
+  '(1) Web search — you can look up current information, news, weather, and facts. ' +
+  '(2) User profile database — you have access to 100 professional profiles with CVs and work experience; use search_users to find people by skills, location, role, or company, and get_user to fetch a full profile by ID. ' +
+  'Keep responses concise (under 4 sentences for voice output) unless the user asks for more detail. ' +
+  'Respond naturally as if speaking aloud. When you use tools, briefly summarize what you found.'
+
+const MAX_ITERATIONS = 5
 
 export async function POST(req: NextRequest) {
   let message: string
@@ -34,20 +46,56 @@ export async function POST(req: NextRequest) {
       }
 
       try {
-        const anthropicStream = anthropic.messages.stream({
-          model: process.env.CLAUDE_MODEL ?? 'claude-sonnet-4-6',
-          max_tokens: 1024,
-          system: SYSTEM_PROMPT,
-          messages: [{ role: 'user', content: message }],
-        })
+        const messages: BetaMessageParam[] = [{ role: 'user', content: message }]
 
-        for await (const event of anthropicStream) {
-          if (
-            event.type === 'content_block_delta' &&
-            event.delta.type === 'text_delta'
-          ) {
-            send({ type: 'delta', text: event.delta.text })
+        for (let iteration = 0; iteration < MAX_ITERATIONS; iteration++) {
+          const response = await anthropic.beta.messages.create({
+            model: process.env.CLAUDE_MODEL ?? 'claude-sonnet-4-6',
+            max_tokens: 1024,
+            system: SYSTEM_PROMPT,
+            tools: TOOL_DEFINITIONS,
+            messages,
+            betas: ['web-search-2025-03-05'],
+          })
+
+          const toolResults: BetaToolResultBlockParam[] = []
+          let hasCustomToolUse = false
+
+          for (const block of response.content) {
+            if (block.type === 'text') {
+              // Chunk text into ~30-char pieces for smoother streaming display
+              const text = block.text
+              for (let i = 0; i < text.length; i += 30) {
+                send({ type: 'delta', text: text.slice(i, i + 30) })
+              }
+            } else if (block.type === 'server_tool_use') {
+              // Server-side tool (web_search) — Anthropic handles execution automatically
+              const label = TOOL_LABELS[block.name] ?? `Using ${block.name}…`
+              send({ type: 'tool_use', name: block.name, label })
+            } else if (block.type === 'tool_use') {
+              // Custom tool — we execute it manually
+              const label = TOOL_LABELS[block.name] ?? `Using ${block.name}…`
+              send({ type: 'tool_use', name: block.name, label })
+              const result = executeCustomTool(
+                block.name,
+                block.input as Record<string, unknown>,
+              )
+              toolResults.push({
+                type: 'tool_result',
+                tool_use_id: block.id,
+                content: result,
+              })
+              hasCustomToolUse = true
+            }
           }
+
+          if (response.stop_reason === 'end_turn' || !hasCustomToolUse) {
+            break
+          }
+
+          // Prepare next iteration with tool results
+          messages.push({ role: 'assistant', content: response.content })
+          messages.push({ role: 'user', content: toolResults })
         }
 
         send({ type: 'done' })

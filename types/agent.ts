@@ -13,6 +13,7 @@ export interface AgentStore {
   streamedResponse: string
   errorMessage: string | null
   micUnlocked: boolean
+  toolStatus: string | null
 
   // Actions
   setInterimTranscript: (text: string) => void
@@ -22,6 +23,7 @@ export interface AgentStore {
   stopListening: () => void
   submitTranscript: () => void
   appendToResponse: (chunk: string) => void
+  setToolStatus: (label: string | null) => void
   setFinishedStreaming: () => void
   setFinishedSpeaking: () => void
   setError: (msg: string) => void
