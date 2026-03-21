@@ -68,17 +68,15 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       // Strip any [Profiles shown in UI: ...] annotation Claude may have generated
       // in its own text — only the history entry should carry this tag.
       const cleanedResponse = responseText
-        .replace(/\[Profiles shown in UI:[^\]]*\]\n?/g, '')
+        .replace(/\[Profiles shown in UI[^\[]*?\]/gs, '')
         .trim()
 
-      // Append current profile IDs to the assistant message so the agent
-      // can reference them in follow-ups (e.g. "keep only two").
+      // Append full profile data to the assistant message so the agent
+      // can reference it in follow-up questions about the candidates.
       let content = responseText
       if (s.candidateProfiles && s.candidateProfiles.length > 0) {
-        const ids = s.candidateProfiles
-          .map((p) => `${p.id} (${p.name}, ${p.role})`)
-          .join('; ')
-        content += `\n[Profiles shown in UI: ${ids}]`
+        content += '\n[Profiles shown in UI — full data:\n' +
+          JSON.stringify(s.candidateProfiles) + ']'
       }
       return {
         state: 'speaking',

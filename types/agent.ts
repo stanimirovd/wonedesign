@@ -11,6 +11,14 @@ export type AgentState =
   | 'speaking'
   | 'error'
 
+export interface Experience {
+  company: string
+  title: string
+  start: string
+  end: string | null
+  description: string
+}
+
 export interface CandidateProfile {
   id: string
   name: string
@@ -20,9 +28,9 @@ export interface CandidateProfile {
   summary: string
   currentCompany: string | null
   totalExperiences: number
-  // Optional fields populated for single-profile lookups
   education?: { institution: string; degree: string; year: number }[]
   languages?: string[]
+  experience?: Experience[]
 }
 
 export interface AgentStore {

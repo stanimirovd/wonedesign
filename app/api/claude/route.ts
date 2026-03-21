@@ -24,10 +24,13 @@ const SYSTEM_PROMPT =
   'you MUST pass that exact number as the `limit` parameter to search_users. Never return more profiles than requested. ' +
   'FILTERING EXISTING RESULTS: When the user wants to narrow down, keep only some, or remove profiles from the current view ' +
   '(e.g. "keep only two", "show just the first one", "remove the last one"), ' +
-  'look at the [Profiles shown in UI: ...] list in the conversation history to find the IDs, ' +
+  'look at the [Profiles shown in UI — full data: ...] block in the conversation history to find the IDs, ' +
   'then use filter_candidates with the IDs you want to keep. Do NOT call search_users again just to filter. ' +
-  'Do NOT output "[Profiles shown in UI: ...]" or any similar annotation in your spoken response — ' +
-  'that tag exists only in the conversation history for your internal reference.'
+  'Do NOT output any "[Profiles shown in UI...]" annotation in your spoken response — ' +
+  'that tag exists only in the conversation history for your internal reference. ' +
+  'PROFILE CONTEXT: When profiles are shown, their complete data (experience history, education, languages, skills, summary) ' +
+  'is stored in the [Profiles shown in UI — full data: ...] JSON block in the conversation history. ' +
+  'Use this data directly to answer any follow-up questions about the candidates — do NOT say you lack the data.'
 
 const MAX_ITERATIONS = 5
 
@@ -152,9 +155,7 @@ export async function POST(req: NextRequest) {
                 type: 'tool_result',
                 tool_use_id: block.id,
                 content: isCandidate
-                  ? profiles.length === 1
-                    ? '1 profile is displayed in the UI.'
-                    : `${profiles.length} profiles are displayed in the UI.`
+                  ? `${profiles.length === 1 ? '1 profile' : `${profiles.length} profiles`} displayed in the UI. Full data: ${result}`
                   : result,
               })
               hasCustomToolUse = true
