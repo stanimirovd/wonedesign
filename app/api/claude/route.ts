@@ -120,10 +120,11 @@ export async function POST(req: NextRequest) {
                 }
               }
 
+              const isCandidate = block.name === 'search_users' || block.name === 'get_user'
               toolResults.push({
                 type: 'tool_result',
                 tool_use_id: block.id,
-                content: result,
+                content: isCandidate ? 'Profiles are displayed in the UI.' : result,
               })
               hasCustomToolUse = true
             }
