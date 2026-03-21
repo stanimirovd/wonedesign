@@ -22,7 +22,7 @@ export function TranscriptDisplay() {
   return (
     <div
       ref={ref}
-      className="w-full max-h-28 overflow-y-auto text-sm leading-relaxed"
+      className="w-full text-sm leading-relaxed"
     >
       {hasContent ? (
         <p>
