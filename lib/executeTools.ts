@@ -25,12 +25,13 @@ interface UserProfile {
 const db = usersData as UserProfile[]
 
 function searchUsers(input: Record<string, unknown>): string {
-  const { skills, role, location, name, company } = input as {
+  const { skills, role, location, name, company, limit } = input as {
     skills?: string[]
     role?: string
     location?: string
     name?: string
     company?: string
+    limit?: number
   }
 
   const results = db.filter((user) => {
@@ -53,7 +54,8 @@ function searchUsers(input: Record<string, unknown>): string {
     return true
   })
 
-  const summary = results.slice(0, 10).map((u) => ({
+  const cap = typeof limit === 'number' && limit > 0 ? Math.min(limit, 100) : 10
+  const summary = results.slice(0, cap).map((u) => ({
     id: u.id,
     name: u.name,
     role: u.role,
@@ -64,6 +66,22 @@ function searchUsers(input: Record<string, unknown>): string {
     totalExperiences: u.experience.length,
   }))
 
+  return JSON.stringify({ found: results.length, results: summary })
+}
+
+function filterCandidates(input: Record<string, unknown>): string {
+  const { ids } = input as { ids: string[] }
+  const results = ids.map((id) => db.find((u) => u.id === id)).filter(Boolean) as UserProfile[]
+  const summary = results.map((u) => ({
+    id: u.id,
+    name: u.name,
+    role: u.role,
+    location: u.location,
+    skills: u.skills,
+    summary: u.summary,
+    currentCompany: u.experience[0]?.company ?? null,
+    totalExperiences: u.experience.length,
+  }))
   return JSON.stringify({ found: results.length, results: summary })
 }
 
@@ -78,6 +96,8 @@ export function executeCustomTool(name: string, input: Record<string, unknown>):
   switch (name) {
     case 'search_users':
       return searchUsers(input)
+    case 'filter_candidates':
+      return filterCandidates(input)
     case 'get_user':
       return getUser(input)
     default:

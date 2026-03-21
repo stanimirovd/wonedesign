@@ -13,19 +13,26 @@ export const runtime = 'nodejs'
 const SYSTEM_PROMPT =
   'You are a helpful voice assistant with two special capabilities: ' +
   '(1) Web search — you can look up current information, news, weather, and facts. ' +
-  '(2) User profile database — you have access to 100 professional profiles with CVs and work experience; use search_users to find people by skills, location, role, or company, and get_user to fetch a full profile by ID. ' +
+  '(2) User profile database — you have access to 100 professional profiles with CVs and work experience; ' +
+  'use search_users to find people by skills, location, role, or company, and get_user to fetch a full profile by ID. ' +
   'Keep responses concise (under 4 sentences for voice output) unless the user asks for more detail. ' +
   'Respond naturally as if speaking aloud. When you use tools, briefly summarize what you found. ' +
   'IMPORTANT: When returning user profile results, keep your spoken response to a single short sentence ' +
   '(e.g. "I found 3 React developers in Berlin." or "Here is the profile for Ana Kovač."). ' +
-  'The UI will display the full profile cards — do NOT list out skills, experience, or other details in your spoken response.'
+  'The UI will display the full profile cards — do NOT list out skills, experience, or other details in your spoken response. ' +
+  'COUNT CONSTRAINTS: When the user asks for a specific number of candidates (e.g. "find 2 developers", "show me 3 designers"), ' +
+  'you MUST pass that exact number as the `limit` parameter to search_users. Never return more profiles than requested. ' +
+  'FILTERING EXISTING RESULTS: When the user wants to narrow down, keep only some, or remove profiles from the current view ' +
+  '(e.g. "keep only two", "show just the first one", "remove the last one"), ' +
+  'look at the [Profiles shown in UI: ...] list in the conversation history to find the IDs, ' +
+  'then use filter_candidates with the IDs you want to keep. Do NOT call search_users again just to filter.'
 
 const MAX_ITERATIONS = 5
 
 function extractCandidates(toolName: string, result: string): CandidateProfile[] {
   try {
     const parsed = JSON.parse(result)
-    if (toolName === 'search_users') {
+    if (toolName === 'search_users' || toolName === 'filter_candidates') {
       return (parsed.results ?? []) as CandidateProfile[]
     }
     if (toolName === 'get_user' && !parsed.error) {
@@ -129,14 +136,21 @@ export async function POST(req: NextRequest) {
 
               // Emit candidate profiles as a dedicated event so the client can
               // render UI cards — these never enter streamedResponse / TTS
-              if (block.name === 'search_users' || block.name === 'get_user') {
+              if (
+                block.name === 'search_users' ||
+                block.name === 'filter_candidates' ||
+                block.name === 'get_user'
+              ) {
                 const profiles = extractCandidates(block.name, result)
                 if (profiles.length > 0) {
                   send({ type: 'candidates', profiles })
                 }
               }
 
-              const isCandidate = block.name === 'search_users' || block.name === 'get_user'
+              const isCandidate =
+                block.name === 'search_users' ||
+                block.name === 'filter_candidates' ||
+                block.name === 'get_user'
               toolResults.push({
                 type: 'tool_result',
                 tool_use_id: block.id,

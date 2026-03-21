@@ -24,11 +24,10 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       state: 'listening',
       interimTranscript: '',
       finalTranscript: '',
-      streamedResponse: '',
+      // streamedResponse and candidateProfiles intentionally kept —
+      // previous agent response and profile cards stay visible while the user speaks
       errorMessage: null,
       toolStatus: null,
-      candidateProfiles: null,
-      // conversationHistory intentionally preserved so follow-ups work
     }),
 
   stopListening: () => {
@@ -44,7 +43,9 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
     const { finalTranscript, conversationHistory } = get()
     if (!finalTranscript.trim()) return
 
-    set({ state: 'thinking', streamedResponse: '', toolStatus: null, candidateProfiles: null })
+    // Clear the previous text response so the new one streams in fresh.
+    // candidateProfiles is intentionally kept until the agent returns new ones.
+    set({ state: 'thinking', streamedResponse: '', toolStatus: null })
 
     fetchClaudeStream(finalTranscript, conversationHistory, {
       onChunk: (chunk) => get().appendToResponse(chunk),
@@ -63,15 +64,26 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
   setCandidates: (profiles) => set({ candidateProfiles: profiles }),
 
   setFinishedStreaming: (responseText) =>
-    set((s) => ({
-      state: 'speaking',
-      toolStatus: null,
-      conversationHistory: [
-        ...s.conversationHistory,
-        { role: 'user' as const, content: s.finalTranscript },
-        { role: 'assistant' as const, content: responseText },
-      ],
-    })),
+    set((s) => {
+      // Append current profile IDs to the assistant message so the agent
+      // can reference them in follow-ups (e.g. "keep only two").
+      let content = responseText
+      if (s.candidateProfiles && s.candidateProfiles.length > 0) {
+        const ids = s.candidateProfiles
+          .map((p) => `${p.id} (${p.name}, ${p.role})`)
+          .join('; ')
+        content += `\n[Profiles shown in UI: ${ids}]`
+      }
+      return {
+        state: 'speaking',
+        toolStatus: null,
+        conversationHistory: [
+          ...s.conversationHistory,
+          { role: 'user' as const, content: s.finalTranscript },
+          { role: 'assistant' as const, content },
+        ],
+      }
+    }),
 
   setFinishedSpeaking: () => set({ state: 'idle' }),
 
