@@ -8,7 +8,7 @@ export const TOOL_DEFINITIONS: BetaToolUnion[] = [
   {
     name: 'search_users',
     description:
-      'Search the user profile database. Returns up to 10 matching profiles with their CV and work experience. Use this to find candidates by skills, role, location, company, or name.',
+      'Search the user profile database. Use this to find candidates by skills, role, location, company, or name. Pass `limit` to control exactly how many results to return.',
     input_schema: {
       type: 'object' as const,
       properties: {
@@ -37,7 +37,29 @@ export const TOOL_DEFINITIONS: BetaToolUnion[] = [
           description:
             'Filter by company name appearing in their work experience. Partial, case-insensitive match.',
         },
+        limit: {
+          type: 'integer',
+          description:
+            'Maximum number of profiles to return. Use this whenever the user specifies a count (e.g. "find 2 developers" → limit: 2). Defaults to 10.',
+        },
       },
+    },
+  },
+  {
+    name: 'filter_candidates',
+    description:
+      'Show only a specific subset of the profiles currently displayed in the UI. Use this whenever the user asks to narrow down, keep only some, or remove profiles from the current view. The current profile IDs are listed in [Profiles shown in UI: ...] in the conversation. Do NOT use search_users just to filter existing results — use this tool instead.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        ids: {
+          type: 'array',
+          items: { type: 'string' },
+          description:
+            'IDs of the profiles to keep, in the order you want them shown (e.g. ["usr_008", "usr_020"]).',
+        },
+      },
+      required: ['ids'],
     },
   },
   {
@@ -60,5 +82,6 @@ export const TOOL_DEFINITIONS: BetaToolUnion[] = [
 export const TOOL_LABELS: Record<string, string> = {
   web_search: 'Searching the web\u2026',
   search_users: 'Searching user profiles\u2026',
+  filter_candidates: 'Filtering profiles\u2026',
   get_user: 'Looking up profile\u2026',
 }
