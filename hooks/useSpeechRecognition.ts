@@ -3,7 +3,9 @@
 import { useEffect, useRef, useCallback } from 'react'
 import { useAgentStore } from '@/store/agentStore'
 
-// Extend window type for browser speech recognition
+// How long of silence (ms) before auto-submitting
+const SILENCE_TIMEOUT_MS = 2500
+
 type SpeechRecognitionType = {
   new(): SpeechRecognitionInstance
 }
@@ -55,6 +57,7 @@ declare global {
 
 export function useSpeechRecognition() {
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null)
+  const silenceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const { state, setInterimTranscript, setFinalTranscript, stopListening, setError } =
     useAgentStore()
 
@@ -62,12 +65,29 @@ export function useSpeechRecognition() {
     typeof window !== 'undefined' &&
     ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)
 
+  const clearSilenceTimer = useCallback(() => {
+    if (silenceTimerRef.current) {
+      clearTimeout(silenceTimerRef.current)
+      silenceTimerRef.current = null
+    }
+  }, [])
+
+  const resetSilenceTimer = useCallback(() => {
+    clearSilenceTimer()
+    silenceTimerRef.current = setTimeout(() => {
+      // Silence has lasted long enough — stop and submit
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop() } catch { /* ignore */ }
+      }
+    }, SILENCE_TIMEOUT_MS)
+  }, [clearSilenceTimer])
+
   const initRecognition = useCallback((): SpeechRecognitionInstance | null => {
     if (!isSupported) return null
 
     const SR = window.SpeechRecognition ?? window.webkitSpeechRecognition
     const recognition = new SR()
-    recognition.continuous = false
+    recognition.continuous = true   // keep mic open; we control when to stop
     recognition.interimResults = true
     recognition.lang = 'en-US'
     recognition.maxAlternatives = 1
@@ -86,14 +106,17 @@ export function useSpeechRecognition() {
         }
       }
       setInterimTranscript(interim)
+      // User is still speaking — reset the silence countdown
+      resetSilenceTimer()
     }
 
     recognition.onend = () => {
-      // Auto-submit when speech recognition ends (silence detected)
+      clearSilenceTimer()
       stopListening()
     }
 
     recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
+      clearSilenceTimer()
       if (event.error === 'no-speech') {
         stopListening()
         return
@@ -106,14 +129,13 @@ export function useSpeechRecognition() {
     }
 
     return recognition
-  }, [isSupported, setInterimTranscript, setFinalTranscript, stopListening, setError])
+  }, [isSupported, setInterimTranscript, setFinalTranscript, stopListening, setError, resetSilenceTimer, clearSilenceTimer])
 
   const start = useCallback(() => {
     if (!isSupported) {
       setError('Speech recognition is not supported in this browser. Try Chrome.')
       return
     }
-    // Stop any existing session
     if (recognitionRef.current) {
       try { recognitionRef.current.abort() } catch { /* ignore */ }
     }
@@ -122,18 +144,21 @@ export function useSpeechRecognition() {
     recognitionRef.current = recognition
     try {
       recognition.start()
+      // Start the silence timer immediately so we don't wait forever
+      // if the user says nothing after the wake word
+      resetSilenceTimer()
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Could not start microphone')
     }
-  }, [isSupported, initRecognition, setError])
+  }, [isSupported, initRecognition, setError, resetSilenceTimer])
 
   const stop = useCallback(() => {
+    clearSilenceTimer()
     if (recognitionRef.current) {
       try { recognitionRef.current.stop() } catch { /* ignore */ }
     }
-  }, [])
+  }, [clearSilenceTimer])
 
-  // Start/stop in sync with store state
   useEffect(() => {
     if (state === 'listening') {
       start()
@@ -142,14 +167,14 @@ export function useSpeechRecognition() {
     }
   }, [state, start, stop])
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
+      clearSilenceTimer()
       if (recognitionRef.current) {
         try { recognitionRef.current.abort() } catch { /* ignore */ }
       }
     }
-  }, [])
+  }, [clearSilenceTimer])
 
   return { isSupported }
 }

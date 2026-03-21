@@ -4,63 +4,98 @@ import { useEffect, useRef, useCallback } from 'react'
 import { useAgentStore } from '@/store/agentStore'
 
 export function useTTS() {
-  const utteranceQueueRef = useRef<SpeechSynthesisUtterance[]>([])
-  const isSpeakingRef = useRef(false)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
   const { state, streamedResponse, setFinishedSpeaking } = useAgentStore()
 
-  const isSupported =
-    typeof window !== 'undefined' && 'speechSynthesis' in window
-
   const cancel = useCallback(() => {
-    if (!isSupported) return
-    window.speechSynthesis.cancel()
-    utteranceQueueRef.current = []
-    isSpeakingRef.current = false
-  }, [isSupported])
-
-  const speakNext = useCallback(() => {
-    if (!isSupported) return
-    const queue = utteranceQueueRef.current
-    if (queue.length === 0) {
-      isSpeakingRef.current = false
-      setFinishedSpeaking()
-      return
+    if (audioRef.current) {
+      audioRef.current.pause()
+      audioRef.current.src = ''
+      audioRef.current = null
     }
-    const utterance = queue.shift()!
-    isSpeakingRef.current = true
-    utterance.onend = () => speakNext()
-    utterance.onerror = () => speakNext()
-    window.speechSynthesis.speak(utterance)
-  }, [isSupported, setFinishedSpeaking])
+    // Also cancel any in-flight Web Speech fallback
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel()
+    }
+  }, [])
 
-  const speak = useCallback(
+  const speakWithElevenLabs = useCallback(
+    async (text: string) => {
+      try {
+        const res = await fetch('/api/tts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text }),
+        })
+
+        if (!res.ok) {
+          // ElevenLabs not configured or errored — fall through to Web Speech
+          throw new Error('elevenlabs_unavailable')
+        }
+
+        const blob = await res.blob()
+        const url = URL.createObjectURL(blob)
+        const audio = new Audio(url)
+        audioRef.current = audio
+
+        audio.onended = () => {
+          URL.revokeObjectURL(url)
+          audioRef.current = null
+          setFinishedSpeaking()
+        }
+        audio.onerror = () => {
+          URL.revokeObjectURL(url)
+          audioRef.current = null
+          setFinishedSpeaking()
+        }
+
+        await audio.play()
+      } catch {
+        // Fallback: Web Speech API
+        speakWithWebSpeech(text)
+      }
+    },
+    [setFinishedSpeaking], // speakWithWebSpeech defined below
+  )
+
+  // Web Speech fallback (inline so it captures setFinishedSpeaking)
+  const speakWithWebSpeech = useCallback(
     (text: string) => {
-      if (!isSupported || !text.trim()) {
+      if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
         setFinishedSpeaking()
         return
       }
-
-      cancel()
-
-      // Split into sentences to avoid Chrome's buffer limit
+      window.speechSynthesis.cancel()
       const sentences = text.match(/[^.!?]+[.!?]*/g) ?? [text]
-      utteranceQueueRef.current = sentences
-        .map((s) => s.trim())
-        .filter(Boolean)
-        .map((sentence) => {
-          const u = new SpeechSynthesisUtterance(sentence)
-          u.rate = 1.0
-          u.pitch = 1.0
-          u.volume = 1.0
-          return u
-        })
+      const queue = sentences.map((s) => {
+        const u = new SpeechSynthesisUtterance(s.trim())
+        u.rate = 1.0
+        u.pitch = 1.0
+        u.volume = 1.0
+        return u
+      })
 
-      speakNext()
+      const playNext = () => {
+        const u = queue.shift()
+        if (!u) { setFinishedSpeaking(); return }
+        u.onend = playNext
+        u.onerror = playNext
+        window.speechSynthesis.speak(u)
+      }
+      playNext()
     },
-    [isSupported, cancel, speakNext, setFinishedSpeaking],
+    [setFinishedSpeaking],
   )
 
-  // Trigger TTS when state transitions to 'speaking'
+  const speak = useCallback(
+    (text: string) => {
+      if (!text.trim()) { setFinishedSpeaking(); return }
+      cancel()
+      speakWithElevenLabs(text)
+    },
+    [cancel, speakWithElevenLabs, setFinishedSpeaking],
+  )
+
   useEffect(() => {
     if (state === 'speaking' && streamedResponse) {
       speak(streamedResponse)
@@ -70,12 +105,9 @@ export function useTTS() {
     }
   }, [state, streamedResponse, speak, cancel])
 
-  // Cleanup on unmount
   useEffect(() => {
-    return () => {
-      cancel()
-    }
+    return () => { cancel() }
   }, [cancel])
 
-  return { isSupported }
+  return {}
 }
