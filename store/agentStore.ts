@@ -8,10 +8,13 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
   finalTranscript: '',
   streamedResponse: '',
   errorMessage: null,
+  micUnlocked: false,
 
   setInterimTranscript: (text) => set({ interimTranscript: text }),
 
   setFinalTranscript: (text) => set({ finalTranscript: text }),
+
+  unlockMic: () => set({ micUnlocked: true }),
 
   startListening: () =>
     set({

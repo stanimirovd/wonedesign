@@ -9,11 +9,13 @@ interface RecordButtonProps {
 
 export function RecordButton({ onStart, onStop }: RecordButtonProps) {
   const state = useAgentStore((s) => s.state)
+  const unlockMic = useAgentStore((s) => s.unlockMic)
   const isListening = state === 'listening'
   const isDisabled = state === 'submitted' || state === 'thinking' || state === 'speaking'
 
   const handleClick = () => {
     if (isDisabled) return
+    unlockMic()
     if (isListening) {
       onStop()
     } else {
