@@ -6,6 +6,7 @@ import type {
   BetaMessageParam,
   BetaToolResultBlockParam,
 } from '@anthropic-ai/sdk/resources/beta/messages/messages'
+import type { CandidateProfile } from '@/types/agent'
 
 export const runtime = 'nodejs'
 
@@ -14,9 +15,40 @@ const SYSTEM_PROMPT =
   '(1) Web search — you can look up current information, news, weather, and facts. ' +
   '(2) User profile database — you have access to 100 professional profiles with CVs and work experience; use search_users to find people by skills, location, role, or company, and get_user to fetch a full profile by ID. ' +
   'Keep responses concise (under 4 sentences for voice output) unless the user asks for more detail. ' +
-  'Respond naturally as if speaking aloud. When you use tools, briefly summarize what you found.'
+  'Respond naturally as if speaking aloud. When you use tools, briefly summarize what you found. ' +
+  'IMPORTANT: When returning user profile results, keep your spoken response to a single short sentence ' +
+  '(e.g. "I found 3 React developers in Berlin." or "Here is the profile for Ana Kovač."). ' +
+  'The UI will display the full profile cards — do NOT list out skills, experience, or other details in your spoken response.'
 
 const MAX_ITERATIONS = 5
+
+function extractCandidates(toolName: string, result: string): CandidateProfile[] {
+  try {
+    const parsed = JSON.parse(result)
+    if (toolName === 'search_users') {
+      return (parsed.results ?? []) as CandidateProfile[]
+    }
+    if (toolName === 'get_user' && !parsed.error) {
+      return [
+        {
+          id: parsed.id,
+          name: parsed.name,
+          role: parsed.role,
+          location: parsed.location,
+          skills: parsed.skills ?? [],
+          summary: parsed.summary ?? '',
+          currentCompany: parsed.experience?.[0]?.company ?? null,
+          totalExperiences: parsed.experience?.length ?? 0,
+          education: parsed.education,
+          languages: parsed.languages,
+        },
+      ]
+    }
+  } catch {
+    // ignore
+  }
+  return []
+}
 
 export async function POST(req: NextRequest) {
   let message: string
@@ -63,23 +95,31 @@ export async function POST(req: NextRequest) {
 
           for (const block of response.content) {
             if (block.type === 'text') {
-              // Chunk text into ~30-char pieces for smoother streaming display
               const text = block.text
               for (let i = 0; i < text.length; i += 30) {
                 send({ type: 'delta', text: text.slice(i, i + 30) })
               }
             } else if (block.type === 'server_tool_use') {
-              // Server-side tool (web_search) — Anthropic handles execution automatically
               const label = TOOL_LABELS[block.name] ?? `Using ${block.name}…`
               send({ type: 'tool_use', name: block.name, label })
             } else if (block.type === 'tool_use') {
-              // Custom tool — we execute it manually
               const label = TOOL_LABELS[block.name] ?? `Using ${block.name}…`
               send({ type: 'tool_use', name: block.name, label })
+
               const result = executeCustomTool(
                 block.name,
                 block.input as Record<string, unknown>,
               )
+
+              // Emit candidate profiles as a dedicated event so the client can
+              // render UI cards — these never enter streamedResponse / TTS
+              if (block.name === 'search_users' || block.name === 'get_user') {
+                const profiles = extractCandidates(block.name, result)
+                if (profiles.length > 0) {
+                  send({ type: 'candidates', profiles })
+                }
+              }
+
               toolResults.push({
                 type: 'tool_result',
                 tool_use_id: block.id,
@@ -93,7 +133,6 @@ export async function POST(req: NextRequest) {
             break
           }
 
-          // Prepare next iteration with tool results
           messages.push({ role: 'assistant', content: response.content })
           messages.push({ role: 'user', content: toolResults })
         }

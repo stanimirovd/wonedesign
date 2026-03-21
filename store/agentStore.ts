@@ -10,6 +10,7 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
   errorMessage: null,
   micUnlocked: false,
   toolStatus: null,
+  candidateProfiles: null,
 
   setInterimTranscript: (text) => set({ interimTranscript: text }),
 
@@ -25,6 +26,7 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       streamedResponse: '',
       errorMessage: null,
       toolStatus: null,
+      candidateProfiles: null,
     }),
 
   stopListening: () => {
@@ -40,13 +42,14 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
     const { finalTranscript } = get()
     if (!finalTranscript.trim()) return
 
-    set({ state: 'thinking', streamedResponse: '', toolStatus: null })
+    set({ state: 'thinking', streamedResponse: '', toolStatus: null, candidateProfiles: null })
 
     fetchClaudeStream(finalTranscript, {
       onChunk: (chunk) => get().appendToResponse(chunk),
       onDone: () => get().setFinishedStreaming(),
       onError: (msg) => get().setError(msg),
       onToolUse: (label) => get().setToolStatus(label),
+      onCandidates: (profiles) => get().setCandidates(profiles),
     })
   },
 
@@ -54,6 +57,8 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
     set((s) => ({ streamedResponse: s.streamedResponse + chunk, toolStatus: null })),
 
   setToolStatus: (label) => set({ toolStatus: label }),
+
+  setCandidates: (profiles) => set({ candidateProfiles: profiles }),
 
   setFinishedStreaming: () => set({ state: 'speaking', toolStatus: null }),
 
@@ -69,5 +74,6 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       streamedResponse: '',
       errorMessage: null,
       toolStatus: null,
+      candidateProfiles: null,
     }),
 }))

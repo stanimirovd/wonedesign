@@ -9,11 +9,13 @@ import { RecordButton } from './RecordButton'
 import { StatusIndicator } from './StatusIndicator'
 import { TranscriptDisplay } from './TranscriptDisplay'
 import { ResponseDisplay } from './ResponseDisplay'
+import { CandidateList } from './CandidateList'
 
 export function AgentCard() {
   const state = useAgentStore((s) => s.state)
   const finalTranscript = useAgentStore((s) => s.finalTranscript)
   const streamedResponse = useAgentStore((s) => s.streamedResponse)
+  const candidateProfiles = useAgentStore((s) => s.candidateProfiles)
   const { startListening, stopListening, reset } = useAgentStore()
   const { isSupported } = useSpeechRecognition()
   useTTS()
@@ -53,6 +55,7 @@ export function AgentCard() {
     streamedResponse !== ''
 
   const showContent = showTranscript || showResponse
+  const showCandidates = !!candidateProfiles && candidateProfiles.length > 0
 
   return (
     <div
@@ -63,7 +66,7 @@ export function AgentCard() {
         rounded-2xl shadow-2xl
         transition-all duration-300 ease-in-out
         overflow-y-auto
-        ${showContent ? 'w-72 p-4' : 'w-auto p-2'}
+        ${showCandidates ? 'w-80 p-4' : showContent ? 'w-72 p-4' : 'w-auto p-2'}
       `}
     >
       {/* Header row */}
@@ -122,6 +125,9 @@ export function AgentCard() {
           <ResponseDisplay />
         </div>
       )}
+
+      {/* Candidate profile cards */}
+      {showCandidates && <CandidateList />}
 
       {/* Browser support warning */}
       {!isSupported && (

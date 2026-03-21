@@ -1,13 +1,16 @@
+import type { CandidateProfile } from '@/types/agent'
+
 interface StreamCallbacks {
   onChunk: (text: string) => void
   onDone: () => void
   onError: (msg: string) => void
   onToolUse?: (label: string) => void
+  onCandidates?: (profiles: CandidateProfile[]) => void
 }
 
 export async function fetchClaudeStream(
   message: string,
-  { onChunk, onDone, onError, onToolUse }: StreamCallbacks,
+  { onChunk, onDone, onError, onToolUse, onCandidates }: StreamCallbacks,
 ) {
   try {
     const res = await fetch('/api/claude', {
@@ -37,9 +40,8 @@ export async function fetchClaudeStream(
 
       buffer += decoder.decode(value, { stream: true })
 
-      // Split on double newline (SSE event boundary)
       const parts = buffer.split('\n\n')
-      buffer = parts.pop() ?? '' // keep incomplete last part
+      buffer = parts.pop() ?? ''
 
       for (const part of parts) {
         const line = part.trim()
@@ -51,6 +53,8 @@ export async function fetchClaudeStream(
             onChunk(event.text)
           } else if (event.type === 'tool_use' && event.label) {
             onToolUse?.(event.label)
+          } else if (event.type === 'candidates' && Array.isArray(event.profiles)) {
+            onCandidates?.(event.profiles)
           } else if (event.type === 'done') {
             onDone()
             return
