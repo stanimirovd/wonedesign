@@ -10,9 +10,6 @@ interface Props {
 export function CandidateCard({ profile }: Props) {
   const [expanded, setExpanded] = useState(false)
 
-  const visibleSkills = expanded ? profile.skills : profile.skills.slice(0, 6)
-  const hiddenCount = profile.skills.length - 6
-
   return (
     <div className="rounded-xl bg-white/5 border border-white/10 p-3 flex flex-col gap-2">
       {/* Name + role */}
@@ -33,10 +30,10 @@ export function CandidateCard({ profile }: Props) {
         )}
       </div>
 
-      {/* Skills */}
-      {visibleSkills.length > 0 && (
+      {/* Skills — always show all */}
+      {profile.skills.length > 0 && (
         <div className="flex flex-wrap gap-1">
-          {visibleSkills.map((skill) => (
+          {profile.skills.map((skill) => (
             <span
               key={skill}
               className="px-1.5 py-0.5 rounded-md bg-white/6 text-white/60 text-[10px] border border-white/8"
@@ -44,52 +41,18 @@ export function CandidateCard({ profile }: Props) {
               {skill}
             </span>
           ))}
-          {!expanded && hiddenCount > 0 && (
-            <span className="px-1.5 py-0.5 rounded-md text-white/30 text-[10px]">
-              +{hiddenCount}
-            </span>
-          )}
         </div>
       )}
 
-      {/* Summary */}
-      <p className={`text-[11px] text-white/40 leading-relaxed${expanded ? '' : ' line-clamp-2'}`}>
+      {/* Summary — clickable to expand */}
+      <button
+        onClick={() => setExpanded((v) => !v)}
+        className={`text-left text-[11px] text-white/40 leading-relaxed${expanded ? '' : ' line-clamp-2'}`}
+      >
         {profile.summary}
-      </p>
+      </button>
 
-      {/* Experience (expanded only) */}
-      {expanded && profile.experience && profile.experience.length > 0 && (
-        <div className="flex flex-col gap-2 pt-1 border-t border-white/8">
-          <p className="text-[10px] text-white/30 uppercase tracking-wider font-medium">Experience</p>
-          {profile.experience.map((exp, i) => (
-            <div key={i} className="flex flex-col gap-0.5">
-              <p className="text-[11px] text-white/60 font-medium">
-                {exp.title} · {exp.company}
-              </p>
-              <p className="text-[10px] text-white/30">
-                {exp.start} – {exp.end ?? 'Present'}
-              </p>
-              {exp.description && (
-                <p className="text-[10px] text-white/35 leading-relaxed">{exp.description}</p>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Education */}
-      {profile.education && profile.education.length > 0 && (
-        <p className="text-[10px] text-white/30">
-          {profile.education[0].degree} · {profile.education[0].institution}
-        </p>
-      )}
-
-      {/* Languages */}
-      {profile.languages && profile.languages.length > 0 && (
-        <p className="text-[10px] text-white/30">{profile.languages.join(' · ')}</p>
-      )}
-
-      {/* Expand / collapse toggle */}
+      {/* Expand / collapse toggle — directly below summary */}
       <button
         onClick={() => setExpanded((v) => !v)}
         className="self-start text-[10px] text-white/30 hover:text-white/50 transition-colors"
@@ -97,8 +60,39 @@ export function CandidateCard({ profile }: Props) {
         {expanded ? 'Show less ↑' : 'Show more ↓'}
       </button>
 
-      {/* Profile ID */}
-      <p className="text-[9px] text-white/20 font-mono">{profile.id}</p>
+      {/* Expanded content: experience, education, languages */}
+      {expanded && (
+        <>
+          {profile.experience && profile.experience.length > 0 && (
+            <div className="flex flex-col gap-2 pt-1 border-t border-white/8">
+              <p className="text-[10px] text-white/30 uppercase tracking-wider font-medium">Experience</p>
+              {profile.experience.map((exp, i) => (
+                <div key={i} className="flex flex-col gap-0.5">
+                  <p className="text-[11px] text-white/60 font-medium">
+                    {exp.title} · {exp.company}
+                  </p>
+                  <p className="text-[10px] text-white/30">
+                    {exp.start} – {exp.end ?? 'Present'}
+                  </p>
+                  {exp.description && (
+                    <p className="text-[10px] text-white/35 leading-relaxed">{exp.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {profile.education && profile.education.length > 0 && (
+            <p className="text-[10px] text-white/30">
+              {profile.education[0].degree} · {profile.education[0].institution}
+            </p>
+          )}
+
+          {profile.languages && profile.languages.length > 0 && (
+            <p className="text-[10px] text-white/30">{profile.languages.join(' · ')}</p>
+          )}
+        </>
+      )}
     </div>
   )
 }
