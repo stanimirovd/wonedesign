@@ -1,0 +1,4742 @@
+[
+  {
+    "id": "usr_001",
+    "name": "Ana Kovač",
+    "email": "ana.kova@example.com",
+    "location": "Berlin, Germany",
+    "age": 31,
+    "role": "Frontend Engineer",
+    "summary": "Frontend Engineer with 2 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Vue.js",
+      "Tailwind CSS",
+      "Webpack",
+      "TypeScript",
+      "Next.js",
+      "Jest"
+    ],
+    "languages": [
+      "English",
+      "Italian",
+      "Swahili"
+    ],
+    "experience": [
+      {
+        "company": "PagerDuty",
+        "title": "Frontend Engineer",
+        "start": "2024-12",
+        "end": null,
+        "description": "Led development of key product features at PagerDuty, working across TypeScript, Webpack, Tailwind CSS. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Aalto University",
+        "degree": "BA Communications",
+        "year": 2021
+      }
+    ]
+  },
+  {
+    "id": "usr_002",
+    "name": "Marco Rossi",
+    "email": "marco.rossi@example.com",
+    "location": "London, UK",
+    "age": 52,
+    "role": "Backend Engineer",
+    "summary": "Backend Engineer with 13 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "PostgreSQL",
+      "Kafka",
+      "gRPC",
+      "Docker",
+      "REST APIs"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Swahili",
+      "Slovenian"
+    ],
+    "experience": [
+      {
+        "company": "Intercom",
+        "title": "Backend Engineer",
+        "start": "2023-01",
+        "end": null,
+        "description": "Led development of key product features at Intercom, working across Python, Kubernetes. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Klarna",
+        "title": "Backend Engineer",
+        "start": "2019-12",
+        "end": "2023-01",
+        "description": "Led development of key product features at Klarna, working across Python, Kubernetes. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Vinted",
+        "title": "Backend Engineer",
+        "start": "2013-02",
+        "end": "2019-12",
+        "description": "Led development of key product features at Vinted, working across Kafka, Redis, gRPC. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "École Polytechnique",
+        "degree": "MSc Human-Computer Interaction",
+        "year": 1999
+      }
+    ]
+  },
+  {
+    "id": "usr_003",
+    "name": "Sophie Martin",
+    "email": "sophie.martin@example.com",
+    "location": "Paris, France",
+    "age": 52,
+    "role": "Full Stack Developer",
+    "summary": "Results-driven full stack developer with 12 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "PostgreSQL",
+      "Node.js",
+      "React",
+      "Redis",
+      "TypeScript",
+      "Next.js",
+      "Prisma",
+      "Docker"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Hebrew",
+      "Dutch"
+    ],
+    "experience": [
+      {
+        "company": "Databricks",
+        "title": "Full Stack Developer",
+        "start": "2023-05",
+        "end": null,
+        "description": "Led development of key product features at Databricks, working across React, AWS, Next.js. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Typeform",
+        "title": "Full Stack Developer",
+        "start": "2020-02",
+        "end": "2023-05",
+        "description": "Led development of key product features at Typeform, working across GraphQL, TypeScript. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Segment",
+        "title": "Full Stack Developer",
+        "start": "2014-08",
+        "end": "2020-02",
+        "description": "Led development of key product features at Segment, working across Node.js, PostgreSQL, AWS. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "UC Berkeley",
+        "degree": "MBA",
+        "year": 1998
+      }
+    ]
+  },
+  {
+    "id": "usr_004",
+    "name": "Lars Jensen",
+    "email": "lars.jensen@example.com",
+    "location": "Amsterdam, Netherlands",
+    "age": 38,
+    "role": "DevOps Engineer",
+    "summary": "Results-driven devops engineer with 7 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "CI/CD",
+      "Terraform",
+      "Prometheus",
+      "Kubernetes",
+      "Bash",
+      "Docker",
+      "AWS"
+    ],
+    "languages": [
+      "English",
+      "Norwegian",
+      "Bengali",
+      "Slovenian"
+    ],
+    "experience": [
+      {
+        "company": "Revolut",
+        "title": "DevOps Engineer",
+        "start": "2024-09",
+        "end": null,
+        "description": "Led development of key product features at Revolut, working across CI/CD, Bash, Docker. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Bolt",
+        "title": "DevOps Engineer",
+        "start": "2019-12",
+        "end": "2024-09",
+        "description": "Led development of key product features at Bolt, working across Docker, Terraform. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "TU Berlin",
+        "degree": "MSc Human-Computer Interaction",
+        "year": 2010
+      }
+    ]
+  },
+  {
+    "id": "usr_005",
+    "name": "Katarzyna Wiśniewska",
+    "email": "katarzyna.winiewska@example.com",
+    "location": "Madrid, Spain",
+    "age": 25,
+    "role": "Data Scientist",
+    "summary": "Results-driven data scientist with 3 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "PyTorch",
+      "Python",
+      "Spark",
+      "Tableau",
+      "R",
+      "pandas",
+      "SQL"
+    ],
+    "languages": [
+      "English",
+      "Dutch",
+      "Hebrew"
+    ],
+    "experience": [
+      {
+        "company": "Airtable",
+        "title": "Data Scientist",
+        "start": "2023-05",
+        "end": null,
+        "description": "Led development of key product features at Airtable, working across Python, pandas. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "MIT",
+        "degree": "BA Design",
+        "year": 2023
+      }
+    ]
+  },
+  {
+    "id": "usr_006",
+    "name": "Luca Ferrari",
+    "email": "luca.ferrari@example.com",
+    "location": "Warsaw, Poland",
+    "age": 35,
+    "role": "ML Engineer",
+    "summary": "Results-driven ml engineer with 5 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "SQL",
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "Docker",
+      "MLflow",
+      "Kubernetes"
+    ],
+    "languages": [
+      "English",
+      "Norwegian",
+      "Hindi",
+      "Korean"
+    ],
+    "experience": [
+      {
+        "company": "Revolut",
+        "title": "ML Engineer",
+        "start": "2024-12",
+        "end": null,
+        "description": "Led development of key product features at Revolut, working across Python, PyTorch. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Linear",
+        "title": "ML Engineer",
+        "start": "2021-08",
+        "end": "2024-12",
+        "description": "Led development of key product features at Linear, working across Hugging Face, Python, Ray. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Bombay",
+        "degree": "BEng Electrical Engineering",
+        "year": 2016
+      }
+    ]
+  },
+  {
+    "id": "usr_007",
+    "name": "Maria García",
+    "email": "maria.garca@example.com",
+    "location": "Ljubljana, Slovenia",
+    "age": 46,
+    "role": "Product Manager",
+    "summary": "Product Manager with 15 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Product Strategy",
+      "Figma",
+      "Roadmapping",
+      "A/B Testing",
+      "SQL",
+      "Data Analysis"
+    ],
+    "languages": [
+      "English",
+      "French"
+    ],
+    "experience": [
+      {
+        "company": "Mollie",
+        "title": "Product Manager",
+        "start": "2025-01",
+        "end": null,
+        "description": "Led development of key product features at Mollie, working across Stakeholder Management, Product Strategy. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Shopify",
+        "title": "Product Manager",
+        "start": "2018-05",
+        "end": "2025-01",
+        "description": "Led development of key product features at Shopify, working across Product Strategy, Roadmapping. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Vinted",
+        "title": "Product Manager",
+        "start": "2011-08",
+        "end": "2018-05",
+        "description": "Led development of key product features at Vinted, working across OKRs, Data Analysis. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "KU Leuven",
+        "degree": "BA Communications",
+        "year": 2003
+      }
+    ]
+  },
+  {
+    "id": "usr_008",
+    "name": "Jan Novak",
+    "email": "jan.novak@example.com",
+    "location": "Prague, Czech Republic",
+    "age": 52,
+    "role": "UX Designer",
+    "summary": "Experienced ux designer focused on impact and execution. 5 years building products used by millions of users worldwide.",
+    "skills": [
+      "Prototyping",
+      "Accessibility",
+      "HTML/CSS",
+      "Sketch",
+      "InVision",
+      "User Research"
+    ],
+    "languages": [
+      "English",
+      "Turkish",
+      "Mandarin",
+      "French"
+    ],
+    "experience": [
+      {
+        "company": "BlaBlaCar",
+        "title": "UX Designer",
+        "start": "2024-11",
+        "end": null,
+        "description": "Led development of key product features at BlaBlaCar, working across HTML/CSS, User Research. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Pipedrive",
+        "title": "UX Designer",
+        "start": "2021-07",
+        "end": "2024-11",
+        "description": "Led development of key product features at Pipedrive, working across Usability Testing, InVision, Sketch. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "MIT",
+        "degree": "BSc Computer Science",
+        "year": 1999
+      }
+    ]
+  },
+  {
+    "id": "usr_009",
+    "name": "Elena Popescu",
+    "email": "elena.popescu@example.com",
+    "location": "Vienna, Austria",
+    "age": 49,
+    "role": "QA Engineer",
+    "summary": "QA Engineer with 6 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Cypress",
+      "Jest",
+      "Test Planning",
+      "Selenium",
+      "Automation",
+      "Python",
+      "SQL",
+      "Postman"
+    ],
+    "languages": [
+      "English",
+      "Danish",
+      "Bengali",
+      "Croatian"
+    ],
+    "experience": [
+      {
+        "company": "Monday.com",
+        "title": "QA Engineer",
+        "start": "2025-06",
+        "end": null,
+        "description": "Led development of key product features at Monday.com, working across Test Planning, Cypress. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Amplitude",
+        "title": "QA Engineer",
+        "start": "2020-05",
+        "end": "2025-06",
+        "description": "Led development of key product features at Amplitude, working across Test Planning, Python, Cypress. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Vienna",
+        "degree": "MBA",
+        "year": 2002
+      }
+    ]
+  },
+  {
+    "id": "usr_010",
+    "name": "Pierre Dubois",
+    "email": "pierre.dubois@example.com",
+    "location": "Zurich, Switzerland",
+    "age": 33,
+    "role": "Marketing Manager",
+    "summary": "Experienced marketing manager focused on impact and execution. 10 years building products used by millions of users worldwide.",
+    "skills": [
+      "SEO",
+      "Paid Ads",
+      "Google Analytics",
+      "Salesforce",
+      "A/B Testing"
+    ],
+    "languages": [
+      "English",
+      "Bengali",
+      "Portuguese"
+    ],
+    "experience": [
+      {
+        "company": "Notion",
+        "title": "Marketing Manager",
+        "start": "2025-01",
+        "end": null,
+        "description": "Led development of key product features at Notion, working across HubSpot, A/B Testing, Email Marketing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Mixpanel",
+        "title": "Marketing Manager",
+        "start": "2024-09",
+        "end": "2025-01",
+        "description": "Led development of key product features at Mixpanel, working across SEO, A/B Testing, Social Media. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Segment",
+        "title": "Marketing Manager",
+        "start": "2016-04",
+        "end": "2024-09",
+        "description": "Led development of key product features at Segment, working across A/B Testing, Paid Ads, SEO. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Bombay",
+        "degree": "MSc Business Analytics",
+        "year": 2018
+      }
+    ]
+  },
+  {
+    "id": "usr_011",
+    "name": "Mei Chen",
+    "email": "mei.chen@example.com",
+    "location": "Stockholm, Sweden",
+    "age": 44,
+    "role": "Sales Executive",
+    "summary": "Results-driven sales executive with 3 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "CRM",
+      "Account Management",
+      "Salesforce",
+      "Negotiation",
+      "B2B Sales",
+      "Cold Outreach",
+      "SaaS Sales"
+    ],
+    "languages": [
+      "English",
+      "Slovenian",
+      "Hindi"
+    ],
+    "experience": [
+      {
+        "company": "BlaBlaCar",
+        "title": "Sales Executive",
+        "start": "2023-05",
+        "end": null,
+        "description": "Led development of key product features at BlaBlaCar, working across Cold Outreach, B2B Sales. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Delhi",
+        "degree": "BA Communications",
+        "year": 2008
+      }
+    ]
+  },
+  {
+    "id": "usr_012",
+    "name": "Hiroshi Tanaka",
+    "email": "hiroshi.tanaka@example.com",
+    "location": "Copenhagen, Denmark",
+    "age": 46,
+    "role": "Business Analyst",
+    "summary": "Business Analyst with 14 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Jira",
+      "Data Modeling",
+      "Process Mapping",
+      "Power BI",
+      "Agile",
+      "Excel",
+      "Tableau"
+    ],
+    "languages": [
+      "English",
+      "Slovenian",
+      "German",
+      "Swahili"
+    ],
+    "experience": [
+      {
+        "company": "PagerDuty",
+        "title": "Business Analyst",
+        "start": "2021-12",
+        "end": null,
+        "description": "Led development of key product features at PagerDuty, working across Jira, Excel. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Linear",
+        "title": "Business Analyst",
+        "start": "2019-10",
+        "end": "2021-12",
+        "description": "Led development of key product features at Linear, working across SQL, Stakeholder Management. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Personio",
+        "title": "Business Analyst",
+        "start": "2012-05",
+        "end": "2019-10",
+        "description": "Led development of key product features at Personio, working across SQL, Process Mapping. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Seoul National University",
+        "degree": "BSc Information Systems",
+        "year": 2004
+      }
+    ]
+  },
+  {
+    "id": "usr_013",
+    "name": "Yuki Kimura",
+    "email": "yuki.kimura@example.com",
+    "location": "Helsinki, Finland",
+    "age": 30,
+    "role": "Operations Manager",
+    "summary": "Operations Manager with 6 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Supply Chain",
+      "Lean",
+      "ERP",
+      "Team Management",
+      "Process Improvement",
+      "KPI Tracking",
+      "Asana",
+      "Budgeting"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Slovenian",
+      "Swedish"
+    ],
+    "experience": [
+      {
+        "company": "Salesforce",
+        "title": "Operations Manager",
+        "start": "2025-09",
+        "end": null,
+        "description": "Led development of key product features at Salesforce, working across ERP, Supply Chain. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Sentry",
+        "title": "Operations Manager",
+        "start": "2020-12",
+        "end": "2025-09",
+        "description": "Led development of key product features at Sentry, working across Process Improvement, Budgeting. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "UCL",
+        "degree": "BSc Information Systems",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "id": "usr_014",
+    "name": "Chen Wang",
+    "email": "chen.wang@example.com",
+    "location": "Lisbon, Portugal",
+    "age": 29,
+    "role": "Cloud Architect",
+    "summary": "Passionate cloud architect with 3 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "AWS",
+      "Azure",
+      "Security",
+      "Networking",
+      "GCP",
+      "Terraform"
+    ],
+    "languages": [
+      "English",
+      "Slovenian",
+      "Romanian",
+      "Arabic"
+    ],
+    "experience": [
+      {
+        "company": "Wise",
+        "title": "Cloud Architect",
+        "start": "2023-01",
+        "end": null,
+        "description": "Led development of key product features at Wise, working across IaC, AWS, Networking. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Aalto University",
+        "degree": "BEng Electrical Engineering",
+        "year": 2021
+      }
+    ]
+  },
+  {
+    "id": "usr_015",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@example.com",
+    "location": "Brussels, Belgium",
+    "age": 32,
+    "role": "Mobile Developer",
+    "summary": "Mobile Developer with 6 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "REST APIs",
+      "React Native",
+      "Flutter",
+      "Firebase",
+      "Kotlin"
+    ],
+    "languages": [
+      "English",
+      "Danish",
+      "Hungarian",
+      "German"
+    ],
+    "experience": [
+      {
+        "company": "Shopify",
+        "title": "Mobile Developer",
+        "start": "2024-01",
+        "end": null,
+        "description": "Led development of key product features at Shopify, working across REST APIs, Flutter. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Mixpanel",
+        "title": "Mobile Developer",
+        "start": "2020-08",
+        "end": "2024-01",
+        "description": "Led development of key product features at Mixpanel, working across Android, Swift. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "KTH Royal Institute of Technology",
+        "degree": "MSc Human-Computer Interaction",
+        "year": 2019
+      }
+    ]
+  },
+  {
+    "id": "usr_016",
+    "name": "Arjun Patel",
+    "email": "arjun.patel@example.com",
+    "location": "Budapest, Hungary",
+    "age": 47,
+    "role": "Security Engineer",
+    "summary": "Passionate security engineer with 12 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Zero Trust",
+      "SIEM",
+      "Incident Response",
+      "OWASP",
+      "Threat Modeling",
+      "IAM",
+      "Cloud Security"
+    ],
+    "languages": [
+      "English",
+      "Bengali",
+      "Finnish"
+    ],
+    "experience": [
+      {
+        "company": "Revolut",
+        "title": "Security Engineer",
+        "start": "2025-04",
+        "end": null,
+        "description": "Led development of key product features at Revolut, working across Cloud Security, Compliance, IAM. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Monzo",
+        "title": "Security Engineer",
+        "start": "2023-03",
+        "end": "2025-04",
+        "description": "Led development of key product features at Monzo, working across Penetration Testing, Threat Modeling, Compliance. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Notion",
+        "title": "Security Engineer",
+        "start": "2014-01",
+        "end": "2023-03",
+        "description": "Led development of key product features at Notion, working across SIEM, Zero Trust, Compliance. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Toronto",
+        "degree": "BSc Computer Science",
+        "year": 2004
+      }
+    ]
+  },
+  {
+    "id": "usr_017",
+    "name": "Min-Jun Park",
+    "email": "minjun.park@example.com",
+    "location": "Bucharest, Romania",
+    "age": 48,
+    "role": "Technical Lead",
+    "summary": "Technical Lead with 3 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "System Design",
+      "TypeScript",
+      "Architecture",
+      "Python",
+      "Mentoring",
+      "Code Review"
+    ],
+    "languages": [
+      "English",
+      "Finnish",
+      "Ukrainian",
+      "Mandarin"
+    ],
+    "experience": [
+      {
+        "company": "Bolt",
+        "title": "Technical Lead",
+        "start": "2023-05",
+        "end": null,
+        "description": "Led development of key product features at Bolt, working across Python, System Design. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Politecnico di Milano",
+        "degree": "BEng Electrical Engineering",
+        "year": 2004
+      }
+    ]
+  },
+  {
+    "id": "usr_018",
+    "name": "Jake Miller",
+    "email": "jake.miller@example.com",
+    "location": "Athens, Greece",
+    "age": 48,
+    "role": "Data Analyst",
+    "summary": "Data Analyst with 11 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "SQL",
+      "Power BI",
+      "dbt",
+      "Excel",
+      "Python",
+      "Looker",
+      "Google Analytics",
+      "A/B Testing"
+    ],
+    "languages": [
+      "English",
+      "Swahili",
+      "Spanish",
+      "French"
+    ],
+    "experience": [
+      {
+        "company": "Monday.com",
+        "title": "Data Analyst",
+        "start": "2023-12",
+        "end": null,
+        "description": "Led development of key product features at Monday.com, working across SQL, Python, Tableau. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Databricks",
+        "title": "Data Analyst",
+        "start": "2022-04",
+        "end": "2023-12",
+        "description": "Led development of key product features at Databricks, working across SQL, A/B Testing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "BlaBlaCar",
+        "title": "Data Analyst",
+        "start": "2015-04",
+        "end": "2022-04",
+        "description": "Led development of key product features at BlaBlaCar, working across Power BI, Tableau. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "KTH Royal Institute of Technology",
+        "degree": "BFA Graphic Design",
+        "year": 2000
+      }
+    ]
+  },
+  {
+    "id": "usr_019",
+    "name": "Emma Wilson",
+    "email": "emma.wilson@example.com",
+    "location": "Milan, Italy",
+    "age": 26,
+    "role": "Content Strategist",
+    "summary": "Results-driven content strategist with 4 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Copywriting",
+      "Analytics",
+      "Social Media",
+      "Email Marketing",
+      "Content Marketing",
+      "Figma",
+      "Brand Voice",
+      "WordPress"
+    ],
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "experience": [
+      {
+        "company": "HashiCorp",
+        "title": "Content Strategist",
+        "start": "2024-04",
+        "end": null,
+        "description": "Led development of key product features at HashiCorp, working across Content Marketing, Figma. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Linear",
+        "title": "Content Strategist",
+        "start": "2022-09",
+        "end": "2024-04",
+        "description": "Led development of key product features at Linear, working across Social Media, WordPress, Email Marketing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Carnegie Mellon University",
+        "degree": "BSc Psychology",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "id": "usr_020",
+    "name": "Tyler Anderson",
+    "email": "tyler.anderson@example.com",
+    "location": "Barcelona, Spain",
+    "age": 40,
+    "role": "Graphic Designer",
+    "summary": "Graphic Designer with 5 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Illustrator",
+      "After Effects",
+      "Design Systems",
+      "Figma",
+      "Print Design",
+      "UI Design"
+    ],
+    "languages": [
+      "English",
+      "Ukrainian",
+      "Greek",
+      "Portuguese"
+    ],
+    "experience": [
+      {
+        "company": "Pipedrive",
+        "title": "Graphic Designer",
+        "start": "2024-11",
+        "end": null,
+        "description": "Led development of key product features at Pipedrive, working across Photoshop, Illustrator, Brand Design. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "dbt Labs",
+        "title": "Graphic Designer",
+        "start": "2021-03",
+        "end": "2024-11",
+        "description": "Led development of key product features at dbt Labs, working across Figma, Design Systems, After Effects. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Warsaw University of Technology",
+        "degree": "BA Communications",
+        "year": 2009
+      }
+    ]
+  },
+  {
+    "id": "usr_021",
+    "name": "Ashley Thompson",
+    "email": "ashley.thompson@example.com",
+    "location": "San Francisco, USA",
+    "age": 41,
+    "role": "Software Engineer",
+    "summary": "Passionate software engineer with 5 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "REST APIs",
+      "GraphQL",
+      "Redis",
+      "AWS",
+      "Go",
+      "Python",
+      "PostgreSQL",
+      "Microservices"
+    ],
+    "languages": [
+      "English",
+      "Arabic",
+      "Serbian",
+      "Czech"
+    ],
+    "experience": [
+      {
+        "company": "Stripe",
+        "title": "Software Engineer",
+        "start": "2024-06",
+        "end": null,
+        "description": "Led development of key product features at Stripe, working across AWS, Redis. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Notion",
+        "title": "Software Engineer",
+        "start": "2021-10",
+        "end": "2024-06",
+        "description": "Led development of key product features at Notion, working across TypeScript, Python. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Amsterdam",
+        "degree": "MSc Business Analytics",
+        "year": 2011
+      }
+    ]
+  },
+  {
+    "id": "usr_022",
+    "name": "Marcus Davis",
+    "email": "marcus.davis@example.com",
+    "location": "New York, USA",
+    "age": 39,
+    "role": "Platform Engineer",
+    "summary": "Passionate platform engineer with 2 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "CI/CD",
+      "PostgreSQL",
+      "Python",
+      "Kubernetes",
+      "Service Mesh",
+      "Go",
+      "AWS",
+      "Terraform"
+    ],
+    "languages": [
+      "English",
+      "Slovenian",
+      "Ukrainian"
+    ],
+    "experience": [
+      {
+        "company": "Airtable",
+        "title": "Platform Engineer",
+        "start": "2024-05",
+        "end": null,
+        "description": "Led development of key product features at Airtable, working across Python, AWS. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Vienna",
+        "degree": "MSc Data Science",
+        "year": 2012
+      }
+    ]
+  },
+  {
+    "id": "usr_023",
+    "name": "Zoe Taylor",
+    "email": "zoe.taylor@example.com",
+    "location": "Boston, USA",
+    "age": 41,
+    "role": "Site Reliability Engineer",
+    "summary": "Passionate site reliability engineer with 7 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Capacity Planning",
+      "Alerting",
+      "Terraform",
+      "AWS",
+      "Incident Management",
+      "Python",
+      "Go",
+      "Grafana"
+    ],
+    "languages": [
+      "English",
+      "Hungarian",
+      "Korean"
+    ],
+    "experience": [
+      {
+        "company": "Vinted",
+        "title": "Site Reliability Engineer",
+        "start": "2024-02",
+        "end": null,
+        "description": "Led development of key product features at Vinted, working across Prometheus, AWS, Terraform. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Vercel",
+        "title": "Site Reliability Engineer",
+        "start": "2019-04",
+        "end": "2024-02",
+        "description": "Led development of key product features at Vercel, working across Prometheus, AWS. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Georgia Tech",
+        "degree": "MSc Data Science",
+        "year": 2011
+      }
+    ]
+  },
+  {
+    "id": "usr_024",
+    "name": "Amara Diallo",
+    "email": "amara.diallo@example.com",
+    "location": "Austin, USA",
+    "age": 41,
+    "role": "UI/UX Designer",
+    "summary": "Passionate ui/ux designer with 5 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "HTML",
+      "CSS",
+      "Motion Design",
+      "User Research",
+      "Figma",
+      "Design Systems"
+    ],
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "experience": [
+      {
+        "company": "Loom",
+        "title": "UI/UX Designer",
+        "start": "2025-03",
+        "end": null,
+        "description": "Led development of key product features at Loom, working across Prototyping, CSS, Usability Testing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Wise",
+        "title": "UI/UX Designer",
+        "start": "2021-07",
+        "end": "2025-03",
+        "description": "Led development of key product features at Wise, working across Prototyping, Usability Testing, Design Systems. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Imperial College London",
+        "degree": "BEng Electrical Engineering",
+        "year": 2008
+      }
+    ]
+  },
+  {
+    "id": "usr_025",
+    "name": "Kofi Mensah",
+    "email": "kofi.mensah@example.com",
+    "location": "Seattle, USA",
+    "age": 38,
+    "role": "Growth Manager",
+    "summary": "Results-driven growth manager with 15 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "SQL",
+      "Product Analytics",
+      "User Acquisition",
+      "Funnel Optimization",
+      "Amplitude"
+    ],
+    "languages": [
+      "English",
+      "Romanian"
+    ],
+    "experience": [
+      {
+        "company": "Datadog",
+        "title": "Growth Manager",
+        "start": "2020-02",
+        "end": null,
+        "description": "Led development of key product features at Datadog, working across A/B Testing, Retention. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Miro",
+        "title": "Growth Manager",
+        "start": "2017-03",
+        "end": "2020-02",
+        "description": "Led development of key product features at Miro, working across Funnel Optimization, SQL, User Acquisition. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Contentful",
+        "title": "Growth Manager",
+        "start": "2011-11",
+        "end": "2017-03",
+        "description": "Led development of key product features at Contentful, working across A/B Testing, SQL, Retention. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Carnegie Mellon University",
+        "degree": "MSc Machine Learning",
+        "year": 2013
+      }
+    ]
+  },
+  {
+    "id": "usr_026",
+    "name": "Fatima Hassan",
+    "email": "fatima.hassan@example.com",
+    "location": "Chicago, USA",
+    "age": 43,
+    "role": "CTO",
+    "summary": "Passionate cto with 5 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "System Design",
+      "AWS",
+      "M&A Technical Due Diligence",
+      "Board Communication",
+      "OKRs",
+      "Python",
+      "Team Building",
+      "Engineering Strategy"
+    ],
+    "languages": [
+      "English",
+      "Swahili",
+      "Finnish",
+      "Dutch"
+    ],
+    "experience": [
+      {
+        "company": "Spotify",
+        "title": "CTO",
+        "start": "2025-07",
+        "end": null,
+        "description": "Led development of key product features at Spotify, working across Python, AWS. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Revolut",
+        "title": "CTO",
+        "start": "2021-08",
+        "end": "2025-07",
+        "description": "Led development of key product features at Revolut, working across System Design, Engineering Strategy. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "KU Leuven",
+        "degree": "MSc Computer Science",
+        "year": 2009
+      }
+    ]
+  },
+  {
+    "id": "usr_027",
+    "name": "Ibrahim Al-Amin",
+    "email": "ibrahim.alamin@example.com",
+    "location": "Toronto, Canada",
+    "age": 29,
+    "role": "Engineering Manager",
+    "summary": "Experienced engineering manager focused on impact and execution. 6 years building products used by millions of users worldwide.",
+    "skills": [
+      "Team Management",
+      "TypeScript",
+      "AWS",
+      "OKRs",
+      "Agile"
+    ],
+    "languages": [
+      "English",
+      "Japanese",
+      "Portuguese"
+    ],
+    "experience": [
+      {
+        "company": "Wise",
+        "title": "Engineering Manager",
+        "start": "2023-02",
+        "end": null,
+        "description": "Led development of key product features at Wise, working across AWS, TypeScript, System Design. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Bolt",
+        "title": "Engineering Manager",
+        "start": "2020-06",
+        "end": "2023-02",
+        "description": "Led development of key product features at Bolt, working across System Design, Roadmapping. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "KTH Royal Institute of Technology",
+        "degree": "MBA",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "id": "usr_028",
+    "name": "Nadia Okafor",
+    "email": "nadia.okafor@example.com",
+    "location": "Vancouver, Canada",
+    "age": 52,
+    "role": "Data Engineer",
+    "summary": "Data Engineer with 2 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "PostgreSQL",
+      "SQL",
+      "AWS",
+      "Databricks",
+      "Snowflake",
+      "Airflow",
+      "dbt",
+      "Kafka"
+    ],
+    "languages": [
+      "English",
+      "Czech"
+    ],
+    "experience": [
+      {
+        "company": "Booking.com",
+        "title": "Data Engineer",
+        "start": "2024-04",
+        "end": null,
+        "description": "Led development of key product features at Booking.com, working across Airflow, dbt. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "UC Berkeley",
+        "degree": "BFA Graphic Design",
+        "year": 2000
+      }
+    ]
+  },
+  {
+    "id": "usr_029",
+    "name": "Carlos Rodriguez",
+    "email": "carlos.rodriguez@example.com",
+    "location": "Singapore",
+    "age": 43,
+    "role": "Blockchain Developer",
+    "summary": "Passionate blockchain developer with 6 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Solidity",
+      "Ethereum",
+      "Smart Contracts",
+      "Security",
+      "Web3.js",
+      "Rust",
+      "IPFS",
+      "TypeScript"
+    ],
+    "languages": [
+      "English",
+      "Portuguese",
+      "Spanish"
+    ],
+    "experience": [
+      {
+        "company": "Wise",
+        "title": "Blockchain Developer",
+        "start": "2024-03",
+        "end": null,
+        "description": "Led development of key product features at Wise, working across Solidity, Security. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Miro",
+        "title": "Blockchain Developer",
+        "start": "2020-09",
+        "end": "2024-03",
+        "description": "Led development of key product features at Miro, working across IPFS, Rust. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Politecnico di Milano",
+        "degree": "BSc Software Engineering",
+        "year": 2009
+      }
+    ]
+  },
+  {
+    "id": "usr_030",
+    "name": "Isabella Santos",
+    "email": "isabella.santos@example.com",
+    "location": "Tokyo, Japan",
+    "age": 42,
+    "role": "Product Designer",
+    "summary": "Product Designer with 9 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Figma",
+      "Motion Design",
+      "User Research",
+      "Accessibility",
+      "Prototyping"
+    ],
+    "languages": [
+      "English",
+      "Italian"
+    ],
+    "experience": [
+      {
+        "company": "Mollie",
+        "title": "Product Designer",
+        "start": "2022-01",
+        "end": null,
+        "description": "Led development of key product features at Mollie, working across Design Systems, Prototyping, CSS. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Booking.com",
+        "title": "Product Designer",
+        "start": "2021-10",
+        "end": "2022-01",
+        "description": "Led development of key product features at Booking.com, working across Figma, User Research, Prototyping. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Grafana Labs",
+        "title": "Product Designer",
+        "start": "2017-03",
+        "end": "2021-10",
+        "description": "Led development of key product features at Grafana Labs, working across CSS, Accessibility, Information Architecture. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Michigan",
+        "degree": "MSc Machine Learning",
+        "year": 2006
+      }
+    ]
+  },
+  {
+    "id": "usr_031",
+    "name": "Diego Morales",
+    "email": "diego.morales@example.com",
+    "location": "Seoul, South Korea",
+    "age": 43,
+    "role": "Frontend Engineer",
+    "summary": "Results-driven frontend engineer with 15 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Next.js",
+      "Figma",
+      "TypeScript",
+      "Jest",
+      "GraphQL",
+      "Tailwind CSS"
+    ],
+    "languages": [
+      "English",
+      "Dutch",
+      "French"
+    ],
+    "experience": [
+      {
+        "company": "Sentry",
+        "title": "Frontend Engineer",
+        "start": "2019-11",
+        "end": null,
+        "description": "Led development of key product features at Sentry, working across Tailwind CSS, Next.js, GraphQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Snowflake",
+        "title": "Frontend Engineer",
+        "start": "2015-06",
+        "end": "2019-11",
+        "description": "Led development of key product features at Snowflake, working across Next.js, TypeScript, GraphQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Monday.com",
+        "title": "Frontend Engineer",
+        "start": "2011-10",
+        "end": "2015-06",
+        "description": "Led development of key product features at Monday.com, working across CSS, Jest, Figma. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "UCL",
+        "degree": "MSc Machine Learning",
+        "year": 2005
+      }
+    ]
+  },
+  {
+    "id": "usr_032",
+    "name": "Valentina Herrera",
+    "email": "valentina.herrera@example.com",
+    "location": "Mumbai, India",
+    "age": 25,
+    "role": "Backend Engineer",
+    "summary": "Backend Engineer with 3 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Kubernetes",
+      "gRPC",
+      "REST APIs",
+      "Redis",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "languages": [
+      "English",
+      "Mandarin",
+      "Hindi",
+      "Polish"
+    ],
+    "experience": [
+      {
+        "company": "Doctolib",
+        "title": "Backend Engineer",
+        "start": "2023-02",
+        "end": null,
+        "description": "Led development of key product features at Doctolib, working across Docker, Kubernetes, PostgreSQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Melbourne",
+        "degree": "MSc Computer Science",
+        "year": 2025
+      }
+    ]
+  },
+  {
+    "id": "usr_033",
+    "name": "Miguel Flores",
+    "email": "miguel.flores@example.com",
+    "location": "Bangalore, India",
+    "age": 40,
+    "role": "Full Stack Developer",
+    "summary": "Results-driven full stack developer with 5 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Docker",
+      "GraphQL",
+      "AWS"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "German",
+      "Finnish"
+    ],
+    "experience": [
+      {
+        "company": "Salesforce",
+        "title": "Full Stack Developer",
+        "start": "2025-06",
+        "end": null,
+        "description": "Led development of key product features at Salesforce, working across Next.js, TypeScript, Prisma. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Notion",
+        "title": "Full Stack Developer",
+        "start": "2021-09",
+        "end": "2025-06",
+        "description": "Led development of key product features at Notion, working across Node.js, React, PostgreSQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Warsaw University of Technology",
+        "degree": "MSc Business Analytics",
+        "year": 2012
+      }
+    ]
+  },
+  {
+    "id": "usr_034",
+    "name": "Raj Kumar",
+    "email": "raj.kumar@example.com",
+    "location": "Sydney, Australia",
+    "age": 34,
+    "role": "DevOps Engineer",
+    "summary": "DevOps Engineer with 9 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "GCP",
+      "CI/CD",
+      "Docker",
+      "Prometheus",
+      "Grafana",
+      "Ansible"
+    ],
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "experience": [
+      {
+        "company": "Amplitude",
+        "title": "DevOps Engineer",
+        "start": "2022-12",
+        "end": null,
+        "description": "Led development of key product features at Amplitude, working across CI/CD, Terraform. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Deliveroo",
+        "title": "DevOps Engineer",
+        "start": "2021-10",
+        "end": "2022-12",
+        "description": "Led development of key product features at Deliveroo, working across Ansible, Terraform. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Klarna",
+        "title": "DevOps Engineer",
+        "start": "2017-09",
+        "end": "2021-10",
+        "description": "Led development of key product features at Klarna, working across Docker, GCP, Prometheus. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "École Polytechnique",
+        "degree": "BSc Mathematics",
+        "year": 2014
+      }
+    ]
+  },
+  {
+    "id": "usr_035",
+    "name": "Akira Suzuki",
+    "email": "akira.suzuki@example.com",
+    "location": "Melbourne, Australia",
+    "age": 29,
+    "role": "Data Scientist",
+    "summary": "Passionate data scientist with 4 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "SQL",
+      "Statistics",
+      "PyTorch",
+      "Tableau",
+      "Jupyter"
+    ],
+    "languages": [
+      "English",
+      "Swahili",
+      "Romanian",
+      "Hindi"
+    ],
+    "experience": [
+      {
+        "company": "Sentry",
+        "title": "Data Scientist",
+        "start": "2024-02",
+        "end": null,
+        "description": "Led development of key product features at Sentry, working across Python, PyTorch, Tableau. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Wise",
+        "title": "Data Scientist",
+        "start": "2022-10",
+        "end": "2024-02",
+        "description": "Led development of key product features at Wise, working across Python, PyTorch. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Georgia Tech",
+        "degree": "MSc Business Analytics",
+        "year": 2020
+      }
+    ]
+  },
+  {
+    "id": "usr_036",
+    "name": "Sven Lindqvist",
+    "email": "sven.lindqvist@example.com",
+    "location": "São Paulo, Brazil",
+    "age": 38,
+    "role": "ML Engineer",
+    "summary": "ML Engineer with 11 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Kubernetes",
+      "Ray",
+      "MLflow",
+      "Hugging Face",
+      "TensorFlow",
+      "PyTorch",
+      "SQL"
+    ],
+    "languages": [
+      "English",
+      "Portuguese",
+      "Hungarian"
+    ],
+    "experience": [
+      {
+        "company": "N26",
+        "title": "ML Engineer",
+        "start": "2021-05",
+        "end": null,
+        "description": "Led development of key product features at N26, working across SQL, AWS SageMaker. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Zendesk",
+        "title": "ML Engineer",
+        "start": "2019-09",
+        "end": "2021-05",
+        "description": "Led development of key product features at Zendesk, working across Python, PyTorch. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Loom",
+        "title": "ML Engineer",
+        "start": "2015-04",
+        "end": "2019-09",
+        "description": "Led development of key product features at Loom, working across SQL, Hugging Face, AWS SageMaker. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Cambridge",
+        "degree": "BSc Mathematics",
+        "year": 2013
+      }
+    ]
+  },
+  {
+    "id": "usr_037",
+    "name": "Olga Petrov",
+    "email": "olga.petrov@example.com",
+    "location": "Mexico City, Mexico",
+    "age": 24,
+    "role": "Product Manager",
+    "summary": "Results-driven product manager with 2 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Roadmapping",
+      "OKRs",
+      "User Research",
+      "Data Analysis",
+      "SQL",
+      "Stakeholder Management"
+    ],
+    "languages": [
+      "English",
+      "Croatian",
+      "Spanish"
+    ],
+    "experience": [
+      {
+        "company": "Sentry",
+        "title": "Product Manager",
+        "start": "2024-01",
+        "end": null,
+        "description": "Led development of key product features at Sentry, working across Figma, Data Analysis, OKRs. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Cambridge",
+        "degree": "BA Design",
+        "year": 2024
+      }
+    ]
+  },
+  {
+    "id": "usr_038",
+    "name": "Tomasz Kowalski",
+    "email": "tomasz.kowalski@example.com",
+    "location": "Buenos Aires, Argentina",
+    "age": 32,
+    "role": "UX Designer",
+    "summary": "Results-driven ux designer with 6 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Prototyping",
+      "User Research",
+      "Accessibility",
+      "Sketch",
+      "Figma"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Swedish",
+      "Hindi"
+    ],
+    "experience": [
+      {
+        "company": "Shopify",
+        "title": "UX Designer",
+        "start": "2023-11",
+        "end": null,
+        "description": "Led development of key product features at Shopify, working across Usability Testing, Prototyping. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "HashiCorp",
+        "title": "UX Designer",
+        "start": "2020-10",
+        "end": "2023-11",
+        "description": "Led development of key product features at HashiCorp, working across Accessibility, HTML/CSS. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "ETH Zurich",
+        "degree": "MSc Business Analytics",
+        "year": 2020
+      }
+    ]
+  },
+  {
+    "id": "usr_039",
+    "name": "Giulia Romano",
+    "email": "giulia.romano@example.com",
+    "location": "Bogotá, Colombia",
+    "age": 30,
+    "role": "QA Engineer",
+    "summary": "Results-driven qa engineer with 5 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Test Planning",
+      "Jest",
+      "Python",
+      "JIRA",
+      "Cypress",
+      "Selenium",
+      "Postman",
+      "Automation"
+    ],
+    "languages": [
+      "English",
+      "Italian",
+      "Portuguese",
+      "Czech"
+    ],
+    "experience": [
+      {
+        "company": "Contentful",
+        "title": "QA Engineer",
+        "start": "2024-09",
+        "end": null,
+        "description": "Led development of key product features at Contentful, working across Selenium, Automation. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Spotify",
+        "title": "QA Engineer",
+        "start": "2021-02",
+        "end": "2024-09",
+        "description": "Led development of key product features at Spotify, working across Selenium, SQL, Jest. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Imperial College London",
+        "degree": "BA Design",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "id": "usr_040",
+    "name": "François Leclerc",
+    "email": "franois.leclerc@example.com",
+    "location": "Dubai, UAE",
+    "age": 33,
+    "role": "Marketing Manager",
+    "summary": "Results-driven marketing manager with 5 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Content Marketing",
+      "Salesforce",
+      "Email Marketing",
+      "Google Analytics",
+      "Social Media"
+    ],
+    "languages": [
+      "English",
+      "Norwegian",
+      "Croatian",
+      "Russian"
+    ],
+    "experience": [
+      {
+        "company": "Contentful",
+        "title": "Marketing Manager",
+        "start": "2024-08",
+        "end": null,
+        "description": "Led development of key product features at Contentful, working across Content Marketing, Email Marketing, Salesforce. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Bolt",
+        "title": "Marketing Manager",
+        "start": "2021-05",
+        "end": "2024-08",
+        "description": "Led development of key product features at Bolt, working across Email Marketing, Content Marketing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Politecnico di Milano",
+        "degree": "MSc Business Analytics",
+        "year": 2018
+      }
+    ]
+  },
+  {
+    "id": "usr_041",
+    "name": "Anya Ivanova",
+    "email": "anya.ivanova@example.com",
+    "location": "Berlin, Germany",
+    "age": 35,
+    "role": "Sales Executive",
+    "summary": "Passionate sales executive with 5 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Negotiation",
+      "Salesforce",
+      "Demo Skills",
+      "CRM",
+      "Account Management",
+      "B2B Sales"
+    ],
+    "languages": [
+      "English",
+      "Japanese",
+      "Croatian",
+      "Bengali"
+    ],
+    "experience": [
+      {
+        "company": "Deliveroo",
+        "title": "Sales Executive",
+        "start": "2025-02",
+        "end": null,
+        "description": "Led development of key product features at Deliveroo, working across Pipeline Management, Cold Outreach, CRM. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Airtable",
+        "title": "Sales Executive",
+        "start": "2021-04",
+        "end": "2025-02",
+        "description": "Led development of key product features at Airtable, working across B2B Sales, Revenue Operations. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Melbourne",
+        "degree": "BSc Computer Science",
+        "year": 2013
+      }
+    ]
+  },
+  {
+    "id": "usr_042",
+    "name": "Patrick O'Brien",
+    "email": "patrick.obrien@example.com",
+    "location": "London, UK",
+    "age": 26,
+    "role": "Business Analyst",
+    "summary": "Passionate business analyst with 3 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Jira",
+      "Agile",
+      "Data Modeling",
+      "Excel",
+      "Process Mapping",
+      "Power BI",
+      "Requirements Gathering",
+      "SQL"
+    ],
+    "languages": [
+      "English",
+      "Danish",
+      "German"
+    ],
+    "experience": [
+      {
+        "company": "HashiCorp",
+        "title": "Business Analyst",
+        "start": "2023-12",
+        "end": null,
+        "description": "Led development of key product features at HashiCorp, working across Process Mapping, SQL, Data Modeling. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Sorbonne University",
+        "degree": "BFA Graphic Design",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "id": "usr_043",
+    "name": "Rebecca Clarke",
+    "email": "rebecca.clarke@example.com",
+    "location": "Paris, France",
+    "age": 28,
+    "role": "Operations Manager",
+    "summary": "Results-driven operations manager with 2 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Asana",
+      "ERP",
+      "Team Management",
+      "Six Sigma",
+      "Budgeting",
+      "Process Improvement"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "Spanish"
+    ],
+    "experience": [
+      {
+        "company": "Stripe",
+        "title": "Operations Manager",
+        "start": "2024-09",
+        "end": null,
+        "description": "Led development of key product features at Stripe, working across Supply Chain, Team Management, Six Sigma. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "National University of Singapore",
+        "degree": "MSc Business Analytics",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "id": "usr_044",
+    "name": "Dmitri Volkov",
+    "email": "dmitri.volkov@example.com",
+    "location": "Amsterdam, Netherlands",
+    "age": 47,
+    "role": "Cloud Architect",
+    "summary": "Experienced cloud architect focused on impact and execution. 7 years building products used by millions of users worldwide.",
+    "skills": [
+      "Microservices",
+      "Kubernetes",
+      "Terraform",
+      "Security",
+      "GCP",
+      "Azure",
+      "IaC"
+    ],
+    "languages": [
+      "English",
+      "Italian",
+      "Bengali",
+      "Romanian"
+    ],
+    "experience": [
+      {
+        "company": "Notion",
+        "title": "Cloud Architect",
+        "start": "2025-06",
+        "end": null,
+        "description": "Led development of key product features at Notion, working across AWS, Terraform, Azure. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Loom",
+        "title": "Cloud Architect",
+        "start": "2019-10",
+        "end": "2025-06",
+        "description": "Led development of key product features at Loom, working across Azure, Networking. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Imperial College London",
+        "degree": "BSc Psychology",
+        "year": 2001
+      }
+    ]
+  },
+  {
+    "id": "usr_045",
+    "name": "Hana Nakamura",
+    "email": "hana.nakamura@example.com",
+    "location": "Madrid, Spain",
+    "age": 39,
+    "role": "Mobile Developer",
+    "summary": "Passionate mobile developer with 12 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Swift",
+      "Flutter",
+      "Android",
+      "Kotlin",
+      "iOS",
+      "CI/CD",
+      "REST APIs"
+    ],
+    "languages": [
+      "English",
+      "Italian"
+    ],
+    "experience": [
+      {
+        "company": "Airtable",
+        "title": "Mobile Developer",
+        "start": "2021-03",
+        "end": null,
+        "description": "Led development of key product features at Airtable, working across iOS, REST APIs, CI/CD. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "PagerDuty",
+        "title": "Mobile Developer",
+        "start": "2018-11",
+        "end": "2021-03",
+        "description": "Led development of key product features at PagerDuty, working across REST APIs, Flutter. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Confluent",
+        "title": "Mobile Developer",
+        "start": "2014-07",
+        "end": "2018-11",
+        "description": "Led development of key product features at Confluent, working across CI/CD, Firebase, App Store Optimization. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Vienna",
+        "degree": "MSc Computer Science",
+        "year": 2013
+      }
+    ]
+  },
+  {
+    "id": "usr_046",
+    "name": "Leo Müller",
+    "email": "leo.mller@example.com",
+    "location": "Warsaw, Poland",
+    "age": 29,
+    "role": "Security Engineer",
+    "summary": "Experienced security engineer focused on impact and execution. 5 years building products used by millions of users worldwide.",
+    "skills": [
+      "OWASP",
+      "IAM",
+      "Compliance",
+      "Zero Trust",
+      "Incident Response",
+      "SIEM"
+    ],
+    "languages": [
+      "English",
+      "Norwegian",
+      "Czech",
+      "Swedish"
+    ],
+    "experience": [
+      {
+        "company": "Monzo",
+        "title": "Security Engineer",
+        "start": "2025-08",
+        "end": null,
+        "description": "Led development of key product features at Monzo, working across Penetration Testing, SIEM, Zero Trust. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Twilio",
+        "title": "Security Engineer",
+        "start": "2021-10",
+        "end": "2025-08",
+        "description": "Led development of key product features at Twilio, working across Zero Trust, Threat Modeling, Penetration Testing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Ljubljana",
+        "degree": "BSc Psychology",
+        "year": 2019
+      }
+    ]
+  },
+  {
+    "id": "usr_047",
+    "name": "Chloe Durand",
+    "email": "chloe.durand@example.com",
+    "location": "Ljubljana, Slovenia",
+    "age": 41,
+    "role": "Technical Lead",
+    "summary": "Technical Lead with 8 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Code Review",
+      "TypeScript",
+      "Microservices",
+      "System Design",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "languages": [
+      "English",
+      "Swedish"
+    ],
+    "experience": [
+      {
+        "company": "HashiCorp",
+        "title": "Technical Lead",
+        "start": "2022-07",
+        "end": null,
+        "description": "Led development of key product features at HashiCorp, working across Code Review, Architecture. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "ASML",
+        "title": "Technical Lead",
+        "start": "2021-09",
+        "end": "2022-07",
+        "description": "Led development of key product features at ASML, working across Code Review, Architecture, System Design. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Shopify",
+        "title": "Technical Lead",
+        "start": "2018-12",
+        "end": "2021-09",
+        "description": "Led development of key product features at Shopify, working across System Design, TypeScript, Python. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Seoul National University",
+        "degree": "BA Communications",
+        "year": 2010
+      }
+    ]
+  },
+  {
+    "id": "usr_048",
+    "name": "Ahmed Ibrahim",
+    "email": "ahmed.ibrahim@example.com",
+    "location": "Prague, Czech Republic",
+    "age": 41,
+    "role": "Data Analyst",
+    "summary": "Experienced data analyst focused on impact and execution. 5 years building products used by millions of users worldwide.",
+    "skills": [
+      "Excel",
+      "Google Analytics",
+      "Python",
+      "Looker",
+      "SQL",
+      "dbt",
+      "A/B Testing",
+      "Tableau"
+    ],
+    "languages": [
+      "English",
+      "Hebrew",
+      "Polish",
+      "Mandarin"
+    ],
+    "experience": [
+      {
+        "company": "Vinted",
+        "title": "Data Analyst",
+        "start": "2024-08",
+        "end": null,
+        "description": "Led development of key product features at Vinted, working across Python, dbt. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "BlaBlaCar",
+        "title": "Data Analyst",
+        "start": "2021-03",
+        "end": "2024-08",
+        "description": "Led development of key product features at BlaBlaCar, working across Looker, Google Analytics, Python. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Ljubljana",
+        "degree": "MSc Computer Science",
+        "year": 2009
+      }
+    ]
+  },
+  {
+    "id": "usr_049",
+    "name": "Leila Khalil",
+    "email": "leila.khalil@example.com",
+    "location": "Vienna, Austria",
+    "age": 32,
+    "role": "Content Strategist",
+    "summary": "Passionate content strategist with 7 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Copywriting",
+      "Email Marketing",
+      "Content Marketing",
+      "Social Media",
+      "WordPress",
+      "SEO",
+      "Brand Voice"
+    ],
+    "languages": [
+      "English",
+      "Portuguese",
+      "Italian",
+      "Spanish"
+    ],
+    "experience": [
+      {
+        "company": "Spotify",
+        "title": "Content Strategist",
+        "start": "2025-01",
+        "end": null,
+        "description": "Led development of key product features at Spotify, working across Brand Voice, WordPress, Analytics. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Airtable",
+        "title": "Content Strategist",
+        "start": "2019-04",
+        "end": "2025-01",
+        "description": "Led development of key product features at Airtable, working across SEO, Analytics. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Aalto University",
+        "degree": "BSc Economics",
+        "year": 2020
+      }
+    ]
+  },
+  {
+    "id": "usr_050",
+    "name": "Kwame Asante",
+    "email": "kwame.asante@example.com",
+    "location": "Zurich, Switzerland",
+    "age": 37,
+    "role": "Graphic Designer",
+    "summary": "Experienced graphic designer focused on impact and execution. 6 years building products used by millions of users worldwide.",
+    "skills": [
+      "Motion Design",
+      "Print Design",
+      "Design Systems",
+      "Brand Design",
+      "Figma"
+    ],
+    "languages": [
+      "English",
+      "Arabic",
+      "Hindi",
+      "Danish"
+    ],
+    "experience": [
+      {
+        "company": "Amplitude",
+        "title": "Graphic Designer",
+        "start": "2025-02",
+        "end": null,
+        "description": "Led development of key product features at Amplitude, working across Typography, Design Systems, UI Design. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Zendesk",
+        "title": "Graphic Designer",
+        "start": "2020-07",
+        "end": "2025-02",
+        "description": "Led development of key product features at Zendesk, working across Print Design, UI Design, After Effects. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "KU Leuven",
+        "degree": "BSc Psychology",
+        "year": 2014
+      }
+    ]
+  },
+  {
+    "id": "usr_051",
+    "name": "Miriam Cohen",
+    "email": "miriam.cohen@example.com",
+    "location": "Stockholm, Sweden",
+    "age": 37,
+    "role": "Software Engineer",
+    "summary": "Results-driven software engineer with 7 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Go",
+      "AWS",
+      "TypeScript",
+      "REST APIs",
+      "Docker",
+      "GraphQL",
+      "Python",
+      "Microservices"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Serbian",
+      "German"
+    ],
+    "experience": [
+      {
+        "company": "dbt Labs",
+        "title": "Software Engineer",
+        "start": "2025-08",
+        "end": null,
+        "description": "Led development of key product features at dbt Labs, working across TypeScript, GraphQL, PostgreSQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Vinted",
+        "title": "Software Engineer",
+        "start": "2019-08",
+        "end": "2025-08",
+        "description": "Led development of key product features at Vinted, working across TypeScript, AWS, REST APIs. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Michigan",
+        "degree": "MSc Computer Science",
+        "year": 2012
+      }
+    ]
+  },
+  {
+    "id": "usr_052",
+    "name": "David Brown",
+    "email": "david.brown@example.com",
+    "location": "Copenhagen, Denmark",
+    "age": 26,
+    "role": "Platform Engineer",
+    "summary": "Passionate platform engineer with 4 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Go",
+      "Service Mesh",
+      "AWS",
+      "CI/CD",
+      "Python",
+      "Terraform",
+      "Kafka"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Spanish"
+    ],
+    "experience": [
+      {
+        "company": "Monzo",
+        "title": "Platform Engineer",
+        "start": "2025-08",
+        "end": null,
+        "description": "Led development of key product features at Monzo, working across Service Mesh, Observability. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Hubspot",
+        "title": "Platform Engineer",
+        "start": "2022-08",
+        "end": "2025-08",
+        "description": "Led development of key product features at Hubspot, working across Kubernetes, Service Mesh. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "ETH Zurich",
+        "degree": "MSc Data Science",
+        "year": 2024
+      }
+    ]
+  },
+  {
+    "id": "usr_053",
+    "name": "Sara Reyes",
+    "email": "sara.reyes@example.com",
+    "location": "Helsinki, Finland",
+    "age": 32,
+    "role": "Site Reliability Engineer",
+    "summary": "Results-driven site reliability engineer with 5 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Kubernetes",
+      "Incident Management",
+      "AWS",
+      "Terraform",
+      "Prometheus"
+    ],
+    "languages": [
+      "English",
+      "Hindi"
+    ],
+    "experience": [
+      {
+        "company": "PagerDuty",
+        "title": "Site Reliability Engineer",
+        "start": "2025-01",
+        "end": null,
+        "description": "Led development of key product features at PagerDuty, working across Incident Management, Python, Go. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Amplitude",
+        "title": "Site Reliability Engineer",
+        "start": "2021-10",
+        "end": "2025-01",
+        "description": "Led development of key product features at Amplitude, working across Capacity Planning, Python. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Bombay",
+        "degree": "BSc Psychology",
+        "year": 2018
+      }
+    ]
+  },
+  {
+    "id": "usr_054",
+    "name": "Javier Kim",
+    "email": "javier.kim@example.com",
+    "location": "Lisbon, Portugal",
+    "age": 30,
+    "role": "UI/UX Designer",
+    "summary": "UI/UX Designer with 7 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "User Research",
+      "Prototyping",
+      "Usability Testing",
+      "HTML",
+      "CSS",
+      "Design Systems",
+      "Motion Design",
+      "Accessibility"
+    ],
+    "languages": [
+      "English",
+      "Serbian",
+      "Dutch"
+    ],
+    "experience": [
+      {
+        "company": "Mollie",
+        "title": "UI/UX Designer",
+        "start": "2024-06",
+        "end": null,
+        "description": "Led development of key product features at Mollie, working across CSS, Usability Testing, Motion Design. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Sentry",
+        "title": "UI/UX Designer",
+        "start": "2019-01",
+        "end": "2024-06",
+        "description": "Led development of key product features at Sentry, working across User Research, Accessibility, Prototyping. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Delhi",
+        "degree": "MSc Human-Computer Interaction",
+        "year": 2018
+      }
+    ]
+  },
+  {
+    "id": "usr_055",
+    "name": "Yuna Gupta",
+    "email": "yuna.gupta@example.com",
+    "location": "Brussels, Belgium",
+    "age": 45,
+    "role": "Growth Manager",
+    "summary": "Results-driven growth manager with 18 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Python",
+      "Referral Programs",
+      "Amplitude",
+      "User Acquisition",
+      "A/B Testing",
+      "Marketing Automation",
+      "Retention",
+      "Funnel Optimization"
+    ],
+    "languages": [
+      "English",
+      "Bengali",
+      "Romanian"
+    ],
+    "experience": [
+      {
+        "company": "BlaBlaCar",
+        "title": "Growth Manager",
+        "start": "2017-01",
+        "end": null,
+        "description": "Led development of key product features at BlaBlaCar, working across Retention, A/B Testing, Funnel Optimization. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "N26",
+        "title": "Growth Manager",
+        "start": "2016-02",
+        "end": "2017-01",
+        "description": "Led development of key product features at N26, working across Amplitude, Referral Programs. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Zendesk",
+        "title": "Growth Manager",
+        "start": "2008-11",
+        "end": "2016-02",
+        "description": "Led development of key product features at Zendesk, working across User Acquisition, Referral Programs, Product Analytics. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Warsaw University of Technology",
+        "degree": "BSc Information Systems",
+        "year": 2005
+      }
+    ]
+  },
+  {
+    "id": "usr_056",
+    "name": "Nikhil Schmidt",
+    "email": "nikhil.schmidt@example.com",
+    "location": "Budapest, Hungary",
+    "age": 37,
+    "role": "CTO",
+    "summary": "Experienced cto focused on impact and execution. 10 years building products used by millions of users worldwide.",
+    "skills": [
+      "TypeScript",
+      "M&A Technical Due Diligence",
+      "Fundraising",
+      "OKRs",
+      "System Design",
+      "Python",
+      "Engineering Strategy"
+    ],
+    "languages": [
+      "English",
+      "Mandarin"
+    ],
+    "experience": [
+      {
+        "company": "dbt Labs",
+        "title": "CTO",
+        "start": "2022-11",
+        "end": null,
+        "description": "Led development of key product features at dbt Labs, working across Fundraising, Team Building, Engineering Strategy. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Mixpanel",
+        "title": "CTO",
+        "start": "2021-10",
+        "end": "2022-11",
+        "description": "Led development of key product features at Mixpanel, working across Team Building, Fundraising, Engineering Strategy. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Stripe",
+        "title": "CTO",
+        "start": "2016-02",
+        "end": "2021-10",
+        "description": "Led development of key product features at Stripe, working across AWS, Team Building, M&A Technical Due Diligence. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Imperial College London",
+        "degree": "BSc Economics",
+        "year": 2014
+      }
+    ]
+  },
+  {
+    "id": "usr_057",
+    "name": "Hannah Larsen",
+    "email": "hannah.larsen@example.com",
+    "location": "Bucharest, Romania",
+    "age": 52,
+    "role": "Engineering Manager",
+    "summary": "Experienced engineering manager focused on impact and execution. 18 years building products used by millions of users worldwide.",
+    "skills": [
+      "Team Management",
+      "OKRs",
+      "Hiring",
+      "Stakeholder Communication",
+      "Roadmapping",
+      "System Design",
+      "TypeScript",
+      "Agile"
+    ],
+    "languages": [
+      "English",
+      "Japanese",
+      "Swedish",
+      "Korean"
+    ],
+    "experience": [
+      {
+        "company": "GetYourGuide",
+        "title": "Engineering Manager",
+        "start": "2023-12",
+        "end": null,
+        "description": "Led development of key product features at GetYourGuide, working across Roadmapping, Performance Reviews. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "N26",
+        "title": "Engineering Manager",
+        "start": "2022-04",
+        "end": "2023-12",
+        "description": "Led development of key product features at N26, working across TypeScript, Hiring, Team Management. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Airtable",
+        "title": "Engineering Manager",
+        "start": "2008-09",
+        "end": "2022-04",
+        "description": "Led development of key product features at Airtable, working across Agile, OKRs. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Seoul National University",
+        "degree": "BSc Information Systems",
+        "year": 1996
+      }
+    ]
+  },
+  {
+    "id": "usr_058",
+    "name": "Tobias Costa",
+    "email": "tobias.costa@example.com",
+    "location": "Athens, Greece",
+    "age": 34,
+    "role": "Data Engineer",
+    "summary": "Data Engineer with 2 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "AWS",
+      "dbt",
+      "Spark",
+      "SQL",
+      "PostgreSQL",
+      "Databricks",
+      "Kafka"
+    ],
+    "languages": [
+      "English",
+      "Portuguese"
+    ],
+    "experience": [
+      {
+        "company": "Amplitude",
+        "title": "Data Engineer",
+        "start": "2024-09",
+        "end": null,
+        "description": "Led development of key product features at Amplitude, working across Snowflake, Databricks, Airflow. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "MIT",
+        "degree": "MSc Data Science",
+        "year": 2018
+      }
+    ]
+  },
+  {
+    "id": "usr_059",
+    "name": "Lena Ndiaye",
+    "email": "lena.ndiaye@example.com",
+    "location": "Milan, Italy",
+    "age": 36,
+    "role": "Blockchain Developer",
+    "summary": "Passionate blockchain developer with 5 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "IPFS",
+      "Web3.js",
+      "Security",
+      "Rust",
+      "Smart Contracts",
+      "DeFi",
+      "Ethereum",
+      "TypeScript"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Spanish"
+    ],
+    "experience": [
+      {
+        "company": "Salesforce",
+        "title": "Blockchain Developer",
+        "start": "2024-03",
+        "end": null,
+        "description": "Led development of key product features at Salesforce, working across Solidity, IPFS, Security. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Bolt",
+        "title": "Blockchain Developer",
+        "start": "2021-11",
+        "end": "2024-03",
+        "description": "Led development of key product features at Bolt, working across Rust, Web3.js. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Stanford University",
+        "degree": "MSc Computer Science",
+        "year": 2012
+      }
+    ]
+  },
+  {
+    "id": "usr_060",
+    "name": "Felipe Watanabe",
+    "email": "felipe.watanabe@example.com",
+    "location": "Barcelona, Spain",
+    "age": 32,
+    "role": "Product Designer",
+    "summary": "Experienced product designer focused on impact and execution. 8 years building products used by millions of users worldwide.",
+    "skills": [
+      "Figma",
+      "User Research",
+      "Sketch",
+      "Prototyping",
+      "Motion Design",
+      "A/B Testing",
+      "Design Systems"
+    ],
+    "languages": [
+      "English",
+      "Swedish",
+      "Czech"
+    ],
+    "experience": [
+      {
+        "company": "Contentful",
+        "title": "Product Designer",
+        "start": "2024-12",
+        "end": null,
+        "description": "Led development of key product features at Contentful, working across CSS, Information Architecture. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Zalando",
+        "title": "Product Designer",
+        "start": "2023-04",
+        "end": "2024-12",
+        "description": "Led development of key product features at Zalando, working across Motion Design, Accessibility. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "BlaBlaCar",
+        "title": "Product Designer",
+        "start": "2018-01",
+        "end": "2023-04",
+        "description": "Led development of key product features at BlaBlaCar, working across Design Systems, CSS, Accessibility. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "KU Leuven",
+        "degree": "MSc Business Analytics",
+        "year": 2016
+      }
+    ]
+  },
+  {
+    "id": "usr_061",
+    "name": "Aisha Ahmed",
+    "email": "aisha.ahmed@example.com",
+    "location": "San Francisco, USA",
+    "age": 46,
+    "role": "Frontend Engineer",
+    "summary": "Frontend Engineer with 12 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Jest",
+      "Figma",
+      "Webpack",
+      "CSS",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "languages": [
+      "English",
+      "Arabic"
+    ],
+    "experience": [
+      {
+        "company": "Deliveroo",
+        "title": "Frontend Engineer",
+        "start": "2020-02",
+        "end": null,
+        "description": "Led development of key product features at Deliveroo, working across Tailwind CSS, CSS, React. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Amplitude",
+        "title": "Frontend Engineer",
+        "start": "2019-05",
+        "end": "2020-02",
+        "description": "Led development of key product features at Amplitude, working across Jest, TypeScript, React. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Twilio",
+        "title": "Frontend Engineer",
+        "start": "2014-04",
+        "end": "2019-05",
+        "description": "Led development of key product features at Twilio, working across Webpack, Figma, TypeScript. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Bombay",
+        "degree": "MBA",
+        "year": 2003
+      }
+    ]
+  },
+  {
+    "id": "usr_062",
+    "name": "Kenji Yamamoto",
+    "email": "kenji.yamamoto@example.com",
+    "location": "New York, USA",
+    "age": 42,
+    "role": "Backend Engineer",
+    "summary": "Experienced backend engineer focused on impact and execution. 14 years building products used by millions of users worldwide.",
+    "skills": [
+      "Python",
+      "Node.js",
+      "Go",
+      "Docker",
+      "Kubernetes",
+      "REST APIs",
+      "Kafka",
+      "gRPC"
+    ],
+    "languages": [
+      "English",
+      "Croatian",
+      "Dutch"
+    ],
+    "experience": [
+      {
+        "company": "Loom",
+        "title": "Backend Engineer",
+        "start": "2021-03",
+        "end": null,
+        "description": "Led development of key product features at Loom, working across Python, Redis. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Hubspot",
+        "title": "Backend Engineer",
+        "start": "2020-06",
+        "end": "2021-03",
+        "description": "Led development of key product features at Hubspot, working across PostgreSQL, Go, Kafka. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "ASML",
+        "title": "Backend Engineer",
+        "start": "2012-07",
+        "end": "2020-06",
+        "description": "Led development of key product features at ASML, working across Redis, gRPC. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "TU Berlin",
+        "degree": "BFA Graphic Design",
+        "year": 2008
+      }
+    ]
+  },
+  {
+    "id": "usr_063",
+    "name": "Zara Williams",
+    "email": "zara.williams@example.com",
+    "location": "Boston, USA",
+    "age": 48,
+    "role": "Full Stack Developer",
+    "summary": "Results-driven full stack developer with 8 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "TypeScript",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "AWS"
+    ],
+    "languages": [
+      "English",
+      "Polish",
+      "Dutch",
+      "German"
+    ],
+    "experience": [
+      {
+        "company": "Notion",
+        "title": "Full Stack Developer",
+        "start": "2023-12",
+        "end": null,
+        "description": "Led development of key product features at Notion, working across Next.js, TypeScript. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Pipedrive",
+        "title": "Full Stack Developer",
+        "start": "2022-09",
+        "end": "2023-12",
+        "description": "Led development of key product features at Pipedrive, working across TypeScript, React. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Linear",
+        "title": "Full Stack Developer",
+        "start": "2018-02",
+        "end": "2022-09",
+        "description": "Led development of key product features at Linear, working across PostgreSQL, Node.js. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Michigan",
+        "degree": "BSc Software Engineering",
+        "year": 2001
+      }
+    ]
+  },
+  {
+    "id": "usr_064",
+    "name": "Ryan Eriksson",
+    "email": "ryan.eriksson@example.com",
+    "location": "Austin, USA",
+    "age": 39,
+    "role": "DevOps Engineer",
+    "summary": "Passionate devops engineer with 11 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "AWS",
+      "Kubernetes",
+      "Bash",
+      "Terraform",
+      "CI/CD",
+      "Docker"
+    ],
+    "languages": [
+      "English",
+      "Dutch"
+    ],
+    "experience": [
+      {
+        "company": "Pipedrive",
+        "title": "DevOps Engineer",
+        "start": "2021-06",
+        "end": null,
+        "description": "Led development of key product features at Pipedrive, working across CI/CD, Kubernetes, Terraform. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Figma",
+        "title": "DevOps Engineer",
+        "start": "2019-12",
+        "end": "2021-06",
+        "description": "Led development of key product features at Figma, working across AWS, GCP. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Loom",
+        "title": "DevOps Engineer",
+        "start": "2015-10",
+        "end": "2019-12",
+        "description": "Led development of key product features at Loom, working across Terraform, Prometheus, Docker. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Amsterdam",
+        "degree": "BSc Economics",
+        "year": 2012
+      }
+    ]
+  },
+  {
+    "id": "usr_065",
+    "name": "Ingrid Popov",
+    "email": "ingrid.popov@example.com",
+    "location": "Seattle, USA",
+    "age": 45,
+    "role": "Data Scientist",
+    "summary": "Passionate data scientist with 12 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "PyTorch",
+      "R",
+      "Tableau",
+      "Statistics",
+      "pandas",
+      "SQL"
+    ],
+    "languages": [
+      "English",
+      "Turkish",
+      "Spanish",
+      "Italian"
+    ],
+    "experience": [
+      {
+        "company": "Salesforce",
+        "title": "Data Scientist",
+        "start": "2022-12",
+        "end": null,
+        "description": "Led development of key product features at Salesforce, working across R, Spark, Jupyter. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Shopify",
+        "title": "Data Scientist",
+        "start": "2020-07",
+        "end": "2022-12",
+        "description": "Led development of key product features at Shopify, working across Jupyter, pandas, Spark. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Intercom",
+        "title": "Data Scientist",
+        "start": "2014-02",
+        "end": "2020-07",
+        "description": "Led development of key product features at Intercom, working across Tableau, scikit-learn. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Toronto",
+        "degree": "BA Communications",
+        "year": 2004
+      }
+    ]
+  },
+  {
+    "id": "usr_066",
+    "name": "Andrei Traoré",
+    "email": "andrei.traor@example.com",
+    "location": "Chicago, USA",
+    "age": 36,
+    "role": "ML Engineer",
+    "summary": "ML Engineer with 4 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Kubernetes",
+      "Ray",
+      "MLflow",
+      "TensorFlow",
+      "AWS SageMaker"
+    ],
+    "languages": [
+      "English",
+      "Swedish",
+      "Finnish"
+    ],
+    "experience": [
+      {
+        "company": "Intercom",
+        "title": "ML Engineer",
+        "start": "2025-11",
+        "end": null,
+        "description": "Led development of key product features at Intercom, working across Kubernetes, TensorFlow, PyTorch. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Monzo",
+        "title": "ML Engineer",
+        "start": "2022-01",
+        "end": "2025-11",
+        "description": "Led development of key product features at Monzo, working across MLflow, Hugging Face, PyTorch. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "École Polytechnique",
+        "degree": "MSc Business Analytics",
+        "year": 2015
+      }
+    ]
+  },
+  {
+    "id": "usr_067",
+    "name": "Fatou Sousa",
+    "email": "fatou.sousa@example.com",
+    "location": "Toronto, Canada",
+    "age": 40,
+    "role": "Product Manager",
+    "summary": "Passionate product manager with 12 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "A/B Testing",
+      "Stakeholder Management",
+      "SQL",
+      "Data Analysis",
+      "JIRA",
+      "Roadmapping",
+      "User Research"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Portuguese",
+      "Italian"
+    ],
+    "experience": [
+      {
+        "company": "Shopify",
+        "title": "Product Manager",
+        "start": "2022-10",
+        "end": null,
+        "description": "Led development of key product features at Shopify, working across Product Strategy, Roadmapping, Stakeholder Management. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Typeform",
+        "title": "Product Manager",
+        "start": "2021-04",
+        "end": "2022-10",
+        "description": "Led development of key product features at Typeform, working across SQL, Roadmapping, Data Analysis. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Sentry",
+        "title": "Product Manager",
+        "start": "2014-02",
+        "end": "2021-04",
+        "description": "Led development of key product features at Sentry, working across A/B Testing, User Research, SQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Imperial College London",
+        "degree": "BA Communications",
+        "year": 2008
+      }
+    ]
+  },
+  {
+    "id": "usr_068",
+    "name": "Victor Mansour",
+    "email": "victor.mansour@example.com",
+    "location": "Vancouver, Canada",
+    "age": 46,
+    "role": "UX Designer",
+    "summary": "Experienced ux designer focused on impact and execution. 15 years building products used by millions of users worldwide.",
+    "skills": [
+      "Accessibility",
+      "Design Systems",
+      "User Research",
+      "Usability Testing",
+      "HTML/CSS"
+    ],
+    "languages": [
+      "English",
+      "Japanese"
+    ],
+    "experience": [
+      {
+        "company": "Zendesk",
+        "title": "UX Designer",
+        "start": "2020-05",
+        "end": null,
+        "description": "Led development of key product features at Zendesk, working across Prototyping, Accessibility. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Sentry",
+        "title": "UX Designer",
+        "start": "2017-06",
+        "end": "2020-05",
+        "description": "Led development of key product features at Sentry, working across Accessibility, Usability Testing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Canva",
+        "title": "UX Designer",
+        "start": "2011-03",
+        "end": "2017-06",
+        "description": "Led development of key product features at Canva, working across Information Architecture, User Research. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "National University of Singapore",
+        "degree": "BSc Mathematics",
+        "year": 2002
+      }
+    ]
+  },
+  {
+    "id": "usr_069",
+    "name": "Nour Harris",
+    "email": "nour.harris@example.com",
+    "location": "Singapore",
+    "age": 45,
+    "role": "QA Engineer",
+    "summary": "Passionate qa engineer with 4 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Jest",
+      "Selenium",
+      "Automation",
+      "Test Planning",
+      "Postman",
+      "SQL",
+      "Cypress",
+      "Python"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Bengali"
+    ],
+    "experience": [
+      {
+        "company": "Segment",
+        "title": "QA Engineer",
+        "start": "2024-09",
+        "end": null,
+        "description": "Led development of key product features at Segment, working across Selenium, Python, JIRA. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Datadog",
+        "title": "QA Engineer",
+        "start": "2022-09",
+        "end": "2024-09",
+        "description": "Led development of key product features at Datadog, working across Selenium, Automation. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Aalto University",
+        "degree": "BSc Computer Science",
+        "year": 2003
+      }
+    ]
+  },
+  {
+    "id": "usr_070",
+    "name": "Jack Vega",
+    "email": "jack.vega@example.com",
+    "location": "Tokyo, Japan",
+    "age": 52,
+    "role": "Marketing Manager",
+    "summary": "Experienced marketing manager focused on impact and execution. 10 years building products used by millions of users worldwide.",
+    "skills": [
+      "Social Media",
+      "Email Marketing",
+      "Content Marketing",
+      "Salesforce",
+      "Google Analytics",
+      "HubSpot",
+      "Paid Ads",
+      "SEO"
+    ],
+    "languages": [
+      "English",
+      "Croatian"
+    ],
+    "experience": [
+      {
+        "company": "Miro",
+        "title": "Marketing Manager",
+        "start": "2021-10",
+        "end": null,
+        "description": "Led development of key product features at Miro, working across Google Analytics, Salesforce, Email Marketing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Spotify",
+        "title": "Marketing Manager",
+        "start": "2020-02",
+        "end": "2021-10",
+        "description": "Led development of key product features at Spotify, working across Content Marketing, Paid Ads. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "dbt Labs",
+        "title": "Marketing Manager",
+        "start": "2016-07",
+        "end": "2020-02",
+        "description": "Led development of key product features at dbt Labs, working across Content Marketing, Paid Ads, SEO. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "National University of Singapore",
+        "degree": "BA Design",
+        "year": 1998
+      }
+    ]
+  },
+  {
+    "id": "usr_071",
+    "name": "Alicia Fujita",
+    "email": "alicia.fujita@example.com",
+    "location": "Seoul, South Korea",
+    "age": 48,
+    "role": "Sales Executive",
+    "summary": "Passionate sales executive with 16 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Salesforce",
+      "CRM",
+      "Demo Skills",
+      "B2B Sales",
+      "SaaS Sales",
+      "Account Management",
+      "Pipeline Management"
+    ],
+    "languages": [
+      "English",
+      "Portuguese",
+      "Ukrainian"
+    ],
+    "experience": [
+      {
+        "company": "Intercom",
+        "title": "Sales Executive",
+        "start": "2022-10",
+        "end": null,
+        "description": "Led development of key product features at Intercom, working across Account Management, Pipeline Management. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Twilio",
+        "title": "Sales Executive",
+        "start": "2018-07",
+        "end": "2022-10",
+        "description": "Led development of key product features at Twilio, working across Pipeline Management, Demo Skills, B2B Sales. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Contentful",
+        "title": "Sales Executive",
+        "start": "2010-03",
+        "end": "2018-07",
+        "description": "Led development of key product features at Contentful, working across Cold Outreach, B2B Sales, Demo Skills. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "UC Berkeley",
+        "degree": "BFA Graphic Design",
+        "year": 2000
+      }
+    ]
+  },
+  {
+    "id": "usr_072",
+    "name": "Ryo Oliveira",
+    "email": "ryo.oliveira@example.com",
+    "location": "Mumbai, India",
+    "age": 50,
+    "role": "Business Analyst",
+    "summary": "Experienced business analyst focused on impact and execution. 5 years building products used by millions of users worldwide.",
+    "skills": [
+      "Stakeholder Management",
+      "Tableau",
+      "Process Mapping",
+      "Excel",
+      "Agile"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "French",
+      "German"
+    ],
+    "experience": [
+      {
+        "company": "Loom",
+        "title": "Business Analyst",
+        "start": "2025-09",
+        "end": null,
+        "description": "Led development of key product features at Loom, working across Jira, SQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Klarna",
+        "title": "Business Analyst",
+        "start": "2021-12",
+        "end": "2025-09",
+        "description": "Led development of key product features at Klarna, working across Jira, Agile. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Bombay",
+        "degree": "MSc Machine Learning",
+        "year": 2002
+      }
+    ]
+  },
+  {
+    "id": "usr_073",
+    "name": "Ines Ben-David",
+    "email": "ines.bendavid@example.com",
+    "location": "Bangalore, India",
+    "age": 50,
+    "role": "Operations Manager",
+    "summary": "Results-driven operations manager with 16 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Process Improvement",
+      "Lean",
+      "Six Sigma",
+      "SQL",
+      "ERP",
+      "Asana",
+      "Supply Chain"
+    ],
+    "languages": [
+      "English",
+      "Serbian",
+      "Spanish",
+      "French"
+    ],
+    "experience": [
+      {
+        "company": "Amplitude",
+        "title": "Operations Manager",
+        "start": "2024-04",
+        "end": null,
+        "description": "Led development of key product features at Amplitude, working across Process Improvement, Six Sigma, SQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Confluent",
+        "title": "Operations Manager",
+        "start": "2020-07",
+        "end": "2024-04",
+        "description": "Led development of key product features at Confluent, working across ERP, Asana, Process Improvement. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Figma",
+        "title": "Operations Manager",
+        "start": "2010-01",
+        "end": "2020-07",
+        "description": "Led development of key product features at Figma, working across Process Improvement, Six Sigma. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Sorbonne University",
+        "degree": "MSc Business Analytics",
+        "year": 2002
+      }
+    ]
+  },
+  {
+    "id": "usr_074",
+    "name": "Tamar Johansson",
+    "email": "tamar.johansson@example.com",
+    "location": "Sydney, Australia",
+    "age": 38,
+    "role": "Cloud Architect",
+    "summary": "Results-driven cloud architect with 8 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "IaC",
+      "Security",
+      "GCP",
+      "Networking",
+      "Kubernetes",
+      "Azure"
+    ],
+    "languages": [
+      "English",
+      "Romanian",
+      "Portuguese"
+    ],
+    "experience": [
+      {
+        "company": "Canva",
+        "title": "Cloud Architect",
+        "start": "2023-02",
+        "end": null,
+        "description": "Led development of key product features at Canva, working across Security, Kubernetes. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Segment",
+        "title": "Cloud Architect",
+        "start": "2021-09",
+        "end": "2023-02",
+        "description": "Led development of key product features at Segment, working across Microservices, Cost Optimization. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Sentry",
+        "title": "Cloud Architect",
+        "start": "2018-08",
+        "end": "2021-09",
+        "description": "Led development of key product features at Sentry, working across Microservices, Azure. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Universidad Complutense Madrid",
+        "degree": "BSc Software Engineering",
+        "year": 2011
+      }
+    ]
+  },
+  {
+    "id": "usr_075",
+    "name": "Oscar Fischer",
+    "email": "oscar.fischer@example.com",
+    "location": "Melbourne, Australia",
+    "age": 35,
+    "role": "Mobile Developer",
+    "summary": "Results-driven mobile developer with 5 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "REST APIs",
+      "Swift",
+      "Kotlin",
+      "Firebase",
+      "App Store Optimization",
+      "CI/CD",
+      "React Native",
+      "Flutter"
+    ],
+    "languages": [
+      "English",
+      "Hungarian"
+    ],
+    "experience": [
+      {
+        "company": "Snowflake",
+        "title": "Mobile Developer",
+        "start": "2024-07",
+        "end": null,
+        "description": "Led development of key product features at Snowflake, working across REST APIs, Flutter, Firebase. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Datadog",
+        "title": "Mobile Developer",
+        "start": "2021-03",
+        "end": "2024-07",
+        "description": "Led development of key product features at Datadog, working across Swift, REST APIs, Kotlin. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Aalto University",
+        "degree": "BEng Electrical Engineering",
+        "year": 2016
+      }
+    ]
+  },
+  {
+    "id": "usr_076",
+    "name": "Mia Ricci",
+    "email": "mia.ricci@example.com",
+    "location": "São Paulo, Brazil",
+    "age": 32,
+    "role": "Security Engineer",
+    "summary": "Results-driven security engineer with 2 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Cloud Security",
+      "Python",
+      "IAM",
+      "SIEM",
+      "Incident Response",
+      "Penetration Testing",
+      "Zero Trust",
+      "Compliance"
+    ],
+    "languages": [
+      "English",
+      "Romanian",
+      "Korean",
+      "Ukrainian"
+    ],
+    "experience": [
+      {
+        "company": "PagerDuty",
+        "title": "Security Engineer",
+        "start": "2024-08",
+        "end": null,
+        "description": "Led development of key product features at PagerDuty, working across OWASP, Python, Compliance. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Ljubljana",
+        "degree": "MSc Machine Learning",
+        "year": 2018
+      }
+    ]
+  },
+  {
+    "id": "usr_077",
+    "name": "Karim Benali",
+    "email": "karim.benali@example.com",
+    "location": "Mexico City, Mexico",
+    "age": 45,
+    "role": "Technical Lead",
+    "summary": "Results-driven technical lead with 17 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "TypeScript",
+      "System Design",
+      "Microservices",
+      "Agile",
+      "PostgreSQL"
+    ],
+    "languages": [
+      "English",
+      "Swahili",
+      "Czech"
+    ],
+    "experience": [
+      {
+        "company": "Deliveroo",
+        "title": "Technical Lead",
+        "start": "2023-10",
+        "end": null,
+        "description": "Led development of key product features at Deliveroo, working across AWS, Code Review. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Spotify",
+        "title": "Technical Lead",
+        "start": "2016-11",
+        "end": "2023-10",
+        "description": "Led development of key product features at Spotify, working across AWS, System Design, TypeScript. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Loom",
+        "title": "Technical Lead",
+        "start": "2009-10",
+        "end": "2016-11",
+        "description": "Led development of key product features at Loom, working across Python, AWS, Architecture. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "UC Berkeley",
+        "degree": "BSc Economics",
+        "year": 2006
+      }
+    ]
+  },
+  {
+    "id": "usr_078",
+    "name": "Julia Roberts",
+    "email": "julia.roberts@example.com",
+    "location": "Buenos Aires, Argentina",
+    "age": 47,
+    "role": "Data Analyst",
+    "summary": "Data Analyst with 5 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "SQL",
+      "Python",
+      "Statistics",
+      "Google Analytics",
+      "Excel"
+    ],
+    "languages": [
+      "English",
+      "Ukrainian",
+      "Norwegian"
+    ],
+    "experience": [
+      {
+        "company": "Notion",
+        "title": "Data Analyst",
+        "start": "2025-07",
+        "end": null,
+        "description": "Led development of key product features at Notion, working across SQL, Google Analytics, Looker. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Figma",
+        "title": "Data Analyst",
+        "start": "2021-01",
+        "end": "2025-07",
+        "description": "Led development of key product features at Figma, working across SQL, Looker, A/B Testing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Melbourne",
+        "degree": "BA Communications",
+        "year": 2002
+      }
+    ]
+  },
+  {
+    "id": "usr_079",
+    "name": "Henrik Torres",
+    "email": "henrik.torres@example.com",
+    "location": "Bogotá, Colombia",
+    "age": 37,
+    "role": "Content Strategist",
+    "summary": "Experienced content strategist focused on impact and execution. 3 years building products used by millions of users worldwide.",
+    "skills": [
+      "Editorial Planning",
+      "Email Marketing",
+      "Social Media",
+      "WordPress",
+      "Copywriting",
+      "Analytics"
+    ],
+    "languages": [
+      "English",
+      "Ukrainian",
+      "Korean",
+      "Greek"
+    ],
+    "experience": [
+      {
+        "company": "Notion",
+        "title": "Content Strategist",
+        "start": "2023-01",
+        "end": null,
+        "description": "Led development of key product features at Notion, working across Analytics, Copywriting. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Cambridge",
+        "degree": "BA Communications",
+        "year": 2014
+      }
+    ]
+  },
+  {
+    "id": "usr_080",
+    "name": "Chiara Sato",
+    "email": "chiara.sato@example.com",
+    "location": "Dubai, UAE",
+    "age": 35,
+    "role": "Graphic Designer",
+    "summary": "Graphic Designer with 3 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Print Design",
+      "Photoshop",
+      "UI Design",
+      "After Effects",
+      "Illustrator",
+      "Motion Design"
+    ],
+    "languages": [
+      "English",
+      "Polish",
+      "Russian",
+      "Hindi"
+    ],
+    "experience": [
+      {
+        "company": "Bolt",
+        "title": "Graphic Designer",
+        "start": "2023-04",
+        "end": null,
+        "description": "Led development of key product features at Bolt, working across UI Design, Figma. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "KU Leuven",
+        "degree": "BA Design",
+        "year": 2015
+      }
+    ]
+  },
+  {
+    "id": "usr_081",
+    "name": "Omar Nakamura",
+    "email": "omar.nakamura@example.com",
+    "location": "Berlin, Germany",
+    "age": 37,
+    "role": "Software Engineer",
+    "summary": "Results-driven software engineer with 15 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Go",
+      "PostgreSQL",
+      "Docker",
+      "TypeScript",
+      "REST APIs"
+    ],
+    "languages": [
+      "English",
+      "German"
+    ],
+    "experience": [
+      {
+        "company": "Personio",
+        "title": "Software Engineer",
+        "start": "2024-07",
+        "end": null,
+        "description": "Led development of key product features at Personio, working across PostgreSQL, Docker. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "dbt Labs",
+        "title": "Software Engineer",
+        "start": "2020-11",
+        "end": "2024-07",
+        "description": "Led development of key product features at dbt Labs, working across Docker, Go. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "PagerDuty",
+        "title": "Software Engineer",
+        "start": "2011-09",
+        "end": "2020-11",
+        "description": "Led development of key product features at PagerDuty, working across GraphQL, Python. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Imperial College London",
+        "degree": "MBA",
+        "year": 2014
+      }
+    ]
+  },
+  {
+    "id": "usr_082",
+    "name": "Grace Abbas",
+    "email": "grace.abbas@example.com",
+    "location": "London, UK",
+    "age": 27,
+    "role": "Platform Engineer",
+    "summary": "Experienced platform engineer focused on impact and execution. 5 years building products used by millions of users worldwide.",
+    "skills": [
+      "Kubernetes",
+      "Go",
+      "Terraform",
+      "AWS",
+      "Service Mesh",
+      "Kafka"
+    ],
+    "languages": [
+      "English",
+      "Dutch"
+    ],
+    "experience": [
+      {
+        "company": "Snowflake",
+        "title": "Platform Engineer",
+        "start": "2025-03",
+        "end": null,
+        "description": "Led development of key product features at Snowflake, working across Go, Service Mesh. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Atlassian",
+        "title": "Platform Engineer",
+        "start": "2021-06",
+        "end": "2025-03",
+        "description": "Led development of key product features at Atlassian, working across Kubernetes, Terraform, PostgreSQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "UC Berkeley",
+        "degree": "MSc Computer Science",
+        "year": 2023
+      }
+    ]
+  },
+  {
+    "id": "usr_083",
+    "name": "Pablo Hansen",
+    "email": "pablo.hansen@example.com",
+    "location": "Paris, France",
+    "age": 52,
+    "role": "Site Reliability Engineer",
+    "summary": "Results-driven site reliability engineer with 16 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Go",
+      "Kubernetes",
+      "Grafana",
+      "Capacity Planning",
+      "Prometheus",
+      "Alerting",
+      "AWS",
+      "Python"
+    ],
+    "languages": [
+      "English",
+      "Swahili",
+      "German"
+    ],
+    "experience": [
+      {
+        "company": "Contentful",
+        "title": "Site Reliability Engineer",
+        "start": "2023-09",
+        "end": null,
+        "description": "Led development of key product features at Contentful, working across Kubernetes, Go. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Mollie",
+        "title": "Site Reliability Engineer",
+        "start": "2019-01",
+        "end": "2023-09",
+        "description": "Led development of key product features at Mollie, working across Go, AWS, Grafana. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Doctolib",
+        "title": "Site Reliability Engineer",
+        "start": "2010-01",
+        "end": "2019-01",
+        "description": "Led development of key product features at Doctolib, working across Kubernetes, Prometheus, Python. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Melbourne",
+        "degree": "MSc Computer Science",
+        "year": 1996
+      }
+    ]
+  },
+  {
+    "id": "usr_084",
+    "name": "Emi Chakraborty",
+    "email": "emi.chakraborty@example.com",
+    "location": "Amsterdam, Netherlands",
+    "age": 26,
+    "role": "UI/UX Designer",
+    "summary": "Passionate ui/ux designer with 2 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Accessibility",
+      "User Research",
+      "Usability Testing",
+      "Figma",
+      "Sketch",
+      "CSS",
+      "Motion Design",
+      "Prototyping"
+    ],
+    "languages": [
+      "English",
+      "Croatian",
+      "Danish"
+    ],
+    "experience": [
+      {
+        "company": "Snowflake",
+        "title": "UI/UX Designer",
+        "start": "2024-05",
+        "end": null,
+        "description": "Led development of key product features at Snowflake, working across Sketch, Usability Testing, CSS. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Vienna",
+        "degree": "BFA Graphic Design",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "id": "usr_085",
+    "name": "Samuel Silva",
+    "email": "samuel.silva@example.com",
+    "location": "Madrid, Spain",
+    "age": 26,
+    "role": "Growth Manager",
+    "summary": "Passionate growth manager with 4 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Amplitude",
+      "Funnel Optimization",
+      "SQL",
+      "Referral Programs",
+      "Python",
+      "Product Analytics",
+      "User Acquisition"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Italian"
+    ],
+    "experience": [
+      {
+        "company": "Vercel",
+        "title": "Growth Manager",
+        "start": "2025-10",
+        "end": null,
+        "description": "Led development of key product features at Vercel, working across Python, A/B Testing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Monzo",
+        "title": "Growth Manager",
+        "start": "2022-07",
+        "end": "2025-10",
+        "description": "Led development of key product features at Monzo, working across Product Analytics, Python, SQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Aalto University",
+        "degree": "MSc Computer Science",
+        "year": 2023
+      }
+    ]
+  },
+  {
+    "id": "usr_086",
+    "name": "Layla Werner",
+    "email": "layla.werner@example.com",
+    "location": "Warsaw, Poland",
+    "age": 42,
+    "role": "CTO",
+    "summary": "Results-driven cto with 19 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "OKRs",
+      "TypeScript",
+      "System Design",
+      "M&A Technical Due Diligence",
+      "Engineering Strategy",
+      "Team Building",
+      "AWS"
+    ],
+    "languages": [
+      "English",
+      "Italian",
+      "Bengali",
+      "Swahili"
+    ],
+    "experience": [
+      {
+        "company": "Sentry",
+        "title": "CTO",
+        "start": "2025-05",
+        "end": null,
+        "description": "Led development of key product features at Sentry, working across Team Building, Python, Engineering Strategy. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Klarna",
+        "title": "CTO",
+        "start": "2019-05",
+        "end": "2025-05",
+        "description": "Led development of key product features at Klarna, working across Board Communication, TypeScript. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Personio",
+        "title": "CTO",
+        "start": "2007-04",
+        "end": "2019-05",
+        "description": "Led development of key product features at Personio, working across AWS, Team Building. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Amsterdam",
+        "degree": "BSc Economics",
+        "year": 2008
+      }
+    ]
+  },
+  {
+    "id": "usr_087",
+    "name": "Finn Nomura",
+    "email": "finn.nomura@example.com",
+    "location": "Ljubljana, Slovenia",
+    "age": 49,
+    "role": "Engineering Manager",
+    "summary": "Results-driven engineering manager with 18 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "Roadmapping",
+      "Team Management",
+      "Hiring",
+      "OKRs",
+      "System Design",
+      "Agile",
+      "TypeScript"
+    ],
+    "languages": [
+      "English",
+      "Portuguese"
+    ],
+    "experience": [
+      {
+        "company": "BlaBlaCar",
+        "title": "Engineering Manager",
+        "start": "2017-04",
+        "end": null,
+        "description": "Led development of key product features at BlaBlaCar, working across Roadmapping, Stakeholder Communication. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Deliveroo",
+        "title": "Engineering Manager",
+        "start": "2016-03",
+        "end": "2017-04",
+        "description": "Led development of key product features at Deliveroo, working across Team Management, Stakeholder Communication, OKRs. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Stripe",
+        "title": "Engineering Manager",
+        "start": "2008-10",
+        "end": "2016-03",
+        "description": "Led development of key product features at Stripe, working across TypeScript, Stakeholder Communication. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Amsterdam",
+        "degree": "BSc Economics",
+        "year": 2001
+      }
+    ]
+  },
+  {
+    "id": "usr_088",
+    "name": "Aditi Jackson",
+    "email": "aditi.jackson@example.com",
+    "location": "Prague, Czech Republic",
+    "age": 24,
+    "role": "Data Engineer",
+    "summary": "Experienced data engineer focused on impact and execution. 2 years building products used by millions of users worldwide.",
+    "skills": [
+      "Python",
+      "Spark",
+      "Databricks",
+      "PostgreSQL",
+      "SQL",
+      "dbt",
+      "Airflow",
+      "AWS"
+    ],
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "experience": [
+      {
+        "company": "Airtable",
+        "title": "Data Engineer",
+        "start": "2024-01",
+        "end": null,
+        "description": "Led development of key product features at Airtable, working across Snowflake, Python. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Vienna",
+        "degree": "MSc Data Science",
+        "year": 2026
+      }
+    ]
+  },
+  {
+    "id": "usr_089",
+    "name": "Santiago Al-Rashid",
+    "email": "santiago.alrashid@example.com",
+    "location": "Vienna, Austria",
+    "age": 31,
+    "role": "Blockchain Developer",
+    "summary": "Results-driven blockchain developer with 9 years of experience. Known for strong technical depth and excellent cross-functional collaboration.",
+    "skills": [
+      "IPFS",
+      "Smart Contracts",
+      "Rust",
+      "Web3.js",
+      "DeFi",
+      "Security",
+      "Ethereum"
+    ],
+    "languages": [
+      "English",
+      "Finnish",
+      "Norwegian"
+    ],
+    "experience": [
+      {
+        "company": "Grafana Labs",
+        "title": "Blockchain Developer",
+        "start": "2022-02",
+        "end": null,
+        "description": "Led development of key product features at Grafana Labs, working across Rust, Solidity. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Stripe",
+        "title": "Blockchain Developer",
+        "start": "2020-11",
+        "end": "2022-02",
+        "description": "Led development of key product features at Stripe, working across Rust, Security. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Mollie",
+        "title": "Blockchain Developer",
+        "start": "2017-09",
+        "end": "2020-11",
+        "description": "Led development of key product features at Mollie, working across DeFi, TypeScript, Solidity. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Georgia Tech",
+        "degree": "BA Communications",
+        "year": 2021
+      }
+    ]
+  },
+  {
+    "id": "usr_090",
+    "name": "Vera Nielsen",
+    "email": "vera.nielsen@example.com",
+    "location": "Zurich, Switzerland",
+    "age": 28,
+    "role": "Product Designer",
+    "summary": "Passionate product designer with 5 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Motion Design",
+      "Figma",
+      "User Research",
+      "Information Architecture",
+      "Sketch",
+      "Prototyping",
+      "Design Systems"
+    ],
+    "languages": [
+      "English",
+      "Greek",
+      "Arabic"
+    ],
+    "experience": [
+      {
+        "company": "Pipedrive",
+        "title": "Product Designer",
+        "start": "2024-11",
+        "end": null,
+        "description": "Led development of key product features at Pipedrive, working across CSS, Design Systems. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Figma",
+        "title": "Product Designer",
+        "start": "2021-05",
+        "end": "2024-11",
+        "description": "Led development of key product features at Figma, working across Prototyping, Accessibility, Design Systems. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Delft University of Technology",
+        "degree": "BA Design",
+        "year": 2021
+      }
+    ]
+  },
+  {
+    "id": "usr_091",
+    "name": "Alex Gomez",
+    "email": "alex.gomez@example.com",
+    "location": "Stockholm, Sweden",
+    "age": 38,
+    "role": "Frontend Engineer",
+    "summary": "Passionate frontend engineer with 12 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Webpack",
+      "Tailwind CSS",
+      "Figma",
+      "Vue.js",
+      "TypeScript",
+      "CSS",
+      "GraphQL",
+      "React"
+    ],
+    "languages": [
+      "English",
+      "Italian",
+      "Finnish"
+    ],
+    "experience": [
+      {
+        "company": "Twilio",
+        "title": "Frontend Engineer",
+        "start": "2021-01",
+        "end": null,
+        "description": "Led development of key product features at Twilio, working across GraphQL, Tailwind CSS, Next.js. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Shopify",
+        "title": "Frontend Engineer",
+        "start": "2020-07",
+        "end": "2021-01",
+        "description": "Led development of key product features at Shopify, working across GraphQL, Webpack. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Mollie",
+        "title": "Frontend Engineer",
+        "start": "2014-01",
+        "end": "2020-07",
+        "description": "Led development of key product features at Mollie, working across CSS, Jest. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Delft University of Technology",
+        "degree": "BSc Economics",
+        "year": 2011
+      }
+    ]
+  },
+  {
+    "id": "usr_092",
+    "name": "Moana Tane",
+    "email": "moana.tane@example.com",
+    "location": "Copenhagen, Denmark",
+    "age": 44,
+    "role": "Backend Engineer",
+    "summary": "Experienced backend engineer focused on impact and execution. 5 years building products used by millions of users worldwide.",
+    "skills": [
+      "Python",
+      "Kafka",
+      "Redis",
+      "Kubernetes",
+      "PostgreSQL"
+    ],
+    "languages": [
+      "English",
+      "Polish"
+    ],
+    "experience": [
+      {
+        "company": "GetYourGuide",
+        "title": "Backend Engineer",
+        "start": "2024-11",
+        "end": null,
+        "description": "Led development of key product features at GetYourGuide, working across REST APIs, Kafka, Node.js. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "PagerDuty",
+        "title": "Backend Engineer",
+        "start": "2021-08",
+        "end": "2024-11",
+        "description": "Led development of key product features at PagerDuty, working across Redis, Node.js. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Toronto",
+        "degree": "MSc Machine Learning",
+        "year": 2007
+      }
+    ]
+  },
+  {
+    "id": "usr_093",
+    "name": "Ben Fox",
+    "email": "ben.fox@example.com",
+    "location": "Helsinki, Finland",
+    "age": 30,
+    "role": "Full Stack Developer",
+    "summary": "Passionate full stack developer with 6 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Docker",
+      "AWS",
+      "Next.js",
+      "Prisma",
+      "GraphQL",
+      "PostgreSQL",
+      "Node.js",
+      "React"
+    ],
+    "languages": [
+      "English",
+      "Romanian",
+      "Slovenian",
+      "Greek"
+    ],
+    "experience": [
+      {
+        "company": "Stripe",
+        "title": "Full Stack Developer",
+        "start": "2023-09",
+        "end": null,
+        "description": "Led development of key product features at Stripe, working across Docker, GraphQL. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Vercel",
+        "title": "Full Stack Developer",
+        "start": "2020-08",
+        "end": "2023-09",
+        "description": "Led development of key product features at Vercel, working across Prisma, React, Next.js. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Delhi",
+        "degree": "MSc Business Analytics",
+        "year": 2021
+      }
+    ]
+  },
+  {
+    "id": "usr_094",
+    "name": "Hira Mirza",
+    "email": "hira.mirza@example.com",
+    "location": "Lisbon, Portugal",
+    "age": 43,
+    "role": "DevOps Engineer",
+    "summary": "Passionate devops engineer with 14 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Terraform",
+      "Prometheus",
+      "Bash",
+      "CI/CD",
+      "Kubernetes"
+    ],
+    "languages": [
+      "English",
+      "Danish",
+      "French"
+    ],
+    "experience": [
+      {
+        "company": "Vercel",
+        "title": "DevOps Engineer",
+        "start": "2019-02",
+        "end": null,
+        "description": "Led development of key product features at Vercel, working across Bash, GCP, Kubernetes. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Booking.com",
+        "title": "DevOps Engineer",
+        "start": "2016-08",
+        "end": "2019-02",
+        "description": "Led development of key product features at Booking.com, working across AWS, Ansible. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Klarna",
+        "title": "DevOps Engineer",
+        "start": "2012-08",
+        "end": "2016-08",
+        "description": "Led development of key product features at Klarna, working across Ansible, Kubernetes. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Seoul National University",
+        "degree": "MSc Data Science",
+        "year": 2008
+      }
+    ]
+  },
+  {
+    "id": "usr_095",
+    "name": "Stefan Hoffmann",
+    "email": "stefan.hoffmann@example.com",
+    "location": "Brussels, Belgium",
+    "age": 45,
+    "role": "Data Scientist",
+    "summary": "Data Scientist with 17 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Tableau",
+      "Jupyter",
+      "pandas",
+      "SQL",
+      "Spark"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Arabic",
+      "Mandarin"
+    ],
+    "experience": [
+      {
+        "company": "Twilio",
+        "title": "Data Scientist",
+        "start": "2018-10",
+        "end": null,
+        "description": "Led development of key product features at Twilio, working across Spark, R, Tableau. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Zendesk",
+        "title": "Data Scientist",
+        "start": "2015-01",
+        "end": "2018-10",
+        "description": "Led development of key product features at Zendesk, working across Python, pandas, scikit-learn. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Vinted",
+        "title": "Data Scientist",
+        "start": "2009-03",
+        "end": "2015-01",
+        "description": "Led development of key product features at Vinted, working across Jupyter, PyTorch. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Melbourne",
+        "degree": "MBA",
+        "year": 2005
+      }
+    ]
+  },
+  {
+    "id": "usr_096",
+    "name": "Liu Zhang",
+    "email": "liu.zhang@example.com",
+    "location": "Budapest, Hungary",
+    "age": 34,
+    "role": "ML Engineer",
+    "summary": "ML Engineer with 11 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "SQL",
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "Docker",
+      "MLflow",
+      "Kubernetes"
+    ],
+    "languages": [
+      "English",
+      "Romanian",
+      "Portuguese",
+      "Swahili"
+    ],
+    "experience": [
+      {
+        "company": "Booking.com",
+        "title": "ML Engineer",
+        "start": "2022-10",
+        "end": null,
+        "description": "Led development of key product features at Booking.com, working across Python, Docker. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Typeform",
+        "title": "ML Engineer",
+        "start": "2020-06",
+        "end": "2022-10",
+        "description": "Led development of key product features at Typeform, working across AWS SageMaker, PyTorch. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Contentful",
+        "title": "ML Engineer",
+        "start": "2015-12",
+        "end": "2020-06",
+        "description": "Led development of key product features at Contentful, working across AWS SageMaker, PyTorch. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Bombay",
+        "degree": "MSc Business Analytics",
+        "year": 2017
+      }
+    ]
+  },
+  {
+    "id": "usr_097",
+    "name": "Rachel Lee",
+    "email": "rachel.lee@example.com",
+    "location": "Bucharest, Romania",
+    "age": 46,
+    "role": "Product Manager",
+    "summary": "Experienced product manager focused on impact and execution. 7 years building products used by millions of users worldwide.",
+    "skills": [
+      "SQL",
+      "Roadmapping",
+      "User Research",
+      "JIRA",
+      "Product Strategy",
+      "Stakeholder Management",
+      "Figma"
+    ],
+    "languages": [
+      "English",
+      "Korean",
+      "Norwegian",
+      "Finnish"
+    ],
+    "experience": [
+      {
+        "company": "Klarna",
+        "title": "Product Manager",
+        "start": "2025-08",
+        "end": null,
+        "description": "Led development of key product features at Klarna, working across Data Analysis, Product Strategy. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Revolut",
+        "title": "Product Manager",
+        "start": "2019-12",
+        "end": "2025-08",
+        "description": "Led development of key product features at Revolut, working across OKRs, SQL, Roadmapping. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "MIT",
+        "degree": "BSc Economics",
+        "year": 2005
+      }
+    ]
+  },
+  {
+    "id": "usr_098",
+    "name": "Kolade Adeyemi",
+    "email": "kolade.adeyemi@example.com",
+    "location": "Athens, Greece",
+    "age": 36,
+    "role": "UX Designer",
+    "summary": "Passionate ux designer with 13 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "Figma",
+      "Prototyping",
+      "Design Systems",
+      "InVision",
+      "User Research",
+      "Accessibility"
+    ],
+    "languages": [
+      "English",
+      "Russian",
+      "Hebrew"
+    ],
+    "experience": [
+      {
+        "company": "Revolut",
+        "title": "UX Designer",
+        "start": "2020-07",
+        "end": null,
+        "description": "Led development of key product features at Revolut, working across HTML/CSS, InVision, User Research. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Grafana Labs",
+        "title": "UX Designer",
+        "start": "2017-01",
+        "end": "2020-07",
+        "description": "Led development of key product features at Grafana Labs, working across User Research, Prototyping, Usability Testing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "Salesforce",
+        "title": "UX Designer",
+        "start": "2013-06",
+        "end": "2017-01",
+        "description": "Led development of key product features at Salesforce, working across Prototyping, Usability Testing, User Research. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IIT Delhi",
+        "degree": "MBA",
+        "year": 2012
+      }
+    ]
+  },
+  {
+    "id": "usr_099",
+    "name": "Tom White",
+    "email": "tom.white@example.com",
+    "location": "Milan, Italy",
+    "age": 25,
+    "role": "QA Engineer",
+    "summary": "QA Engineer with 2 years of experience building scalable products at high-growth tech companies.",
+    "skills": [
+      "Test Planning",
+      "SQL",
+      "Automation",
+      "Postman",
+      "Jest",
+      "JIRA",
+      "Python"
+    ],
+    "languages": [
+      "English",
+      "Finnish"
+    ],
+    "experience": [
+      {
+        "company": "Revolut",
+        "title": "QA Engineer",
+        "start": "2024-03",
+        "end": null,
+        "description": "Led development of key product features at Revolut, working across Test Planning, JIRA, Automation. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "University of Cambridge",
+        "degree": "MBA",
+        "year": 2026
+      }
+    ]
+  },
+  {
+    "id": "usr_100",
+    "name": "Beatriz Alves",
+    "email": "beatriz.alves@example.com",
+    "location": "Barcelona, Spain",
+    "age": 32,
+    "role": "Marketing Manager",
+    "summary": "Passionate marketing manager with 4 years of hands-on experience. Specializes in delivering high-quality solutions in fast-paced environments.",
+    "skills": [
+      "SEO",
+      "Content Marketing",
+      "Email Marketing",
+      "Copywriting",
+      "Paid Ads",
+      "HubSpot"
+    ],
+    "languages": [
+      "English",
+      "Japanese",
+      "Swedish"
+    ],
+    "experience": [
+      {
+        "company": "N26",
+        "title": "Marketing Manager",
+        "start": "2024-03",
+        "end": null,
+        "description": "Led development of key product features at N26, working across A/B Testing, SEO. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      },
+      {
+        "company": "dbt Labs",
+        "title": "Marketing Manager",
+        "start": "2022-07",
+        "end": "2024-03",
+        "description": "Led development of key product features at dbt Labs, working across Paid Ads, Email Marketing. Collaborated with cross-functional teams to deliver high-impact projects on time."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Carnegie Mellon University",
+        "degree": "MSc Machine Learning",
+        "year": 2017
+      }
+    ]
+  }
+]

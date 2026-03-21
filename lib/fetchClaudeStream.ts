@@ -2,11 +2,12 @@ interface StreamCallbacks {
   onChunk: (text: string) => void
   onDone: () => void
   onError: (msg: string) => void
+  onToolUse?: (label: string) => void
 }
 
 export async function fetchClaudeStream(
   message: string,
-  { onChunk, onDone, onError }: StreamCallbacks,
+  { onChunk, onDone, onError, onToolUse }: StreamCallbacks,
 ) {
   try {
     const res = await fetch('/api/claude', {
@@ -48,6 +49,8 @@ export async function fetchClaudeStream(
           const event = JSON.parse(json)
           if (event.type === 'delta' && event.text) {
             onChunk(event.text)
+          } else if (event.type === 'tool_use' && event.label) {
+            onToolUse?.(event.label)
           } else if (event.type === 'done') {
             onDone()
             return

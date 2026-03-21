@@ -9,6 +9,7 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
   streamedResponse: '',
   errorMessage: null,
   micUnlocked: false,
+  toolStatus: null,
 
   setInterimTranscript: (text) => set({ interimTranscript: text }),
 
@@ -23,6 +24,7 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       finalTranscript: '',
       streamedResponse: '',
       errorMessage: null,
+      toolStatus: null,
     }),
 
   stopListening: () => {
@@ -38,23 +40,26 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
     const { finalTranscript } = get()
     if (!finalTranscript.trim()) return
 
-    set({ state: 'thinking', streamedResponse: '' })
+    set({ state: 'thinking', streamedResponse: '', toolStatus: null })
 
     fetchClaudeStream(finalTranscript, {
       onChunk: (chunk) => get().appendToResponse(chunk),
       onDone: () => get().setFinishedStreaming(),
       onError: (msg) => get().setError(msg),
+      onToolUse: (label) => get().setToolStatus(label),
     })
   },
 
   appendToResponse: (chunk) =>
-    set((s) => ({ streamedResponse: s.streamedResponse + chunk })),
+    set((s) => ({ streamedResponse: s.streamedResponse + chunk, toolStatus: null })),
 
-  setFinishedStreaming: () => set({ state: 'speaking' }),
+  setToolStatus: (label) => set({ toolStatus: label }),
+
+  setFinishedStreaming: () => set({ state: 'speaking', toolStatus: null }),
 
   setFinishedSpeaking: () => set({ state: 'idle' }),
 
-  setError: (msg) => set({ state: 'error', errorMessage: msg }),
+  setError: (msg) => set({ state: 'error', errorMessage: msg, toolStatus: null }),
 
   reset: () =>
     set({
@@ -63,5 +68,6 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       finalTranscript: '',
       streamedResponse: '',
       errorMessage: null,
+      toolStatus: null,
     }),
 }))

@@ -20,11 +20,21 @@ export function ResponseDisplay() {
   const state = useAgentStore((s) => s.state)
   const streamedResponse = useAgentStore((s) => s.streamedResponse)
   const errorMessage = useAgentStore((s) => s.errorMessage)
+  const toolStatus = useAgentStore((s) => s.toolStatus)
 
   if (state === 'error' && errorMessage) {
     return (
       <div className="w-full text-sm text-red-300/90 leading-relaxed">
         {errorMessage}
+      </div>
+    )
+  }
+
+  if (toolStatus) {
+    return (
+      <div className="w-full flex items-center gap-2 text-sm text-white/40">
+        <AnimatedDots />
+        <span className="text-xs italic">{toolStatus}</span>
       </div>
     )
   }
@@ -44,7 +54,7 @@ export function ResponseDisplay() {
     <div className="w-full">
       <p className="text-sm text-white/85 leading-relaxed whitespace-pre-wrap">
         {streamedResponse}
-        {(state === 'thinking') && (
+        {state === 'thinking' && (
           <span className="inline-block w-0.5 h-3.5 bg-white/60 ml-0.5 animate-pulse align-middle" />
         )}
       </p>
