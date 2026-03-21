@@ -1,4 +1,4 @@
-import type { CandidateProfile } from '@/types/agent'
+import type { CandidateProfile, ConversationTurn } from '@/types/agent'
 
 interface StreamCallbacks {
   onChunk: (text: string) => void
@@ -10,13 +10,14 @@ interface StreamCallbacks {
 
 export async function fetchClaudeStream(
   message: string,
+  history: ConversationTurn[],
   { onChunk, onDone, onError, onToolUse, onCandidates }: StreamCallbacks,
 ) {
   try {
     const res = await fetch('/api/claude', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message, history }),
     })
 
     if (!res.ok) {
