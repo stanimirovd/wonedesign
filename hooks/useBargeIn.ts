@@ -9,9 +9,14 @@ interface BargeInRecognition {
   lang: string
   start: () => void
   abort: () => void
-  onresult: (() => void) | null
+  onresult: ((e: BargeInEvent) => void) | null
   onerror: (() => void) | null
   onend: (() => void) | null
+}
+
+interface BargeInEvent {
+  results: { [i: number]: { isFinal: boolean; [j: number]: { confidence: number } } }
+  resultIndex: number
 }
 
 export function useBargeIn() {
@@ -34,31 +39,43 @@ export function useBargeIn() {
       (window as unknown as { webkitSpeechRecognition?: new () => BargeInRecognition }).webkitSpeechRecognition
     if (!SR) return
 
-    const recognition = new SR()
-    recognition.continuous = false
-    recognition.interimResults = true
-    recognition.lang = 'en-US'
+    // Delay start to avoid catching acoustic echo from the first moment of TTS
+    const timer = setTimeout(() => {
+      const recognition = new SR()
+      recognition.continuous = false
+      recognition.interimResults = true
+      recognition.lang = 'en-US'
 
-    recognition.onresult = () => {
-      // Any speech detected while agent is speaking = barge-in interrupt
-      try { recognition.abort() } catch { /* ignore */ }
-      recognitionRef.current = null
-      startListening()
-    }
+      recognition.onresult = (e: BargeInEvent) => {
+        const result = e.results[e.resultIndex]
+        // Ignore low-confidence or non-final results (likely TTS echo)
+        if (!result.isFinal || result[0].confidence < 0.5) return
+        try { recognition.abort() } catch { /* ignore */ }
+        recognitionRef.current = null
+        startListening()
+      }
 
-    recognition.onerror = () => {
-      recognitionRef.current = null
-    }
+      recognition.onerror = () => {
+        // Don't null the ref — onend will fire next and handle restart
+      }
 
-    recognition.onend = () => {
-      recognitionRef.current = null
-    }
+      recognition.onend = () => {
+        // If onresult already triggered barge-in, ref was nulled → don't restart
+        if (recognitionRef.current === recognition) {
+          try { recognition.start() } catch { recognitionRef.current = null }
+        }
+      }
 
-    recognitionRef.current = recognition
-    try { recognition.start() } catch { /* ignore */ }
+      recognitionRef.current = recognition
+      try { recognition.start() } catch { /* ignore */ }
+    }, 1000)
 
     return () => {
-      try { recognition.abort() } catch { /* ignore */ }
+      clearTimeout(timer)
+      if (recognitionRef.current) {
+        try { recognitionRef.current.abort() } catch { /* ignore */ }
+        recognitionRef.current = null
+      }
     }
   }, [state, startListening])
 }
