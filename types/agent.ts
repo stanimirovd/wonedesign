@@ -33,6 +33,14 @@ export interface CandidateProfile {
   experience?: Experience[]
 }
 
+export interface RoleBrief {
+  title: string
+  skills: string[]
+  location: string | null
+  experienceLevel: string | null
+  summary: string
+}
+
 export interface AgentStore {
   state: AgentState
   interimTranscript: string
@@ -51,6 +59,7 @@ export interface AgentStore {
   startListening: () => void
   stopListening: () => void
   submitTranscript: () => void
+  submitText: (text: string) => void
   appendToResponse: (chunk: string) => void
   setToolStatus: (label: string | null) => void
   setCandidates: (profiles: CandidateProfile[]) => void
