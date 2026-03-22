@@ -56,6 +56,27 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
     })
   },
 
+  submitText: (text: string) => {
+    if (!text.trim()) return
+
+    const { conversationHistory } = get()
+    set({
+      state: 'thinking',
+      finalTranscript: text,
+      streamedResponse: '',
+      toolStatus: null,
+      errorMessage: null,
+    })
+
+    fetchClaudeStream(text, conversationHistory, {
+      onChunk: (chunk) => get().appendToResponse(chunk),
+      onDone: (responseText) => get().setFinishedStreaming(responseText),
+      onError: (msg) => get().setError(msg),
+      onToolUse: (label) => get().setToolStatus(label),
+      onCandidates: (profiles) => get().setCandidates(profiles),
+    })
+  },
+
   appendToResponse: (chunk) =>
     set((s) => ({ streamedResponse: s.streamedResponse + chunk, toolStatus: null })),
 

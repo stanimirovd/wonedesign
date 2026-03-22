@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useAgentStore } from '@/store/agentStore'
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition'
 import { useTTS } from '@/hooks/useTTS'
@@ -11,6 +11,7 @@ import { StatusIndicator } from './StatusIndicator'
 import { TranscriptDisplay } from './TranscriptDisplay'
 import { ResponseDisplay } from './ResponseDisplay'
 import { CandidateList } from './CandidateList'
+import { TextInputPanel } from './TextInputPanel'
 
 export function AgentCard() {
   const state = useAgentStore((s) => s.state)
@@ -19,6 +20,7 @@ export function AgentCard() {
   const candidateProfiles = useAgentStore((s) => s.candidateProfiles)
   const { startListening, stopListening, reset } = useAgentStore()
   const { isSupported } = useSpeechRecognition()
+  const [textInputOpen, setTextInputOpen] = useState(false)
   useTTS()
   useWakeWord()
   useBargeIn()
@@ -35,12 +37,16 @@ export function AgentCard() {
         }
       }
       if (e.key === 'Escape') {
-        reset()
+        if (textInputOpen) {
+          setTextInputOpen(false)
+        } else {
+          reset()
+        }
       }
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [state, startListening, stopListening, reset])
+  }, [state, startListening, stopListening, reset, textInputOpen])
 
   const isActive =
     state === 'listening' ||
@@ -49,6 +55,8 @@ export function AgentCard() {
     state === 'speaking' ||
     state === 'error'
 
+  const isBusy = state === 'submitted' || state === 'thinking' || state === 'speaking'
+
   const showTranscript = isActive || finalTranscript !== ''
   const showResponse =
     state === 'thinking' ||
@@ -56,7 +64,7 @@ export function AgentCard() {
     state === 'error' ||
     streamedResponse !== ''
 
-  const showContent = showTranscript || showResponse
+  const showContent = showTranscript || showResponse || textInputOpen
   const showCandidates = !!candidateProfiles && candidateProfiles.length > 0
 
   return (
@@ -85,28 +93,60 @@ export function AgentCard() {
           )}
         </div>
 
-        {showContent && (
-          <button
-            onClick={reset}
-            aria-label="Close"
-            className="w-6 h-6 rounded-full flex items-center justify-center text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors flex-shrink-0"
-          >
-            <svg
-              className="w-3.5 h-3.5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+        <div className="flex items-center gap-1 flex-shrink-0">
+          {/* Text input toggle */}
+          {!isBusy && (
+            <button
+              onClick={() => setTextInputOpen((v) => !v)}
+              aria-label="Type or paste role description"
+              title="Type or paste role description"
+              className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
+                textInputOpen
+                  ? 'text-white/70 bg-white/15'
+                  : 'text-white/30 hover:text-white/60 hover:bg-white/10'
+              }`}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        )}
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
+            </button>
+          )}
+
+          {showContent && (
+            <button
+              onClick={reset}
+              aria-label="Close"
+              className="w-6 h-6 rounded-full flex items-center justify-center text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors"
+            >
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          )}
+        </div>
       </div>
+
+      {/* Text input panel */}
+      {textInputOpen && !isBusy && (
+        <div className="border-t border-white/10 pt-3">
+          <TextInputPanel onSearchSubmitted={() => setTextInputOpen(false)} />
+        </div>
+      )}
 
       {/* Transcript */}
       {showTranscript && (
