@@ -1,4 +1,4 @@
-import type { CandidateProfile, ConversationTurn } from '@/types/agent'
+import type { AttachedFile, CandidateProfile, ConversationTurn } from '@/types/agent'
 
 interface StreamCallbacks {
   onChunk: (text: string) => void
@@ -11,13 +11,18 @@ interface StreamCallbacks {
 export async function fetchClaudeStream(
   message: string,
   history: ConversationTurn[],
+  attachment: AttachedFile | null,
   { onChunk, onDone, onError, onToolUse, onCandidates }: StreamCallbacks,
 ) {
   try {
+    const body: Record<string, unknown> = { message, history }
+    if (attachment) {
+      body.attachment = { name: attachment.name, mediaType: attachment.mediaType, data: attachment.data }
+    }
     const res = await fetch('/api/claude', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message, history }),
+      body: JSON.stringify(body),
     })
 
     if (!res.ok) {
