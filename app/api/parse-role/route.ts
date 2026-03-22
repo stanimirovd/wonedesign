@@ -24,18 +24,6 @@ const URL_SYSTEM =
   'information, return exactly: ' +
   '{"title":"","skills":[],"location":null,"experienceLevel":null,"summary":""}.'
 
-// Signals that indicate we received a login/auth wall instead of real page content
-const AUTH_WALL_SIGNALS = [
-  'log in to notion',
-  'sign in to notion',
-  'notion – sign in',
-  'log in with',
-  'create an account to continue',
-  'sign up for free',
-  'you need to sign in',
-  'please log in',
-]
-
 // Recursively collect non-trivial string values from a parsed JSON tree
 function extractStrings(value: unknown, depth = 0): string[] {
   if (depth > 12) return []
@@ -109,13 +97,7 @@ async function fetchUrlContent(url: string): Promise<string> {
         .slice(0, 3000)
     }
 
-    const result = parts.join('\n').slice(0, 4000)
-
-    // Discard content that looks like a login/auth wall — it's noise for the LLM
-    const lower = result.toLowerCase()
-    if (AUTH_WALL_SIGNALS.some((s) => lower.includes(s))) return ''
-
-    return result
+    return parts.join('\n').slice(0, 4000)
   } catch {
     return ''
   } finally {
