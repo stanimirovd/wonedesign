@@ -6,6 +6,7 @@ export interface ConversationTurn {
 export interface AttachedFile {
   name: string
   mediaType: 'image/jpeg' | 'image/png' | 'image/gif' | 'image/webp' | 'application/pdf'
+    | 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
   data: string        // raw base64, no data-URL prefix
   previewUrl: string | null  // object URL for images; null for PDFs
 }

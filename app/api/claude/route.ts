@@ -1,4 +1,5 @@
 import { NextRequest } from 'next/server'
+import mammoth from 'mammoth'
 import anthropic from '@/lib/anthropic'
 import { TOOL_DEFINITIONS, TOOL_LABELS } from '@/lib/tools'
 import { executeCustomTool } from '@/lib/executeTools'
@@ -123,12 +124,24 @@ export async function POST(req: NextRequest) {
       }
 
       try {
+        const DOCX_MIME = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
         const userContentBlocks: BetaContentBlockParam[] = []
         if (attachment) {
           if (attachment.mediaType === 'application/pdf') {
             userContentBlocks.push({
               type: 'document',
               source: { type: 'base64', media_type: 'application/pdf', data: attachment.data },
+            } as BetaContentBlockParam)
+          } else if (attachment.mediaType === DOCX_MIME) {
+            const buffer = Buffer.from(attachment.data, 'base64')
+            const { value: extractedText } = await mammoth.extractRawText({ buffer })
+            userContentBlocks.push({
+              type: 'document',
+              source: {
+                type: 'text',
+                media_type: 'text/plain',
+                data: `[Word Document: ${attachment.name}]\n\n${extractedText}`,
+              },
             } as BetaContentBlockParam)
           } else {
             userContentBlocks.push({
