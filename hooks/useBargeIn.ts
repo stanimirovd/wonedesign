@@ -3,13 +3,6 @@
 import { useEffect, useRef } from 'react'
 import { useAgentStore } from '@/store/agentStore'
 
-declare global {
-  interface Window {
-    SpeechRecognition: new () => BargeInRecognition
-    webkitSpeechRecognition: new () => BargeInRecognition
-  }
-}
-
 interface BargeInRecognition {
   continuous: boolean
   interimResults: boolean
@@ -36,7 +29,9 @@ export function useBargeIn() {
     }
 
     if (typeof window === 'undefined') return
-    const SR = window.SpeechRecognition ?? window.webkitSpeechRecognition
+    const SR: (new () => BargeInRecognition) | undefined =
+      (window as unknown as { SpeechRecognition?: new () => BargeInRecognition }).SpeechRecognition ??
+      (window as unknown as { webkitSpeechRecognition?: new () => BargeInRecognition }).webkitSpeechRecognition
     if (!SR) return
 
     const recognition = new SR()
