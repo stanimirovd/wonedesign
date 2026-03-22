@@ -211,7 +211,7 @@ export function AgentCard() {
 
           {showContent && (
             <button
-              onClick={reset}
+              onClick={textInputOpen ? () => setTextInputOpen(false) : reset}
               aria-label="Close"
               className="w-6 h-6 rounded-full flex items-center justify-center text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors"
             >
