@@ -9,7 +9,8 @@ export function AttachmentPreview() {
 
   if (!attachment) return null
 
-  const isImage = attachment.mediaType !== 'application/pdf'
+  const isImage = attachment.mediaType.startsWith('image/')
+  const isDocx = attachment.mediaType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 
   return (
     <div className="flex items-center gap-2 px-2 py-1.5 bg-white/5 border border-white/10 rounded-xl">
@@ -20,6 +21,10 @@ export function AttachmentPreview() {
           alt={attachment.name}
           className="w-8 h-8 rounded-lg object-cover flex-shrink-0"
         />
+      ) : isDocx ? (
+        <div className="w-8 h-8 rounded-lg bg-blue-900/40 flex items-center justify-center flex-shrink-0">
+          <span className="text-[10px] font-bold text-blue-300">W</span>
+        </div>
       ) : (
         <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
           <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -41,7 +41,7 @@ export function AgentCard() {
 
   const processFile = useCallback(
     (file: File) => {
-      const allowed = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf']
+      const allowed = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
       if (!allowed.includes(file.type)) return
       const reader = new FileReader()
       reader.onload = () => {
@@ -139,7 +139,7 @@ export function AgentCard() {
       <input
         ref={fileInputRef}
         type="file"
-        accept="image/jpeg,image/png,image/gif,image/webp,application/pdf"
+        accept="image/jpeg,image/png,image/gif,image/webp,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.docx"
         className="hidden"
         onChange={(e) => {
           const file = e.target.files?.[0]
