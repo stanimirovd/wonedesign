@@ -3,6 +3,7 @@ import anthropic from '@/lib/anthropic'
 import { TOOL_DEFINITIONS, TOOL_LABELS } from '@/lib/tools'
 import { executeCustomTool } from '@/lib/executeTools'
 import type {
+  BetaContentBlockParam,
   BetaMessageParam,
   BetaToolResultBlockParam,
 } from '@anthropic-ai/sdk/resources/beta/messages/messages'
@@ -66,15 +67,31 @@ function extractCandidates(toolName: string, result: string): CandidateProfile[]
 }
 
 export async function POST(req: NextRequest) {
-  let message: string
-
+  let message = ''
   let history: ConversationTurn[] = []
+  let attachment: { name: string; mediaType: string; data: string } | null = null
 
   try {
     const body = await req.json()
-    message = body?.message
-    if (!message || typeof message !== 'string' || !message.trim()) {
-      return new Response(JSON.stringify({ error: 'message is required' }), {
+    if (typeof body?.message === 'string') {
+      message = body.message
+    }
+    if (
+      body?.attachment &&
+      typeof body.attachment.data === 'string' &&
+      body.attachment.data.length > 0 &&
+      typeof body.attachment.mediaType === 'string'
+    ) {
+      attachment = {
+        name: typeof body.attachment.name === 'string' ? body.attachment.name : 'attachment',
+        mediaType: body.attachment.mediaType,
+        data: body.attachment.data,
+      }
+    }
+    const hasText = message.trim().length > 0
+    const hasAttachment = attachment !== null
+    if (!hasText && !hasAttachment) {
+      return new Response(JSON.stringify({ error: 'message or attachment is required' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       })
@@ -106,10 +123,37 @@ export async function POST(req: NextRequest) {
       }
 
       try {
+        const userContentBlocks: BetaContentBlockParam[] = []
+        if (attachment) {
+          if (attachment.mediaType === 'application/pdf') {
+            userContentBlocks.push({
+              type: 'document',
+              source: { type: 'base64', media_type: 'application/pdf', data: attachment.data },
+            } as BetaContentBlockParam)
+          } else {
+            userContentBlocks.push({
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: attachment.mediaType as 'image/jpeg' | 'image/png' | 'image/gif' | 'image/webp',
+                data: attachment.data,
+              },
+            })
+          }
+        }
+        if (message.trim()) {
+          userContentBlocks.push({ type: 'text', text: message })
+        }
+
         const messages: BetaMessageParam[] = [
           ...history.map((t) => ({ role: t.role, content: t.content })),
-          { role: 'user', content: message },
+          { role: 'user', content: userContentBlocks },
         ]
+
+        const betas: string[] = ['web-search-2025-03-05']
+        if (attachment?.mediaType === 'application/pdf') {
+          betas.push('pdfs-2024-09-25')
+        }
 
         for (let iteration = 0; iteration < MAX_ITERATIONS; iteration++) {
           const response = await anthropic.beta.messages.create({
@@ -118,7 +162,7 @@ export async function POST(req: NextRequest) {
             system: SYSTEM_PROMPT,
             tools: TOOL_DEFINITIONS,
             messages,
-            betas: ['web-search-2025-03-05'],
+            betas,
           })
 
           const toolResults: BetaToolResultBlockParam[] = []

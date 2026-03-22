@@ -3,6 +3,13 @@ export interface ConversationTurn {
   content: string
 }
 
+export interface AttachedFile {
+  name: string
+  mediaType: 'image/jpeg' | 'image/png' | 'image/gif' | 'image/webp' | 'application/pdf'
+  data: string        // raw base64, no data-URL prefix
+  previewUrl: string | null  // object URL for images; null for PDFs
+}
+
 export type AgentState =
   | 'idle'
   | 'listening'
@@ -51,6 +58,7 @@ export interface AgentStore {
   toolStatus: string | null
   candidateProfiles: CandidateProfile[] | null
   conversationHistory: ConversationTurn[]
+  attachment: AttachedFile | null
 
   // Actions
   setInterimTranscript: (text: string) => void
@@ -60,6 +68,7 @@ export interface AgentStore {
   stopListening: () => void
   submitTranscript: () => void
   submitText: (text: string) => void
+  setAttachment: (file: AttachedFile | null) => void
   appendToResponse: (chunk: string) => void
   setToolStatus: (label: string | null) => void
   setCandidates: (profiles: CandidateProfile[]) => void

@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import type { AgentStore } from '@/types/agent'
 import { fetchClaudeStream } from '@/lib/fetchClaudeStream'
+import type { AttachedFile } from '@/types/agent'
 
 export const useAgentStore = create<AgentStore>((set, get) => ({
   state: 'idle',
@@ -12,6 +13,9 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
   toolStatus: null,
   candidateProfiles: null,
   conversationHistory: [],
+  attachment: null,
+
+  setAttachment: (file: AttachedFile | null) => set({ attachment: file }),
 
   setInterimTranscript: (text) => set({ interimTranscript: text }),
 
@@ -40,14 +44,14 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
   },
 
   submitTranscript: () => {
-    const { finalTranscript, conversationHistory } = get()
-    if (!finalTranscript.trim()) return
+    const { finalTranscript, conversationHistory, attachment } = get()
+    if (!finalTranscript.trim() && !attachment) return
 
     // Clear the previous text response so the new one streams in fresh.
     // candidateProfiles is intentionally kept until the agent returns new ones.
-    set({ state: 'thinking', streamedResponse: '', toolStatus: null })
+    set({ state: 'thinking', streamedResponse: '', toolStatus: null, attachment: null })
 
-    fetchClaudeStream(finalTranscript, conversationHistory, {
+    fetchClaudeStream(finalTranscript, conversationHistory, attachment, {
       onChunk: (chunk) => get().appendToResponse(chunk),
       onDone: (responseText) => get().setFinishedStreaming(responseText),
       onError: (msg) => get().setError(msg),
@@ -57,18 +61,19 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
   },
 
   submitText: (text: string) => {
-    if (!text.trim()) return
+    const { conversationHistory, attachment } = get()
+    if (!text.trim() && !attachment) return
 
-    const { conversationHistory } = get()
     set({
       state: 'thinking',
       finalTranscript: text,
       streamedResponse: '',
       toolStatus: null,
       errorMessage: null,
+      attachment: null,
     })
 
-    fetchClaudeStream(text, conversationHistory, {
+    fetchClaudeStream(text, conversationHistory, attachment, {
       onChunk: (chunk) => get().appendToResponse(chunk),
       onDone: (responseText) => get().setFinishedStreaming(responseText),
       onError: (msg) => get().setError(msg),
@@ -129,5 +134,6 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
       toolStatus: null,
       candidateProfiles: null,
       conversationHistory: [],
+      attachment: null,
     }),
 }))
