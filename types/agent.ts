@@ -56,6 +56,8 @@ export interface AgentStore {
   setCandidates: (profiles: CandidateProfile[]) => void
   setFinishedStreaming: (responseText: string) => void
   setFinishedSpeaking: () => void
+  interruptSpeaking: () => void
+  restartListening: () => void
   setError: (msg: string) => void
   reset: () => void
 }
