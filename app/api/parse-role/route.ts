@@ -18,7 +18,11 @@ const BASE_SYSTEM =
 const URL_SYSTEM =
   BASE_SYSTEM +
   ' Fetched page content is included below the URL if available — use it as the primary source. ' +
-  'Use the web_search tool only if the fetched content is missing or clearly insufficient.'
+  'Use the web_search tool only if the fetched content is missing or clearly insufficient. ' +
+  'IMPORTANT: You MUST always respond with only a valid JSON object — no explanatory text, ' +
+  'no apologies, no markdown. If the linked page cannot be accessed or contains insufficient ' +
+  'information, return exactly: ' +
+  '{"title":"","skills":[],"location":null,"experienceLevel":null,"summary":""}.'
 
 // Recursively collect non-trivial string values from a parsed JSON tree
 function extractStrings(value: unknown, depth = 0): string[] {
@@ -192,7 +196,11 @@ export async function POST(req: NextRequest) {
     const brief = extractBrief(rawText.trim())
     if (!brief) {
       return Response.json(
-        { error: 'Could not extract a role title from the provided text' },
+        {
+          error: hasUrls
+            ? 'Could not read this link — it may be private or require a login. Try pasting the job description text directly.'
+            : 'Could not extract a role title from the provided text.',
+        },
         { status: 422 },
       )
     }
