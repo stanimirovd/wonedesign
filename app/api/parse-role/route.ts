@@ -18,7 +18,23 @@ const BASE_SYSTEM =
 const URL_SYSTEM =
   BASE_SYSTEM +
   ' Fetched page content is included below the URL if available — use it as the primary source. ' +
-  'Use the web_search tool only if the fetched content is missing or clearly insufficient.'
+  'Use the web_search tool only if the fetched content is missing or clearly insufficient. ' +
+  'IMPORTANT: You MUST always respond with only a valid JSON object — no explanatory text, ' +
+  'no apologies, no markdown. If the linked page cannot be accessed or contains insufficient ' +
+  'information, return exactly: ' +
+  '{"title":"","skills":[],"location":null,"experienceLevel":null,"summary":""}.'
+
+// Signals that indicate we received a login/auth wall instead of real page content
+const AUTH_WALL_SIGNALS = [
+  'log in to notion',
+  'sign in to notion',
+  'notion – sign in',
+  'log in with',
+  'create an account to continue',
+  'sign up for free',
+  'you need to sign in',
+  'please log in',
+]
 
 // Recursively collect non-trivial string values from a parsed JSON tree
 function extractStrings(value: unknown, depth = 0): string[] {
@@ -93,7 +109,13 @@ async function fetchUrlContent(url: string): Promise<string> {
         .slice(0, 3000)
     }
 
-    return parts.join('\n').slice(0, 4000)
+    const result = parts.join('\n').slice(0, 4000)
+
+    // Discard content that looks like a login/auth wall — it's noise for the LLM
+    const lower = result.toLowerCase()
+    if (AUTH_WALL_SIGNALS.some((s) => lower.includes(s))) return ''
+
+    return result
   } catch {
     return ''
   } finally {
@@ -192,7 +214,11 @@ export async function POST(req: NextRequest) {
     const brief = extractBrief(rawText.trim())
     if (!brief) {
       return Response.json(
-        { error: 'Could not extract a role title from the provided text' },
+        {
+          error: hasUrls
+            ? 'Could not read this link — it may be private or require a login. Try pasting the job description text directly.'
+            : 'Could not extract a role title from the provided text.',
+        },
         { status: 422 },
       )
     }
