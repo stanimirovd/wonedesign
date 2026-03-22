@@ -1,11 +1,19 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useAgentStore } from '@/store/agentStore'
 import type { RoleBrief } from '@/types/agent'
 
 interface TextInputPanelProps {
   onSearchSubmitted: () => void
+}
+
+function buildQuery(b: RoleBrief): string {
+  const parts: string[] = [`Find me a ${b.title}`]
+  if (b.location) parts.push(`based in ${b.location}`)
+  if (b.skills.length) parts.push(`with skills in ${b.skills.join(', ')}`)
+  if (b.experienceLevel) parts.push(`at ${b.experienceLevel} level`)
+  return parts.join(', ')
 }
 
 export function TextInputPanel({ onSearchSubmitted }: TextInputPanelProps) {
@@ -16,6 +24,21 @@ export function TextInputPanel({ onSearchSubmitted }: TextInputPanelProps) {
   const [error, setError] = useState<string | null>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const submitText = useAgentStore((s) => s.submitText)
+  const candidateProfiles = useAgentStore((s) => s.candidateProfiles)
+  const prevCandidatesRef = useRef(candidateProfiles)
+
+  // Auto-close panel when candidates arrive after an auto-submitted search
+  useEffect(() => {
+    if (
+      phase === 'preview' &&
+      candidateProfiles !== prevCandidatesRef.current &&
+      candidateProfiles &&
+      candidateProfiles.length > 0
+    ) {
+      onSearchSubmitted()
+    }
+    prevCandidatesRef.current = candidateProfiles
+  }, [candidateProfiles, phase, onSearchSubmitted])
 
   async function handleParse() {
     if (!inputText.trim()) return
@@ -34,22 +57,13 @@ export function TextInputPanel({ onSearchSubmitted }: TextInputPanelProps) {
       }
       setBrief(data.brief)
       setPhase('preview')
+      // Auto-trigger search immediately — no button press needed
+      submitText(buildQuery(data.brief))
     } catch {
       setError('Network error. Please try again.')
     } finally {
       setLoading(false)
     }
-  }
-
-  function handleConfirm() {
-    if (!brief) return
-    const parts: string[] = [`Find me a ${brief.title}`]
-    if (brief.location) parts.push(`based in ${brief.location}`)
-    if (brief.skills.length) parts.push(`with skills in ${brief.skills.join(', ')}`)
-    if (brief.experienceLevel) parts.push(`at ${brief.experienceLevel} level`)
-    const query = parts.join(', ')
-    submitText(query)
-    onSearchSubmitted()
   }
 
   function handleEdit() {
@@ -117,17 +131,11 @@ export function TextInputPanel({ onSearchSubmitted }: TextInputPanelProps) {
           </div>
         )}
 
-        {/* Actions */}
-        <div className="flex items-center gap-2 pt-1">
-          <button
-            onClick={handleConfirm}
-            className="flex-1 bg-white/15 hover:bg-white/25 text-white text-xs font-medium rounded-xl px-3 py-2 transition-colors"
-          >
-            Search candidates
-          </button>
+        {/* Edit */}
+        <div className="pt-1">
           <button
             onClick={handleEdit}
-            className="text-white/40 hover:text-white/60 text-xs transition-colors whitespace-nowrap"
+            className="text-white/40 hover:text-white/60 text-xs transition-colors"
           >
             ← Edit
           </button>
