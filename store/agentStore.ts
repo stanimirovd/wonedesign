@@ -92,6 +92,10 @@ export const useAgentStore = create<AgentStore>((set, get) => ({
 
   setFinishedSpeaking: () => set({ state: 'idle' }),
 
+  interruptSpeaking: () => set({ state: 'idle' }),
+
+  restartListening: () => set({ interimTranscript: '', finalTranscript: '' }),
+
   setError: (msg) => set({ state: 'error', errorMessage: msg, toolStatus: null }),
 
   reset: () =>

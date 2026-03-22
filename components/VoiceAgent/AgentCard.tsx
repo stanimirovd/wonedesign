@@ -5,6 +5,7 @@ import { useAgentStore } from '@/store/agentStore'
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition'
 import { useTTS } from '@/hooks/useTTS'
 import { useWakeWord } from '@/hooks/useWakeWord'
+import { useBargeIn } from '@/hooks/useBargeIn'
 import { RecordButton } from './RecordButton'
 import { StatusIndicator } from './StatusIndicator'
 import { TranscriptDisplay } from './TranscriptDisplay'
@@ -20,6 +21,7 @@ export function AgentCard() {
   const { isSupported } = useSpeechRecognition()
   useTTS()
   useWakeWord()
+  useBargeIn()
 
   // Ctrl+Shift+M global keyboard shortcut
   useEffect(() => {

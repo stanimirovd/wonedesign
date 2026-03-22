@@ -6,6 +6,8 @@ import { useAgentStore } from '@/store/agentStore'
 // How long of silence (ms) before auto-submitting
 const SILENCE_TIMEOUT_MS = 2500
 
+const RESET_PHRASES = ['start over', 'scratch that', 'never mind', 'cancel that']
+
 type SpeechRecognitionType = {
   new(): SpeechRecognitionInstance
 }
@@ -58,7 +60,7 @@ declare global {
 export function useSpeechRecognition() {
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null)
   const silenceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const { state, setInterimTranscript, setFinalTranscript, stopListening, setError } =
+  const { state, setInterimTranscript, setFinalTranscript, stopListening, setError, restartListening } =
     useAgentStore()
 
   const isSupported =
@@ -100,6 +102,16 @@ export function useSpeechRecognition() {
         const result = event.results[i]
         if (result.isFinal) {
           accumulatedFinal += result[0].transcript
+          // Check for "start over" voice command
+          const normalized = accumulatedFinal.trim().toLowerCase().replace(/[.,!?]+$/, '')
+          if (RESET_PHRASES.includes(normalized)) {
+            accumulatedFinal = ''
+            setFinalTranscript('')
+            setInterimTranscript('')
+            restartListening()
+            resetSilenceTimer()
+            return
+          }
           setFinalTranscript(accumulatedFinal)
         } else {
           interim += result[0].transcript
@@ -129,7 +141,7 @@ export function useSpeechRecognition() {
     }
 
     return recognition
-  }, [isSupported, setInterimTranscript, setFinalTranscript, stopListening, setError, resetSilenceTimer, clearSilenceTimer])
+  }, [isSupported, setInterimTranscript, setFinalTranscript, stopListening, setError, resetSilenceTimer, clearSilenceTimer, restartListening])
 
   const start = useCallback(() => {
     if (!isSupported) {
