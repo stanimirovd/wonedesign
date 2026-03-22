@@ -152,7 +152,7 @@ export function TextInputPanel({ onSearchSubmitted }: TextInputPanelProps) {
           }
         }}
         rows={4}
-        placeholder="Describe the role you're hiring for, or paste a job description, spec, or Notion doc…"
+        placeholder="Start typing or add links"
         className="bg-white/5 border border-white/10 rounded-xl text-sm text-white/80 placeholder:text-white/25 resize-none focus:outline-none focus:border-white/20 p-3 w-full leading-relaxed"
         autoFocus
       />
@@ -161,22 +161,22 @@ export function TextInputPanel({ onSearchSubmitted }: TextInputPanelProps) {
         <p className="text-xs text-red-400/80">{error}</p>
       )}
 
-      <div className="flex items-center gap-2">
+      <div className="flex justify-end">
         <button
           onClick={handleParse}
           disabled={loading || !inputText.trim()}
-          className="flex-1 bg-white/15 hover:bg-white/25 disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs font-medium rounded-xl px-3 py-2 transition-colors"
+          aria-label="Parse and preview"
+          className="w-8 h-8 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/25 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
         >
-          {loading ? 'Structuring brief…' : 'Parse & preview'}
+          {loading ? (
+            <div className="w-3.5 h-3.5 rounded-full border-2 border-white/20 border-t-white/60 animate-spin" />
+          ) : (
+            <svg className="w-4 h-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19V5m0 0l-7 7m7-7l7 7" />
+            </svg>
+          )}
         </button>
-        {loading && (
-          <div className="w-3.5 h-3.5 rounded-full border-2 border-white/20 border-t-white/60 animate-spin flex-shrink-0" />
-        )}
       </div>
-
-      <p className="text-[10px] text-white/20 text-center">
-        Ctrl+Enter to parse
-      </p>
     </div>
   )
 }

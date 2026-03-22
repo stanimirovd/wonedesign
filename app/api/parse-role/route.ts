@@ -6,6 +6,7 @@ export const runtime = 'nodejs'
 
 const SYSTEM_PROMPT =
   'You are a recruitment assistant. Extract a structured role brief from the provided text. ' +
+  'If content fetched from URLs is provided, use it as the primary source for extracting role details. ' +
   'Return ONLY valid JSON with exactly these fields: ' +
   'title (string, the job title or role being hired for), ' +
   'skills (string[], required technical skills or competencies — can be empty array if none mentioned), ' +
@@ -13,6 +14,36 @@ const SYSTEM_PROMPT =
   'experienceLevel (string | null, seniority or years of experience if mentioned, e.g. "Senior", "5+ years", otherwise null), ' +
   'summary (string, 1-2 concise sentences describing what they are looking for). ' +
   'Do not include any explanation, markdown, or extra text — return only the raw JSON object.'
+
+const URL_RE = /https?:\/\/[^\s<>"{}|\\^`[\]]+/gi
+
+async function fetchUrlText(url: string): Promise<string> {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), 5000)
+  try {
+    const res = await fetch(url, {
+      signal: controller.signal,
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; Wone/1.0)' },
+    })
+    if (!res.ok) return ''
+    const html = await res.text()
+    return html
+      .replace(/<script[\s\S]*?<\/script>/gi, '')
+      .replace(/<style[\s\S]*?<\/style>/gi, '')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 3000)
+  } catch {
+    return ''
+  } finally {
+    clearTimeout(timer)
+  }
+}
 
 export async function POST(req: NextRequest) {
   let text: string
@@ -28,11 +59,24 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    const urls = [...new Set(text.match(URL_RE) ?? [])]
+    let contextText = text.trim()
+
+    if (urls.length > 0) {
+      const fetched = await Promise.allSettled(urls.map(fetchUrlText))
+      for (let i = 0; i < urls.length; i++) {
+        const result = fetched[i]
+        if (result.status === 'fulfilled' && result.value) {
+          contextText += `\n\n[Content from ${urls[i]}]:\n${result.value}`
+        }
+      }
+    }
+
     const response = await anthropic.messages.create({
       model: process.env.CLAUDE_MODEL ?? 'claude-sonnet-4-6',
       max_tokens: 512,
       system: SYSTEM_PROMPT,
-      messages: [{ role: 'user', content: text.trim() }],
+      messages: [{ role: 'user', content: contextText }],
     })
 
     let rawText = ''
