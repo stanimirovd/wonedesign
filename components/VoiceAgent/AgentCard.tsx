@@ -141,8 +141,8 @@ export function AgentCard() {
         </div>
       </div>
 
-      {/* Text input panel */}
-      {textInputOpen && !isBusy && (
+      {/* Text input panel — stays visible during busy state so the brief remains readable */}
+      {textInputOpen && (
         <div className="border-t border-white/10 pt-3">
           <TextInputPanel onSearchSubmitted={() => setTextInputOpen(false)} />
         </div>
